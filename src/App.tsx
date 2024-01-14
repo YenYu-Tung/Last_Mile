@@ -1,5 +1,5 @@
 import { HashRouter as BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
@@ -37,17 +37,6 @@ export default function App() {
 
     const [value, setValue] = useState('home');
     console.log(value);
-
-    useEffect(() => {
-        const path = window.location.pathname;  
-        console.log(path)      
-        if (path === '/') setValue('home');
-        else if (path === '/#/delivery') setValue('delivery');
-        else if (path === '/#/deliverymap') setValue('delivery');
-        else if (path === '/#/locker') setValue('locker');
-        else if (path === '/#/profile') setValue('profile');
-        else setValue('none');
-    }, []);
 
     const isBottomNavigationVisible =
         value === 'home' || value === 'delivery' || value === 'locker' || value === 'profile';
