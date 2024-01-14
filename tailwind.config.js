@@ -6,7 +6,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./src/*.{js,ts,jsx,tsx}",
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
-    "node_modules/react-qr-scanner/**/*.{js,jsx,ts,tsx}",
+    "node_modules/react-qr-scanner/**/*.{js,jsx,ts,tsx,cjs.js}",
   ],
   theme: {
     extend: {  
