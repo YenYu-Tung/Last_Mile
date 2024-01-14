@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import success from "/success.svg";
 
@@ -8,16 +7,7 @@ type SuccessProps = {
 }
 
 export default function Success({ setValue }: SuccessProps){
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
-
+  
   const navigate = useNavigate();
   const handleNavigate = () => {
     navigate('/');

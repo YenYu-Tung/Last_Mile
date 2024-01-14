@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 
@@ -71,16 +71,6 @@ type ProfileProps = {
 
 export default function Profile({ setValue }: ProfileProps){
   
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
-
   const navigate = useNavigate();
 
   const [num, setNum] = useState(0);

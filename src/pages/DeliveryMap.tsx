@@ -22,16 +22,7 @@ type DeliveryMapProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Delivery({ setValue }: DeliveryMapProps) {
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
+export default function DeliveryMap({ setValue }: DeliveryMapProps) {
   
   const navigate = useNavigate();
   const handleNavigate = () => {

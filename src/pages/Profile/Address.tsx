@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 // import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
@@ -62,19 +62,9 @@ type AddressProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function List({ setValue }: AddressProps) {
+export default function Address({ setValue }: AddressProps) {
   const location = useLocation();
   const prevUrl = location.state?.prevurl;
-
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
 
   const navigate = useNavigate();
   const handleNavigate = () => {

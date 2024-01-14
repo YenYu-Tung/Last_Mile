@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 
@@ -28,16 +27,6 @@ const listSxProp = {
 };
 
 export default function Account({ setValue }: AccountProps) {
-
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
 
   const navigate = useNavigate();
   const handleNavigate = () => {

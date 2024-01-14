@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 // import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
@@ -23,15 +22,6 @@ type ListProps = {
 }
 
 export default function List({ setValue }: ListProps){
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
 
   const navigate = useNavigate();
   const handleNavigate = () => {

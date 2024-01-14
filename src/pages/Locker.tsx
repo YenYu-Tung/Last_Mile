@@ -3,7 +3,6 @@ import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
-import { useEffect } from 'react';
 
 import shopee from "/shopee.svg";
 import momo from "/momo.svg";
@@ -40,15 +39,6 @@ type LockerProps = {
 }
 
 export default function Locker({ setValue }: LockerProps) {
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
 
   const navigate = useNavigate();
 

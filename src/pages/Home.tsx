@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import logo from "/logo.svg";
 import inprogress from "/inprogress.svg";
@@ -52,15 +52,6 @@ type HomeProps = {
 }
 
 export default function Home({ setValue }: HomeProps) {
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') setValue('home');
-    else if (path === '/#/delivery') setValue('delivery');
-    else if (path === '/#/deliverymap') setValue('delivery');
-    else if (path === '/#/locker') setValue('locker');
-    else if (path === '/#/profile') setValue('profile');
-    else setValue('none');
-  }, [setValue]);
 
   const navigate = useNavigate();
   const handleNavigate = () => {
