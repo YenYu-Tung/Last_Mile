@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
@@ -34,6 +36,8 @@ const theme = createTheme({
 });
 
 export default function App() {
+
+    const navigate = useNavigate();
 
     const [value, setValue] = useState('home');
 
@@ -110,7 +114,10 @@ export default function App() {
                                         },
                                     },                             
                                 }}
-                                href="/"
+                                onClick={() => {
+                                    navigate('/');
+                                    setValue('home');
+                                }}
                             />
                             <BottomNavigationAction
                                 value="delivery" label="DELIVERY" icon={<LocalShippingRoundedIcon sx={{
@@ -145,7 +152,10 @@ export default function App() {
                                         },
                                     },
                                 }}
-                                href="/delivery"
+                                onClick={() => {
+                                    navigate('/delivery');
+                                    setValue('delivery');
+                                }}
                             />
 
                             <BottomNavigationAction
@@ -180,7 +190,10 @@ export default function App() {
                                         },
                                     },
                                 }} 
-                                href="/locker"
+                                onClick={() => {
+                                    navigate('/locker');
+                                    setValue('locker');
+                                }}
                                 />
                             <BottomNavigationAction
                                 value="profile" label="PROFILE" icon={<PersonRoundedIcon sx={{
@@ -215,7 +228,10 @@ export default function App() {
                                         },
                                     },
                                 }}
-                                href="/profile"
+                                onClick={() => {
+                                    navigate('/profile');
+                                    setValue('profile');
+                                }}
                                 />                        
                         </BottomNavigation>
                     </Paper>
