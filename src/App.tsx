@@ -36,7 +36,7 @@ const theme = createTheme({
 export default function App() {
 
     const [value, setValue] = useState('home');
-    console.log(value)
+    console.log(value);
 
     useEffect(() => {
         const path = window.location.pathname;  
@@ -59,18 +59,18 @@ export default function App() {
                 <div id="body">
                     <Routes>
                         <Route path="/" element={<Home setValue={setValue} />}  />
-                        <Route path="/#/delivery" element={<Delivery setValue={setValue} />} />
-                        <Route path="/#/deliverymap" element={<DeliveryMap setValue={setValue} />} />
-                        <Route path="/#/locker" element={<Locker setValue={setValue} />} />
-                        <Route path="/#/profile" element={<Profile setValue={setValue} />} />
-                        <Route path="/#/list" element={<List setValue={setValue} />}  />
-                        <Route path="/#/success" element={<Success setValue={setValue} />} />
-                        <Route path="/#/scan" element={<Scan setValue={setValue} />} />
-                        <Route path="/#/ai-assistant" element={<Assistant setValue={setValue} />} />
-                        <Route path="/#/profile/about-us" element={<AboutUs setValue={setValue} />} />
-                        <Route path="/#/profile/account" element={<Account setValue={setValue} />} />
-                        <Route path="/#/profile/address-setting" element={<Address setValue={setValue} />} />
-                        <Route path="/#/profile/wallets" element={<Wallet setValue={setValue}/>} />
+                        <Route path="/delivery" element={<Delivery setValue={setValue} />} />
+                        <Route path="/deliverymap" element={<DeliveryMap setValue={setValue} />} />
+                        <Route path="/locker" element={<Locker setValue={setValue} />} />
+                        <Route path="/profile" element={<Profile setValue={setValue} />} />
+                        <Route path="/list" element={<List setValue={setValue} />}  />
+                        <Route path="/success" element={<Success setValue={setValue} />} />
+                        <Route path="/scan" element={<Scan setValue={setValue} />} />
+                        <Route path="/ai-assistant" element={<Assistant setValue={setValue} />} />
+                        <Route path="/profile/about-us" element={<AboutUs setValue={setValue} />} />
+                        <Route path="/profile/account" element={<Account setValue={setValue} />} />
+                        <Route path="/profile/address-setting" element={<Address setValue={setValue} />} />
+                        <Route path="/profile/wallets" element={<Wallet setValue={setValue}/>} />
                         {/* <Route path="/guard/*" element={<Guard />} /> */}
                     </Routes>
                     {isBottomNavigationVisible && (
