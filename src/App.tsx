@@ -112,6 +112,7 @@ export default function App() {
                                     },                             
                                 }}
                                 href="/"
+                                onClick={()=>{setValue('home')}}
                             />
                             <BottomNavigationAction
                                 value="delivery" label="DELIVERY" icon={<LocalShippingRoundedIcon sx={{
@@ -147,6 +148,7 @@ export default function App() {
                                     },
                                 }}
                                 href="/#/delivery"
+                                onClick={() => { setValue('delivery') }}
                             />
 
                             <BottomNavigationAction
@@ -182,6 +184,7 @@ export default function App() {
                                     },
                                 }} 
                                 href="/#/locker"
+                                onClick={() => { setValue('locker') }}
                                 />
                             <BottomNavigationAction
                                 value="profile" label="PROFILE" icon={<PersonRoundedIcon sx={{
@@ -217,6 +220,7 @@ export default function App() {
                                     },
                                 }}
                                 href="/#/profile"
+                                onClick={() => { setValue('profile') }}
                                 />                        
                         </BottomNavigation>
                     </Paper>
