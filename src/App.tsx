@@ -145,7 +145,7 @@ export default function App() {
                                         },
                                     },
                                 }}
-                                href="/delivery"
+                                href="/#/delivery"
                             />
 
                             <BottomNavigationAction
@@ -180,7 +180,7 @@ export default function App() {
                                         },
                                     },
                                 }} 
-                                href="/locker"
+                                href="/#/locker"
                                 />
                             <BottomNavigationAction
                                 value="profile" label="PROFILE" icon={<PersonRoundedIcon sx={{
@@ -215,7 +215,7 @@ export default function App() {
                                         },
                                     },
                                 }}
-                                href="/profile"
+                                href="/#/profile"
                                 />                        
                         </BottomNavigation>
                     </Paper>
