@@ -41,10 +41,10 @@ export default function App() {
         const path = window.location.pathname;  
         console.log(path)      
         if (path === '/') setValue('home');
-        else if (path === '/delivery') setValue('delivery');
-        else if (path === '/deliverymap') setValue('delivery');
-        else if (path === '/locker') setValue('locker');
-        else if (path === '/profile') setValue('profile');
+        else if (path === '/#/delivery') setValue('delivery');
+        else if (path === '/#/deliverymap') setValue('delivery');
+        else if (path === '/#/locker') setValue('locker');
+        else if (path === '/#/profile') setValue('profile');
         else setValue('none');
     }, []);
 
