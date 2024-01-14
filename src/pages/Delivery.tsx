@@ -30,10 +30,10 @@ export default function Delivery({ setValue }: DeliveryProps) {
   useEffect(() => {
     const path = window.location.pathname;
     if (path === '/') setValue('home');
-    else if (path === '/delivery') setValue('delivery');
-    else if (path === '/deliverymap') setValue('delivery');
-    else if (path === '/locker') setValue('locker');
-    else if (path === '/profile') setValue('profile');
+    else if (path === '/#/delivery') setValue('delivery');
+    else if (path === '/#/deliverymap') setValue('delivery');
+    else if (path === '/#/locker') setValue('locker');
+    else if (path === '/#/profile') setValue('profile');
     else setValue('none');
   }, [setValue]);
   
