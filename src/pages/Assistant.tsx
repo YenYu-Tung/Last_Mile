@@ -50,6 +50,7 @@ export default function List({ setValue }: AssistantProps) {
   
   useEffect(() => {   
     const path = window.location.pathname;
+    console.log(path) 
     if (path === '/') setValue('home');
     else if (path === '/delivery') setValue('delivery');
     else if (path === '/deliverymap') setValue('delivery');
