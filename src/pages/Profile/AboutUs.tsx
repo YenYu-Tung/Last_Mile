@@ -51,7 +51,7 @@ export default function Scan({ setValue }: AboutProps) {
         </IconButton>
         <div className='flex flex-col text-white'>
           <span className='text-xl'>Lastmile Global Web</span>
-          <span className='text-xxs'>http:// www.lastmile.glibal.com.tw</span>
+          <span className='text-xxs'>https://www.lastmile.global.com.tw</span>
         </div>
       </div>
 

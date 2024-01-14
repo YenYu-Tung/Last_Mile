@@ -86,7 +86,9 @@ export default function Profile({ setValue }: ProfileProps){
   const [num, setNum] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setNum(newValue);
+    if(event){
+      setNum(newValue);
+    }
   };
 
 
@@ -197,7 +199,7 @@ export default function Profile({ setValue }: ProfileProps){
         </List>
       </div>
       <div className='mx-auto mt-1 min-h-[40vh] sm:min-h-[50vh] pb-20 bg-exdark rounded-t-[35px]' style={{ display: 'flex', flexDirection: 'column' }}>
-        <Box sx={{ padding: 2, flex: 1}}>
+        <Box sx={{ paddingX: 2, paddingY: 1.5, flex: 1}}>
           <Tabs value={num} onChange={handleChange} aria-label="basic tabs example"
             sx={{
             '& .MuiTabs-indicator': {
@@ -217,7 +219,7 @@ export default function Profile({ setValue }: ProfileProps){
           >
             <Tab label="Badges" {...a11yProps(0)}/>
             <Tab label="History" {...a11yProps(1)} />
-            <Tab label="List" {...a11yProps(2)} />
+            <Tab label="Coupon" {...a11yProps(2)} />
           </Tabs>
           <CustomTabPanel value={num} index={0}>
             <Box sx={{
@@ -232,6 +234,33 @@ export default function Profile({ setValue }: ProfileProps){
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>
+            <Box sx={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              flexDirection: 'column', pt: 3, px: 1, gap: 2.2, flexWrap: 'wrap'
+            }} >
+              <div className='flex w-full h-20 rounded-2xl bg-light'>
+                <div className='w-3/4 p-4 flex flex-col'>
+                  <span className='text-green text-lg'>#RWQ-51F9711D</span>
+                  <span className='text-light-gray text-sm'>2023 / 03 / 18 </span>
+                </div>
+                <div className='w-1/4 text-green text-4xl flex items-center justify-center'>
+                  <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                </div>
+              </div>
+              <div className='flex w-full h-20 rounded-2xl bg-light'>
+                <div className='w-3/4 p-4 flex flex-col'>
+                  <span className='text-green text-lg'>#OUR-PFU1IG8</span>
+                  <span className='text-light-gray text-sm'>2023 / 03 / 05 </span>
+                </div>
+                <div className='w-1/4 text-green text-4xl flex items-center justify-center'>
+                  <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                </div>
+              </div>
+            </Box>
+
+          </CustomTabPanel>
+          <CustomTabPanel value={num} index={2}>
 
             <Box sx={{
               display: 'flex',
@@ -257,32 +286,7 @@ export default function Profile({ setValue }: ProfileProps){
                 </div>
               </div>
             </Box>
-          </CustomTabPanel>
-          <CustomTabPanel value={num} index={2}>
-            <Box sx={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              flexDirection: 'column', pt: 3, px: 1, gap: 2, flexWrap: 'wrap'
-            }} >
-              <div className='flex w-full h-20 rounded-2xl bg-light'>
-                <div className='w-3/4 p-4 flex flex-col'>
-                  <span className='text-green text-lg'>#RWQ-51F9711D</span>
-                  <span className='text-light-gray text-sm'>2023 / 03 / 18 </span>
-                </div>
-                <div className='w-1/4 text-green text-4xl flex items-center justify-center'>
-                  <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
-                </div>
-              </div>
-              <div className='flex w-full h-20 rounded-2xl bg-light'>
-                <div className='w-3/4 p-4 flex flex-col'>
-                  <span className='text-green text-lg'>#OUR-PFU1IG8</span>
-                  <span className='text-light-gray text-sm'>2023 / 03 / 05 </span>
-                </div>
-                <div className='w-1/4 text-green text-4xl flex items-center justify-center'>
-                  <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
-                </div>
-              </div>
-            </Box>
+            
           </CustomTabPanel>
         </Box>
       </div>         

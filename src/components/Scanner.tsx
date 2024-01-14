@@ -13,14 +13,14 @@ class QRScan extends React.Component<ScanProps> {
 
   handleScan = (data: string | null) => {
     this.setState({
-      result: data 
+      result: data
     });
-    if(data){
+    if (data) {
       this.props.setData(data);
     }
   };
 
-  handleError = (err) => {
+  handleError = (err: string) => {
     console.error(err);
   };
 
