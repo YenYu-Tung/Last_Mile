@@ -8,7 +8,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import SearchIcon from '@mui/icons-material/Search';
 
-import Logo from "../assets/logo.svg";
+import Logo from "/logo.svg";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',

@@ -8,8 +8,8 @@ import Chip from '@mui/material/Chip';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 
-import Logo from "../assets/Logo.svg";
-import Mapimg from "../assets/Mapimg.svg";
+import Logo from "/Logo.svg";
+import Mapimg from "/Mapimg.svg";
 
 type DialogProps = {
   open: boolean;

@@ -17,8 +17,8 @@ import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import Shopee from "../assets/shopee.svg";
-import PChome from "../assets/pchome.svg";
+import Shopee from "/shopee.svg";
+import PChome from "/pchome.svg";
 
 const Cars = ['#CAR-967', '#CAR-811', '#CAR-654', '#CAR-992', '#CAR-336'];
 const Dates = ['TUE 12.26.2023', 'WED 12.27.2023', 'FRI 12.29.2023', 'SAT 12.30.2023', 'SUN 12.31.2023'];
