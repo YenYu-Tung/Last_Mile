@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import IconButton from '@mui/material/IconButton';
 
-import BGimg from "../../assets/web.svg";
+import web from "../../assets/web.svg";
 
 import AppBar from "../../components/AppBar";
 import WebProgressBar from "../../components/WebProgressBar"
@@ -13,7 +13,7 @@ type AboutProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 const containerStyle = {
-  background: `url(${BGimg}), linear-gradient(to bottom, rgba(20, 21, 22, 1), transparent)`,
+  background: `url(${web}), linear-gradient(to bottom, rgba(20, 21, 22, 1), transparent)`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'bottom',

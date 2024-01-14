@@ -12,9 +12,9 @@ import IconButton from '@mui/material/IconButton';
 
 import shopee from "../assets/shopee.svg";
 import pchome from "../assets/pchome.svg";
-import Logo from "../assets/logo.svg";
-import toShip from "../assets/packagestoship.svg";
-import toReceive from "../assets/packagestoreceive.svg";
+import logo from "../assets/logo.svg";
+import packagestoship from "../assets/packagestoship.svg";
+import packagestoreceive from "../assets/packagestoreceive.svg";
 
 import DialogShow from "../components/DialogShow";
 
@@ -52,7 +52,7 @@ export default function List({ setValue }: ListProps){
               <ChevronLeftRoundedIcon sx={{ color: '#898989', fontSize: 48 }} />
             </button>
           </span>
-          <img className="w-28 sm:w-40" src={Logo} alt="Logo" />
+          <img className="w-28 sm:w-40" src={logo} alt="Logo" />
           <IconButton aria-label="qrcode" onClick={handleQrcode}>
             <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "2rem" }} />
           </IconButton>
@@ -60,7 +60,7 @@ export default function List({ setValue }: ListProps){
       </div>
 
       <div className="flex flex-col gap-3 items-start px-6 py-4 w-full">
-        <img className="w-50" src={toReceive} alt=" Packages To Receive" />
+        <img className="w-50" src={packagestoreceive} alt=" Packages To Receive" />
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className='mt-4 w-full min-h-40 rounded-3xl border hover:border-green shadow-5xl'>
             <div className='w-full flex flex-col h-full relative'>
@@ -114,7 +114,7 @@ export default function List({ setValue }: ListProps){
       }} >No more</Divider>
 
       <div className="flex flex-col items-start px-6 py-4">
-        <img className="w-50" src={toShip} alt=" Packages To Ship" />
+        <img className="w-50" src={packagestoship} alt=" Packages To Ship" />
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className='mt-4 w-full min-h-40 rounded-3xl border shadow-5xl'>
             <div className='w-full flex flex-col h-full relative'>

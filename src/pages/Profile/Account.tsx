@@ -14,7 +14,7 @@ import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 
 import Avatar from '@mui/material/Avatar';
 
-import Avatarimg from "../../assets/avatar.svg";
+import avatar from "../../assets/avatar.svg";
 
 
 type AccountProps = {
@@ -61,7 +61,7 @@ export default function Account({ setValue }: AccountProps) {
           <ListItem
             secondaryAction={
               <div className='flex items-center'>
-                <Avatar alt="Avatar" src={Avatarimg} sx={{
+                <Avatar alt="Avatar" src={avatar} sx={{
                   width: 52, height: 52, border: 1.5,
                   borderColor: '#32FF9D'
                 }} />

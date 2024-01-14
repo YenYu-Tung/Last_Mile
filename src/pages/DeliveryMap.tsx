@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-import walk0 from "../assets/walk1.svg";
-import walk1 from "../assets/walk2.svg";
-import walk2 from "../assets/walk3.svg";
-import walk3 from "../assets/walk4.svg";
+import walk1 from "../assets/walk1.svg";
+import walk2 from "../assets/walk2.svg";
+import walk3 from "../assets/walk3.svg";
+import walk4 from "../assets/walk4.svg";
 import people from "../assets/people.svg";
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
@@ -47,12 +47,12 @@ export default function Delivery({ setValue }: DeliveryMapProps) {
 
   const containerStyle = {
     backgroundImage: activeStep === 0
-      ? `url(${walk0})`
+      ? `url(${walk1})`
       : activeStep === 1
-        ? `url(${walk1})`
+        ? `url(${walk2})`
       : activeStep === 2
-          ? `url(${walk2})`
-        : `url(${walk3})`,
+          ? `url(${walk3})`
+        : `url(${walk4})`,
     // backgroundImage: `url(${walk0})`,
     backgroundColor: 'rgba(0, 0, 0, 1)',
     backgroundSize: 'cover',

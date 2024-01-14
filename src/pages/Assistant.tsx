@@ -17,8 +17,8 @@ import FormControl from '@mui/material/FormControl';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 
-import RoundLogo from "../assets/roundlogo.svg";
-import WhiteLogo from "../assets/whitelogo.svg";
+import roundlogo from "../assets/roundlogo.svg";
+import whitelogo from "../assets/whitelogo.svg";
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
@@ -74,7 +74,7 @@ export default function List({ setValue }: AssistantProps) {
               <ChevronLeftRoundedIcon sx={{ color: 'white', fontSize: 42 }} />
             </button>
           </span>
-          <span className='flex text-white text-2xl font-semibold'><img className="w-8 mr-2" src={RoundLogo} alt="Last Mile" />AI Assistant
+          <span className='flex text-white text-2xl font-semibold'><img className="w-8 mr-2" src={roundlogo} alt="Last Mile" />AI Assistant
           </span>
           <span className='absolute top-6.8 right-4'>
             <button>
@@ -85,7 +85,7 @@ export default function List({ setValue }: AssistantProps) {
       </div>
       <Divider variant="middle" sx={{ border: 0.5, borderColor: 'white', borderRadius: '24px' }} />
       <div className='flex flex-col w-full justify-center items-center px-6'>
-        <img className="w-32 mt-12" src={WhiteLogo} alt="Last Mile" />
+        <img className="w-32 mt-12" src={whitelogo} alt="Last Mile" />
         <div className='flex flex-col items-center mt-6 gap-4'>
           <span className='text-white text-3xl font-bold'>Hello, I’m LastAI</span>
           <span className='text-exlight-gray w-[85%] text-center'>Help you quickly deal with problems you encounter</span>
@@ -95,7 +95,7 @@ export default function List({ setValue }: AssistantProps) {
 
       <div className="flex flex-col gap-3 px-5 w-full fixed bottom-8">
         <div className="w-full flex items-center">
-          <img className="w-8 mr-2" src={RoundLogo} alt="Last Mile" />
+          <img className="w-8 mr-2" src={roundlogo} alt="Last Mile" />
           <span className='flex text-white text-sm bg-slate-400/20 px-4 py-2  rounded-lg'>Hi, I’m LastAI. How may I help you?
           </span>
         </div>

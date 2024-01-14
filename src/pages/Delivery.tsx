@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import BGimg from "../assets/deliverybg.svg";
+import deliverybg from "../assets/deliverybg.svg";
 import shopee from "../assets/shopee.svg";
-import Deliver from "../assets/deliver.svg";
+import deliver from "../assets/deliver.svg";
 // import Arrival from "../assets/Arrival.svg";
 // import Draggable from 'react-draggable';
 
@@ -48,7 +48,7 @@ export default function Delivery({ setValue }: DeliveryProps) {
 
 
   const containerStyle = {
-    backgroundImage: `url(${BGimg})`,
+    backgroundImage: `url(${deliverybg})`,
     backgroundColor: 'rgba(0, 0, 0, 1)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -130,7 +130,7 @@ export default function Delivery({ setValue }: DeliveryProps) {
                 <span className="text-white text-lg ml-2">Shopee</span>
               </div>              
               <div className="flex w-full min-h-[50%] truncate ... items-center sm:ml-10">
-                <img className="w-3" src={Deliver} alt="Deliver" />
+                <img className="w-3" src={deliver} alt="Deliver" />
                 <div className="flex flex-col ml-3 w-full">
                   <div className="flex flex-col">
                     <span className="text-gray text-sm">Deliver from</span>
@@ -173,7 +173,7 @@ export default function Delivery({ setValue }: DeliveryProps) {
                 <span className="text-white text-lg ml-2">Shopee</span>
               </div>
               <div className="flex w-full min-h-[50%] truncate ... items-center sm:ml-10">
-                <img className="w-3" src={Deliver} alt="Deliver" />
+                <img className="w-3" src={deliver} alt="Deliver" />
                 <div className="flex flex-col ml-3 w-full">
                   <div className="flex flex-col">
                     <span className="text-gray text-sm">Deliver from</span>

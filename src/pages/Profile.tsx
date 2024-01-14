@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 
-import Avatarimg from "../assets/avatar.svg";
-import Badge1 from "../assets/badge1.svg";
-import Badge2 from "../assets/badge2.svg";
-import UnknownBadge from "../assets/unknownbadge.svg";
+import avatar from "../assets/avatar.svg";
+import badge1 from "../assets/badge1.svg";
+import badge2 from "../assets/badge2.svg";
+import unknownbadge from "../assets/unknownbadge.svg";
 
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
@@ -95,7 +95,7 @@ export default function Profile({ setValue }: ProfileProps){
   return (
     <div className='bg-dark' style={{ minHeight: "100vh" }}>
       <div className='flex flex-col sm:flex-row justify-center items-center h-[33vh] sm:h-[28vh] gap-2'>
-        <Avatar alt="Avatar" src={Avatarimg} sx={{
+        <Avatar alt="Avatar" src={avatar} sx={{
           width: '105px', height: '105px', border: 2,
           borderColor: '#32FF9D',
           '@media (min-width: 768px)': { 
@@ -227,10 +227,10 @@ export default function Profile({ setValue }: ProfileProps){
               alignItems: 'flex-start',
               flexDirection: 'row', pt: 3, px: 1, gap: 2, flexWrap: 'wrap'
             }} >
-              <img className="w-[4.3rem]" src={Badge1} alt="Badge1" />
-              <img className="w-[4.25rem]" src={Badge2} alt="Badge2" />
-              <img className="w-[4.9rem]" src={UnknownBadge} alt="UnknownBadge" />
-              <img className="w-[4.9rem]" src={UnknownBadge} alt="UnknownBadge" />
+              <img className="w-[4.3rem]" src={badge1} alt="Badge1" />
+              <img className="w-[4.25rem]" src={badge2} alt="Badge2" />
+              <img className="w-[4.9rem]" src={unknownbadge} alt="UnknownBadge" />
+              <img className="w-[4.9rem]" src={unknownbadge} alt="UnknownBadge" />
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>

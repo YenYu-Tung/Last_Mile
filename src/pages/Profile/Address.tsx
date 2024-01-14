@@ -19,7 +19,7 @@ import InputBase from '@mui/material/InputBase';
 import FormControl from '@mui/material/FormControl';
 // import { OutlinedInputProps } from '@mui/material/OutlinedInput';
 
-import Address from "../../assets/address.svg";
+import address from "../../assets/address.svg";
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
@@ -43,7 +43,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 }));
 
 const containerStyle = {
-  background: `url(${Address})`,
+  background: `url(${address})`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',

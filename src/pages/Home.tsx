@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
-import Logo from "../assets/logo.svg";
-import InProgress from "../assets/inprogress.svg";
-import PopularServices from "../assets/popularservices.svg";
-import Delivery from "../assets/delivery.svg";
+import logo from "../assets/logo.svg";
+import inprogress from "../assets/inprogress.svg";
+import popularservices from "../assets/popularservices.svg";
+import delivery from "../assets/delivery.svg";
 import shopee from "../assets/shopee.svg";
 // import momo from "../assets/momo.svg";
 import pchome from "../assets/pchome.svg";
-import Homeimg from "../assets/home.svg";
+import home from "../assets/home.svg";
 
 import Divider from '@mui/material/Divider';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
@@ -30,7 +30,7 @@ import DialogList from "../components/DialogList";
 import ProgressBar from "../components/ProgressBar";
 
 const containerStyle = {
-  background: `url(${Homeimg}), linear-gradient(to right, rgba(31, 31, 31, 1), transparent)`,
+  background: `url(${home}), linear-gradient(to right, rgba(31, 31, 31, 1), transparent)`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'right',
@@ -89,14 +89,14 @@ export default function Home({ setValue }: HomeProps) {
   return (
     <div className="bg-dark pb-24 md:px-8" style={{ minHeight: "100vh" }}>
       <div className="flex justify-between align-middle items-center p-4">
-        <img className="w-36 sm:w-50" src={Logo} alt="Last Mile" />
+        <img className="w-36 sm:w-50" src={logo} alt="Last Mile" />
         <IconButton aria-label="qrcode" onClick={handleQrcode}>
           <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "2rem" }} />
         </IconButton>
         
       </div>
       <div className="flex flex-col items-start px-6 pb-4 ">
-        <img className="w-28 sm:w-40" src={InProgress} alt="In Progress" />
+        <img className="w-28 sm:w-40" src={inprogress} alt="In Progress" />
         <div className="border border-green mt-4 w-full rounded-3xl h-52 shadow-3xl relative" >  
           <div className='w-full h-full bg-gradient-to-r from-gray/20 via-dark-gray/5 to-dark-gray/10 rounded-3xl z-20'></div>  
           <div className='w-full h-full z-0' style={containerStyle}>
@@ -129,7 +129,7 @@ export default function Home({ setValue }: HomeProps) {
         </div>
       </div> 
       <div className="flex flex-col items-start px-6 py-4">
-        <img className="w-40 sm:w-60" src={PopularServices} alt="Popular Services" />
+        <img className="w-40 sm:w-60" src={popularservices} alt="Popular Services" />
         <div className="flex mt-4 w-full gap-3">
           <div className='flex flex-col w-1/3 items-center justify-center px-3 py-4 border border-green rounded-t-3xl xs:rounded-t-[30px] rounded-bl-3xl xs:rounded-bl-[30px] rounded-br-[32px] xs:rounded-br-[50px] relative shadow-3xl'>
             <SendRoundedIcon className='text-green' style={{ fontSize: "3.5rem" }} />
@@ -148,7 +148,7 @@ export default function Home({ setValue }: HomeProps) {
       </div> 
       <div className="flex flex-col items-start px-6 py-4">
         <div className="flex w-full justify-between">
-          <img className="w-40 sm:w-60" src={Delivery} alt="Wait For Delivery" />
+          <img className="w-40 sm:w-60" src={delivery} alt="Wait For Delivery" />
           <button className="flex justify-center items-center text-white hover:text-green" onClick={handleNavigate}>
             <span className='text-base'>See all</span>
             <ChevronRightRoundedIcon  style={{ fontSize: "1.5rem" }} />

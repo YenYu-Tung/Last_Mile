@@ -7,8 +7,8 @@ import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 
 import Avatar from '@mui/material/Avatar';
 
-import Avatarimg from "../../assets/avatar.svg";
-import WhiteLogo from "../../assets/whitelogo.svg";
+import avatar from "../../assets/avatar.svg";
+import whitelogo from "../../assets/whitelogo.svg";
 import discount from "../../assets/discount.svg";
 
 
@@ -58,7 +58,7 @@ export default function List({ setValue }: WalletProps) {
 
       <div className="flex flex-col gap-3 items-start px-6 pb-3 w-full mt-4">
         <span className='flex text-lg text-white justify-center items-center'>
-          <Avatar alt="Avatar" src={Avatarimg} sx={{
+          <Avatar alt="Avatar" src={avatar} sx={{
             width: 36, height: 36, border: 2,
             borderColor: '#32FF9D', marginRight: 2 }} className="" />
           Hi, Tiffany921</span>
@@ -76,7 +76,7 @@ export default function List({ setValue }: WalletProps) {
                 </span>
               </div>
               <div className='w-1/3 mx-auto mt-10'>
-                <img className="w-16 xs:w-20" src={WhiteLogo} alt="Last Mile" />
+                <img className="w-16 xs:w-20" src={whitelogo} alt="Last Mile" />
               </div>
             </div>
             <div className='w-full h-1/3 flex justify-center items-start'>

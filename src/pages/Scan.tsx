@@ -7,14 +7,14 @@ import ProgressBar from "../components/ScanProgressBar";
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import IconButton from '@mui/material/IconButton';
 
-import BGimg from "../assets/car.svg";
-import success from "../assets/successicon.svg";
+import car from "../assets/car.svg";
+import successicon from "../assets/successicon.svg";
 
 type ScanProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 const containerStyle = {
-  backgroundImage: `url(${BGimg})`,
+  backgroundImage: `url(${car})`,
   backgroundColor: 'rgba(20, 21, 22, 0.9)',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -66,7 +66,7 @@ export default function Scan({ setValue }: ScanProps) {
 
   return (
     <div style={containerStyle}>
-      {(start && progress === 100) && <div className="absolute top-[26%] w-full flex justify-center"><img className="w-28" src={success} alt="Success" /></div>}
+      {(start && progress === 100) && <div className="absolute top-[26%] w-full flex justify-center"><img className="w-28" src={successicon} alt="Success" /></div>}
 
       <div className="flex flex-col h-3/4 p-4">
         <IconButton aria-label="back" onClick={handleBack} sx={{ justifyContent: 'start' }}>
