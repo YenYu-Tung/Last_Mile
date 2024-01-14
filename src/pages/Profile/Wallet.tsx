@@ -7,8 +7,8 @@ import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 
 import Avatar from '@mui/material/Avatar';
 
-import Avatarimg from "../../assets/Avatar.svg";
-import WhiteLogo from "../../assets/WhiteLogo.svg";
+import Avatarimg from "../../assets/avatar.svg";
+import WhiteLogo from "../../assets/whitelogo.svg";
 import discount from "../../assets/discount.svg";
 
 

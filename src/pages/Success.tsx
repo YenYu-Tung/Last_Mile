@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import Successful from "../assets/Success.svg";
+import Successful from "../assets/success.svg";
 
 type SuccessProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;

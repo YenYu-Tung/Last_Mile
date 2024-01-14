@@ -14,7 +14,7 @@ import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 
 import Avatar from '@mui/material/Avatar';
 
-import Avatarimg from "../../assets/Avatar.svg";
+import Avatarimg from "../../assets/avatar.svg";
 
 
 type AccountProps = {
@@ -28,7 +28,7 @@ const listSxProp = {
 };
 
 export default function Account({ setValue }: AccountProps) {
-  
+
   useEffect(() => {
     const path = window.location.pathname;
     if (path === '/') setValue('home');
@@ -68,17 +68,17 @@ export default function Account({ setValue }: AccountProps) {
                 <IconButton edge="end" aria-label="delete">
                   <ArrowRightRoundedIcon sx={{ color: '#767676', fontSize: 40 }} />
                 </IconButton>
-              </div>          
+              </div>
             }
             sx={{ padding: '24px 28px' }}
-            // onClick={() => {
-              
-            // }}
+          // onClick={() => {
+
+          // }}
           >
             <ListItemText
               primary="Avatar"
               className='text-white'
-              sx={ listSxProp }
+              sx={listSxProp}
             />
           </ListItem>
           <Divider variant="middle" sx={{ border: 1, borderColor: '#484848' }} />
@@ -89,13 +89,13 @@ export default function Account({ setValue }: AccountProps) {
                 <IconButton edge="end" aria-label="delete">
                   <ArrowRightRoundedIcon sx={{ color: '#767676', fontSize: 40 }} />
                 </IconButton>
-              </div>                
+              </div>
             }
             sx={{ padding: '24px 28px' }}
-            // onClick={() => {
-            //   navigate('/profile/wallets');
-            //   setValue('none');
-            // }}
+          // onClick={() => {
+          //   navigate('/profile/wallets');
+          //   setValue('none');
+          // }}
           >
             <ListItemText
               primary="Name"
@@ -111,13 +111,13 @@ export default function Account({ setValue }: AccountProps) {
                 <IconButton edge="end" aria-label="delete">
                   <ArrowRightRoundedIcon sx={{ color: '#767676', fontSize: 40 }} />
                 </IconButton>
-              </div>    
+              </div>
             }
             sx={{ padding: '24px 28px' }}
-            // onClick={() => {
-            //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
-            //   setValue('none');
-            // }}
+          // onClick={() => {
+          //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
+          //   setValue('none');
+          // }}
           >
             <ListItemText
               primary="Mail Address"
@@ -133,13 +133,13 @@ export default function Account({ setValue }: AccountProps) {
                 <IconButton edge="end" aria-label="delete">
                   <ArrowRightRoundedIcon sx={{ color: '#767676', fontSize: 40 }} />
                 </IconButton>
-              </div>    
+              </div>
             }
             sx={{ padding: '24px 28px' }}
-            // onClick={() => {
-            //   navigate('/profile/about-us');
-            //   setValue('none');
-            // }}
+          // onClick={() => {
+          //   navigate('/profile/about-us');
+          //   setValue('none');
+          // }}
           >
             <ListItemText
               primary="Security"
@@ -155,13 +155,13 @@ export default function Account({ setValue }: AccountProps) {
                 <IconButton edge="end" aria-label="delete">
                   <ArrowRightRoundedIcon sx={{ color: '#767676', fontSize: 40 }} />
                 </IconButton>
-              </div>    
+              </div>
             }
             sx={{ padding: '24px 28px' }}
-            // onClick={() => {
-            //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
-            //   setValue('none');
-            // }}
+          // onClick={() => {
+          //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
+          //   setValue('none');
+          // }}
           >
             <ListItemText
               primary="Authentication"
@@ -177,13 +177,13 @@ export default function Account({ setValue }: AccountProps) {
                 <IconButton edge="end" aria-label="delete">
                   <ArrowRightRoundedIcon sx={{ color: '#767676', fontSize: 40 }} />
                 </IconButton>
-              </div>    
+              </div>
             }
             sx={{ padding: '24px 28px' }}
-            // onClick={() => {
-            //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
-            //   setValue('none');
-            // }}
+          // onClick={() => {
+          //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
+          //   setValue('none');
+          // }}
           >
             <ListItemText
               primary="Language"

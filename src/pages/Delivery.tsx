@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import BGimg from "../assets/DeliveryBg.svg";
+import BGimg from "../assets/deliverybg.svg";
 import shopee from "../assets/shopee.svg";
-import Deliver from "../assets/Deliver.svg";
+import Deliver from "../assets/deliver.svg";
 // import Arrival from "../assets/Arrival.svg";
 // import Draggable from 'react-draggable';
 
@@ -26,7 +26,7 @@ type DeliveryProps = {
 
 export default function Delivery({ setValue }: DeliveryProps) {
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const path = window.location.pathname;
     if (path === '/') setValue('home');

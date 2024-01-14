@@ -7,8 +7,8 @@ import ProgressBar from "../components/ScanProgressBar";
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import IconButton from '@mui/material/IconButton';
 
-import BGimg from "../assets/Car.svg";
-import success from "../assets/successIcon.svg";
+import BGimg from "../assets/car.svg";
+import success from "../assets/successicon.svg";
 
 type ScanProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;

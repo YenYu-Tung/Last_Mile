@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
-import Logo from "../assets/Logo.svg";
-import InProgress from "../assets/InProgress.svg";
-import PopularServices from "../assets/PopularServices.svg";
-import Delivery from "../assets/Delivery.svg";
+import Logo from "../assets/logo.svg";
+import InProgress from "../assets/inprogress.svg";
+import PopularServices from "../assets/popularservices.svg";
+import Delivery from "../assets/delivery.svg";
 import shopee from "../assets/shopee.svg";
 // import momo from "../assets/momo.svg";
 import pchome from "../assets/pchome.svg";
-import Homeimg from "../assets/Home.svg";
+import Homeimg from "../assets/home.svg";
 
 import Divider from '@mui/material/Divider';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';

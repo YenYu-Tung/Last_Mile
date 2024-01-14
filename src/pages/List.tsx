@@ -12,9 +12,9 @@ import IconButton from '@mui/material/IconButton';
 
 import shopee from "../assets/shopee.svg";
 import pchome from "../assets/pchome.svg";
-import Logo from "../assets/Logo.svg";
-import toShip from "../assets/PackagesToShip.svg";
-import toReceive from "../assets/PackagesToReceive.svg";
+import Logo from "../assets/logo.svg";
+import toShip from "../assets/packagestoship.svg";
+import toReceive from "../assets/packagestoreceive.svg";
 
 import DialogShow from "../components/DialogShow";
 

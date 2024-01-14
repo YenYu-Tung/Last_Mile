@@ -17,8 +17,8 @@ import FormControl from '@mui/material/FormControl';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 
-import RoundLogo from "../assets/RoundLogo.svg";
-import WhiteLogo from "../assets/WhiteLogo.svg";
+import RoundLogo from "../assets/roundlogo.svg";
+import WhiteLogo from "../assets/whitelogo.svg";
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
