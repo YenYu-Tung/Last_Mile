@@ -8,7 +8,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import SearchIcon from '@mui/icons-material/Search';
 
-import Logo from "/logo.svg";
+import logo from "/logo.svg";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -58,7 +58,7 @@ export default function SearchAppBar() {
     <Box sx={{ width: '100%' }}>
       <AppBar position="static" sx={{ bgcolor: 'transparent', boxShadow: 'none', width: '100%' }}>
         <Toolbar sx={{ paddingLeft: '0', paddingRight: '0', width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-          <img className="w-24 xs:w-32 sm:w-48" src={Logo} alt="Last Mile" />
+          <img className="w-24 xs:w-32 sm:w-48" src={logo} alt="Last Mile" />
           <div className='flex items-center justify-between'>
             <Search>
               <SearchIconWrapper>

@@ -8,8 +8,8 @@ import Chip from '@mui/material/Chip';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 
-import Logo from "/Logo.svg";
-import Mapimg from "/Mapimg.svg";
+import logo from "/logo.svg";
+import mapimg from "/mapimg.svg";
 
 type DialogProps = {
   open: boolean;
@@ -17,7 +17,7 @@ type DialogProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 const containerStyle = {
-  backgroundImage: `url(${Mapimg})`,
+  backgroundImage: `url(${mapimg})`,
   backgroundSize: 'contain',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -64,7 +64,7 @@ export default function SimpleDialog(props: DialogProps) {
       <Box sx={{ ...style, width: 340 }}>
         <div className="w-[64%] text-white py-1 pr-2">
           <div className="border border-green rounded-md w-16 px-1 py-0.5">
-            <img src={Logo} alt="Logo" />
+            <img src={logo} alt="Logo" />
           </div>
           <div className="flex flex-col p-1 my-2">
             <span className="text-lg font-bold">Walk in 1 minutes</span>

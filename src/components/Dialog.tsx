@@ -17,8 +17,8 @@ import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import Shopee from "/shopee.svg";
-import PChome from "/pchome.svg";
+import shopee from "/shopee.svg";
+import pchome from "/pchome.svg";
 
 const Cars = ['#CAR-967', '#CAR-811', '#CAR-654', '#CAR-992', '#CAR-336'];
 const Dates = ['TUE 12.26.2023', 'WED 12.27.2023', 'FRI 12.29.2023', 'SAT 12.30.2023', 'SUN 12.31.2023'];
@@ -55,7 +55,7 @@ export default function SimpleDialog(props: DialogProps) {
       <DialogTitle className="flex flex-col text-green font-bold">
         {title}
         <Chip
-          avatar={<Avatar alt={avatar} src={avatar === 'Shopee' ? Shopee : PChome} />}
+          avatar={<Avatar alt={avatar} src={avatar === 'Shopee' ? shopee : pchome} />}
           label={
             <div className='flex align-middle items-center text-green text-xs font-bold'>
               {avatar}
