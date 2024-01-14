@@ -5,8 +5,8 @@ import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 import { useEffect } from 'react';
 
-import shopee from "../assets/shopee.svg";
-import momo from "../assets/momo.svg";
+import shopee from "/shopee.svg";
+import momo from "/momo.svg";
 
 import { useNavigate } from 'react-router-dom';
 

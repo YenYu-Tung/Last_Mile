@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-import walk1 from "../assets/walk1.svg";
-import walk2 from "../assets/walk2.svg";
-import walk3 from "../assets/walk3.svg";
-import walk4 from "../assets/walk4.svg";
-import people from "../assets/people.svg";
+import walk1 from "/walk1.svg";
+import walk2 from "/walk2.svg";
+import walk3 from "/walk3.svg";
+import walk4 from "/walk4.svg";
+import people from "/people.svg";
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import Divider from '@mui/material/Divider';

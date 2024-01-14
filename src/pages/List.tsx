@@ -10,11 +10,11 @@ import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
 import IconButton from '@mui/material/IconButton';
 
-import shopee from "../assets/shopee.svg";
-import pchome from "../assets/pchome.svg";
-import logo from "../assets/logo.svg";
-import packagestoship from "../assets/packagestoship.svg";
-import packagestoreceive from "../assets/packagestoreceive.svg";
+import shopee from "/shopee.svg";
+import pchome from "/pchome.svg";
+import logo from "/logo.svg";
+import packagestoship from "/packagestoship.svg";
+import packagestoreceive from "/packagestoreceive.svg";
 
 import DialogShow from "../components/DialogShow";
 

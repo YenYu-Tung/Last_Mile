@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-import deliverybg from "../assets/deliverybg.svg";
-import shopee from "../assets/shopee.svg";
-import deliver from "../assets/deliver.svg";
-// import Arrival from "../assets/Arrival.svg";
+import deliverybg from "/deliverybg.svg";
+import shopee from "/shopee.svg";
+import deliver from "/deliver.svg";
+// import Arrival from "/Arrival.svg";
 // import Draggable from 'react-draggable';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';

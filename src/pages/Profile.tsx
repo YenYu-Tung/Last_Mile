@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 
-import avatar from "../assets/avatar.svg";
-import badge1 from "../assets/badge1.svg";
-import badge2 from "../assets/badge2.svg";
-import unknownbadge from "../assets/unknownbadge.svg";
+import avatar from "/avatar.svg";
+import badge1 from "/badge1.svg";
+import badge2 from "/badge2.svg";
+import unknownbadge from "/unknownbadge.svg";
 
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';

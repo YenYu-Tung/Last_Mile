@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import IconButton from '@mui/material/IconButton';
 
-import web from "../../assets/web.svg";
+import web from "/web.svg";
 
 import AppBar from "../../components/AppBar";
 import WebProgressBar from "../../components/WebProgressBar"

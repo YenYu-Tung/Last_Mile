@@ -14,7 +14,7 @@ import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 
 import Avatar from '@mui/material/Avatar';
 
-import avatar from "../../assets/avatar.svg";
+import avatar from "/avatar.svg";
 
 
 type AccountProps = {

@@ -19,7 +19,7 @@ import InputBase from '@mui/material/InputBase';
 import FormControl from '@mui/material/FormControl';
 // import { OutlinedInputProps } from '@mui/material/OutlinedInput';
 
-import address from "../../assets/address.svg";
+import address from "/address.svg";
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {

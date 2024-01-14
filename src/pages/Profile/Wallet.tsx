@@ -7,9 +7,9 @@ import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 
 import Avatar from '@mui/material/Avatar';
 
-import avatar from "../../assets/avatar.svg";
-import whitelogo from "../../assets/whitelogo.svg";
-import discount from "../../assets/discount.svg";
+import avatar from "/avatar.svg";
+import whitelogo from "/whitelogo.svg";
+import discount from "/discount.svg";
 
 
 type WalletProps = {
