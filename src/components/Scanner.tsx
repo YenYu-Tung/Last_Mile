@@ -15,9 +15,11 @@ class QRScan extends React.Component<ScanProps> {
   handleScan = (data: any | null) => {
     console.log(data)
     this.setState({
-      result: data
+      result: data.text
     });
-    this.props.setData(this.state.result);
+    if(data.text){
+      this.props.setData(data.text);
+    }    
   };
 
   /* eslint-disable-next-line */
@@ -30,12 +32,12 @@ class QRScan extends React.Component<ScanProps> {
       <div className="w-72 h-72 border-[6px] border-white/70 border-dashed rounded-3xl m-auto">
         <QrReader
           delay={this.state.delay}
-          //style={previewStyle}
+          // style={previewStyle}
           onError={this.handleError}
           onScan={this.handleScan}
           className="w-72 h-[276px]"
         />
-        <p>{this.state.result}</p>
+        {/* <p>{this.state.result}</p> */}
       </div>
     );
   }
