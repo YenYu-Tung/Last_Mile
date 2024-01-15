@@ -30,7 +30,7 @@ const containerStyle = {
 export default function Scan({ setValue }: ScanProps) {
 
   const [start, setStart] = useState(false);
-  const [data, setData] = useState("b");
+  const [data, setData] = useState("");
   const [progress, setProgress] = useState(10);
 
   const navigate = useNavigate();
