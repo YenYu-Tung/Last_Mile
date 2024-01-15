@@ -31,11 +31,12 @@ class QRScan extends React.Component<ScanProps> {
     return (
       <div className="w-72 h-72 border-[6px] border-white/70 border-dashed rounded-3xl m-auto">
         <QrReader
-          delay={this.state.delay}
+          delay={false}
           constraints={{
             audio: false,
             video: { facingMode: "environment" }
           }} 
+          legacyMode={true}
           onError={this.handleError}
           onScan={this.handleScan}
           className="w-72 h-[276px]"
