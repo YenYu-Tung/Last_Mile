@@ -81,7 +81,7 @@ export default function Address({ setValue }: AddressProps) {
  
 
   return (
-    <div className="bg-dark w-full" style={{ minHeight: "100vh" }}>
+    <div className="bg-dark w-full min-h-screen">
       <div className='flex flex-col m-auto w-11/12 pt-6'>
         <div className="flex justify-center items-center">
           <span className='absolute top-6.5 left-4'>

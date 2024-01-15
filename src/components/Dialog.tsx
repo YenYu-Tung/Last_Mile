@@ -107,7 +107,7 @@ export default function SimpleDialog(props: DialogProps) {
                     <PersonIcon />
                   </Avatar>
                 </ListItemAvatar> */}
-                <div className="w-full flex font-bold text-xs sm:text-sm">
+                <div className="w-full flex font-bold text-xs xs:text-sm">
                   <div className="w-[45%]">
                     {Cars[index]}
                   </div>

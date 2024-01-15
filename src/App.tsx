@@ -1,5 +1,5 @@
 import { HashRouter as BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
@@ -37,6 +37,27 @@ export default function App() {
 
     const [value, setValue] = useState('home');
     console.log(value);
+
+    useEffect(() => {
+        const path = window.location.hash;
+        /* eslint-disable-next-line */
+        const match = path.match(/^#\/([^\/]+)\/?([^\/]+)?\/?([^\/]+)?$/);
+        if (match) {
+            const segments = match.slice(1).filter(Boolean);
+            if(segments.length === 1){
+                console.log(segments[0]);
+                if (segments[0] === 'delivery') setValue('delivery');
+                else if (segments[0] === 'deliverymap') setValue('delivery');
+                else if (segments[0] === 'locker') setValue('locker');
+                else if (segments[0] === 'profile') setValue('profile');
+                else setValue('none');
+            }else{
+                setValue('none');
+            }
+        } else {
+            setValue('home');
+        }         
+    }, []);
 
     const isBottomNavigationVisible =
         value === 'home' || value === 'delivery' || value === 'locker' || value === 'profile';

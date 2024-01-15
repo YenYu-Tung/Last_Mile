@@ -32,7 +32,7 @@ class QRScan extends React.Component<ScanProps> {
           //style={previewStyle}
           onError={this.handleError}
           onScan={this.handleScan}
-          className="w-72 h-72"
+          className="w-72 h-[280px]"
         />
         <p>{this.state.result}</p>
       </div>

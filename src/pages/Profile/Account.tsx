@@ -35,8 +35,8 @@ export default function Account({ setValue }: AccountProps) {
   };
 
   return (
-    <div className="bg-dark w-full" style={{ height: "100vh" }}>
-      <div className='flex w-full h-[10vh] justify-center items-center'>
+    <div className="bg-dark w-full h-screen" >
+      <div className='flex w-full h-[10%] justify-center items-center'>
         <span className='absolute top-6.5 left-4'>
           <button onClick={handleNavigate}>
             <ChevronLeftRoundedIcon sx={{ color: 'white', fontSize: 42 }} />
@@ -45,7 +45,7 @@ export default function Account({ setValue }: AccountProps) {
         <span className='text-white text-2xl font-semibold'>Account</span>
       </div>
 
-      <div className="flex flex-col items-start pt-1 w-full bg-exdark rounded-t-[35px] min-h-[90vh] pb-32">
+      <div className="flex flex-col items-start pt-1 w-full bg-exdark rounded-t-[35px] min-h-[90%] pb-32">
         <List className='w-full'>
           <ListItem
             secondaryAction={

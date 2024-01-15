@@ -55,7 +55,7 @@ export default function Assistant({ setValue }: AssistantProps) {
 
 
   return (
-    <div className="bg-dark w-full" style={{ minHeight: "100vh" }}>
+    <div className="bg-dark w-full h-screen" >
       <div className='flex flex-col mx-auto w-11/12 pt-6 mb-4'>
         <div className="flex justify-center items-center">
           <span className='absolute top-6.5 left-4'>
