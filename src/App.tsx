@@ -36,7 +36,6 @@ const theme = createTheme({
 export default function App() {
 
     const [value, setValue] = useState('home');
-    console.log(value);
 
     useEffect(() => {
         const path = window.location.hash;
@@ -45,7 +44,6 @@ export default function App() {
         if (match) {
             const segments = match.slice(1).filter(Boolean);
             if(segments.length === 1){
-                console.log(segments[0]);
                 if (segments[0] === 'delivery') setValue('delivery');
                 else if (segments[0] === 'deliverymap') setValue('delivery');
                 else if (segments[0] === 'locker') setValue('locker');

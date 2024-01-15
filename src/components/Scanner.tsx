@@ -13,6 +13,7 @@ class QRScan extends React.Component<ScanProps> {
 
   /* eslint-disable-next-line */
   handleScan = (data: any | null) => {
+    console.log(data)
     this.setState({
       result: data
     });
