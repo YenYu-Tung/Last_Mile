@@ -8,19 +8,19 @@ type ScanProps = {
 class QRScan extends React.Component<ScanProps> {
   state = {
     delay: 100,
-    result: "No result"
+    result: ""
   };
 
-  handleScan = (data: string | null) => {
+  /* eslint-disable-next-line */
+  handleScan = (data: any | null) => {
     this.setState({
       result: data
     });
-    if (data) {
-      this.props.setData(data);
-    }
+    this.props.setData(this.state.result);
   };
 
-  handleError = (err: string) => {
+  /* eslint-disable-next-line */
+  handleError = (err: any) => { 
     console.error(err);
   };
 
@@ -32,7 +32,7 @@ class QRScan extends React.Component<ScanProps> {
           //style={previewStyle}
           onError={this.handleError}
           onScan={this.handleScan}
-          className="w-72 h-[280px]"
+          className="w-72 h-[276px]"
         />
         <p>{this.state.result}</p>
       </div>
