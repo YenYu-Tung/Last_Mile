@@ -56,10 +56,11 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
     height: '100%',
     backgroundBlendMode: 'hard-light',
   } as const;
+
   const bottomDivStyle = {
-    height: '40%', 
+    height: '36%', 
     position: 'fixed',
-    top: '42%',
+    top: '45%',
   } as const;
 
   useEffect(() => {
@@ -92,28 +93,28 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
         </div>
         <div className="flex w-full" style={bottomDivStyle} >
           <div className="w-[85%] sm:w-[50%] mx-auto h-full">
-            <div className="w-[80%] sm:w-[40%] flex h-1/6 justify-center z-10 absolute">
-              <div className="bg-exdark text-white text-lg w-1/2 rounded-tl-xl rounded-tr-2xl flex justify-center items-center mt-1 border-[1.5px] border-flash no-bottom-border">
+            <div className="w-[85%] sm:w-1/2 flex h-1/6 sm:h-[25%] justify-center z-10 absolute">
+              <div className="bg-exdark text-white text-lg w-1/2 rounded-tl-xl rounded-tr-2xl flex justify-center items-center border-[1.5px] border-flash no-bottom-border">
                 WALK MODE
               </div>
               <div className="w-1/2 m-auto flex items-center align-middle justify-center">
-                <button className="bg-green rounded-full w-10/12 py-1.5" onClick={handleQrcode}>
+                <button className="bg-green rounded-full w-10/12 py-1.5 sm:py-1" onClick={handleQrcode}>
                   <QrCodeScannerRoundedIcon className='text-exdark mr-2' style={{ fontSize: "1.5rem" }} />                
                   <span className="font-bold">SCAN</span>
                 </button>
               </div>
             </div>
-            <div className="bg-exdark flex flex-col w-full h-5/6 rounded-r-xl rounded-bl-xl border-[1.5px] border-flash relative top-[16.2%]">
+            <div className="bg-exdark flex flex-col w-full h-5/6 sm:h-[80%] rounded-r-xl rounded-bl-xl border-[1.5px] border-flash relative top-[16%] sm:top-[24%] overflow-y-auto">
               <div className="flex justify-start m-4">
                 <CircularProgress />
 
                 <div className="flex flex-col items-start justify-center ml-3">
-                  <span className="text-white text-lg">#082-WSDF9128</span>
+                  <span className="text-white text-lg">#CAR-985</span>
                   <span className="text-gray">24 Jan, 2024</span>
                 </div>
               </div>
               <Divider variant="middle" sx={{ border: 1, borderColor: '#898989', borderRadius: '24px' }} />
-              <div className="flex flex-col sm:flex-row justify-start mt-2 mx-4 items-start h-full">
+              <div className="flex flex-col sm:flex-row justify-start mt-2 mx-4 items-start h-full pb-2">
                 <div className="flex items-center h-1/4">
                   <span className="text-white text-lg ml-2 sm:mt-8">Walk Directions</span>
                 </div>

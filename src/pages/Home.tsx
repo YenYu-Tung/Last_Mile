@@ -146,7 +146,7 @@ export default function Home({ setValue }: HomeProps) {
           </button>
         </div>
         
-        <div className="flex flex-col mt-4 w-full gap-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-4 w-full gap-4">
           <div className='w-full h-24 rounded-3xl border border-green hover:bg-green text-white hover:border-exdark hover:text-exdark' onMouseEnter={() => setHoveredDiv('#RWQ-51F9711D')}
             onMouseLeave={() => setHoveredDiv('')}>
             <div className='w-full flex flex-col h-full relative'>

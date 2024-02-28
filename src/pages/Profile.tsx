@@ -84,13 +84,13 @@ export default function Profile({ setValue }: ProfileProps){
 
   return (
     <div className='bg-dark' style={{ minHeight: "100vh" }}>
-      <div className='flex flex-col sm:flex-row justify-center items-center h-[33vh] sm:h-[28vh] gap-2'>
+      <div className='flex flex-col sm:flex-row justify-center items-center h-[32vh] sm:h-[30vh] gap-2'>
         <Avatar alt="Avatar" src={avatar} sx={{
           width: '105px', height: '105px', border: 2,
           borderColor: '#32FF9D',
           '@media (min-width: 768px)': { 
-            width: '130px', 
-            height: '130px', 
+            width: '110px', 
+            height: '110px', 
           }, }}  />
           <div className="flex flex-col gap-1 items-center sm:ml-2">
             <span className='text-2xl text-white font-bold'>Tiffany921</span>
@@ -188,7 +188,7 @@ export default function Profile({ setValue }: ProfileProps){
           </ListItem>
         </List>
       </div>
-      <div className='mx-auto mt-1 min-h-[40vh] sm:min-h-[50vh] pb-20 bg-exdark rounded-t-[35px]' style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className='mx-auto mt-1 min-h-[45vh] sm:min-h-[50vh] pb-20 bg-exdark rounded-t-[35px]' style={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ paddingX: 2, paddingY: 1.5, flex: 1}}>
           <Tabs value={num} onChange={handleChange} aria-label="basic tabs example"
             sx={{
@@ -224,11 +224,7 @@ export default function Profile({ setValue }: ProfileProps){
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>
-            <Box sx={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              flexDirection: 'column', pt: 3, px: 1, gap: 2.2, flexWrap: 'wrap'
-            }} >
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4 px-1">
               <div className='flex w-full h-20 rounded-2xl bg-light'>
                 <div className='w-3/4 p-4 flex flex-col'>
                   <span className='text-green text-lg'>#RWQ-51F9711D</span>
@@ -238,6 +234,7 @@ export default function Profile({ setValue }: ProfileProps){
                   <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
                 </div>
               </div>
+              
               <div className='flex w-full h-20 rounded-2xl bg-light'>
                 <div className='w-3/4 p-4 flex flex-col'>
                   <span className='text-green text-lg'>#OUR-PFU1IG8</span>
@@ -247,7 +244,15 @@ export default function Profile({ setValue }: ProfileProps){
                   <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
                 </div>
               </div>
-            </Box>
+
+            </div>
+            {/* <Box sx={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              flexDirection: 'row', pt: 3, px: 1, gap: 2.2, flexWrap: 'wrap'
+            }} >
+              
+            </Box> */}
 
           </CustomTabPanel>
           <CustomTabPanel value={num} index={2}>

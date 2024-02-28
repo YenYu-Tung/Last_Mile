@@ -85,26 +85,26 @@ export default function Assistant({ setValue }: AssistantProps) {
       <div className="flex flex-col gap-3 px-5 w-full fixed bottom-8">
         <div className="w-full flex items-center">
           <img className="w-8 mr-2" src={roundlogo} alt="Last Mile" />
-          <span className='flex text-white text-sm bg-slate-400/20 px-4 py-2  rounded-lg'>Hi, I’m LastAI. How may I help you?
+          <span className='flex text-white text-sm bg-zinc-700/90 px-4 py-2  rounded-lg'>Hi, I’m LastAI. How may I help you?
           </span>
         </div>
         <div className="w-full flex gap-2 overflow-x-auto py-2">
-          <Chip label="Package Mistake" sx={{ backgroundColor: 'rgb(148 163 184 / 0.2)', color: 'white' }} />
-          <Chip label="Cannot open my box" sx={{ backgroundColor: 'rgb(148 163 184 / 0.2)', color: 'white' }} />
-          <Chip label="Goods late" sx={{ backgroundColor: 'rgb(148 163 184 / 0.2)', color: 'white' }} />
+          <Chip label="Package Mistake" sx={{ backgroundColor: 'rgb(63 63 70 / 0.9)', color: 'white' }} />
+          <Chip label="Cannot open my box" sx={{ backgroundColor: 'rgb(63 63 70 / 0.9)', color: 'white' }} />
+          <Chip label="Goods late" sx={{ backgroundColor: 'rgb(63 63 70 / 0.9)', color: 'white' }} />
         </div>
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between sm:justify-start">
           {/* another div  */}
-          <Box sx={{ display: 'flex', width: '82%', justifyContent: 'space-around', alignItems: 'center', backgroundColor: 'rgba(113, 117, 118, 0.67)', borderRadius: '69px', padding: '3px' }}>
-            <FormControl variant="standard" sx={{ display: 'flex', width: '80%', justifyContent: 'center' }}>
+          <Box sx={{ display: 'flex', width: '80%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgb(113, 113, 122, 1)', borderRadius: '69px', padding: '3px' }}>
+            <FormControl variant="standard" sx={{ display: 'flex', width: '85%', justifyContent: 'center' }}>
               <BootstrapInput defaultValue="Type your questions....." id="bootstrap-input" />              
             </FormControl>
-            <Avatar sx={{ bgcolor: 'rgba(113, 113, 113, 1)', margin: 'auto', width: 42, height: 42 }}>
+            <Avatar sx={{ bgcolor: 'rgb(63 63 70 / 0.3)', margin: 'auto', width: 42, height: 42 }}>
               <KeyboardVoiceOutlinedIcon sx={{ fontSize: 28 }} />
             </Avatar>
             
           </Box>
-          <button><Avatar sx={{ bgcolor: 'transparent', margin: 'auto', width: 53, height: 53, border: 2, borderColor: '#32FF9D' }}>
+          <button className='sm:ml-6'><Avatar sx={{ bgcolor: 'transparent', margin: 'auto', width: 53, height: 53, border: 2, borderColor: '#32FF9D' }}>
             <SendOutlinedIcon sx={{ fontSize: 29, color: '#32FF9D' }} />
           </Avatar></button>
           

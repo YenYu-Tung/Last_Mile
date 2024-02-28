@@ -17,7 +17,7 @@ const containerStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'bottom',
   position: 'fixed',
-  top: '9%',
+  top: '8.9%',
   left: 0,
   width: '100%',
   height: '91%',
@@ -40,7 +40,7 @@ export default function AboutUs({ setValue }: AboutProps) {
           <ChevronLeftRoundedIcon className='text-white mt-2' style={{ fontSize: "2.5rem" }} />
         </IconButton>
         <div className='flex flex-col text-white'>
-          <span className='text-xl'>Lastmile Global Web</span>
+          <span className='text-xl sm:text-sm'>Lastmile Global Web</span>
           <span className='text-xxs'>https://www.lastmile.global.com.tw</span>
         </div>
       </div>

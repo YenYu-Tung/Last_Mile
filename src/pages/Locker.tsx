@@ -71,19 +71,19 @@ export default function Locker({ setValue }: LockerProps) {
         <div className='flex flex-col m-auto w-11/12 border-2 border-green rounded-xl mt-8'>
           <table>
             <thead>
-              <tr>
-                <th className='text-green'>A</th>
-                <th className='text-green'>B</th>
-                <th className='text-green'>C</th>
-                <th className='text-green'>D</th>
-                <th className='text-green'>E</th>
+              <tr className='text-green'>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
               </tr>
             </thead>
             <tbody className=''>{generateTable()}</tbody>
           </table>
         </div>
-        <div className='flex flex-col sm:flex-row m-auto w-11/12 mt-8 gap-6 pb-24 flex-wrap'>
-          <div className='bg-dark-gray w-full lg:w-2/5 h-44 rounded-3xl shadow-3xl border border-gray pb-2'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-11/12 mt-8 gap-6 pb-24 justify-between'>
+          <div className='bg-dark-gray w-full h-44 rounded-3xl shadow-3xl border border-gray pb-2'>
             <div className='w-full flex h-2/3'>
               <div className='w-1/3 text-green text-4xl text-center align-middle my-auto'>
                 A2
@@ -113,8 +113,9 @@ export default function Locker({ setValue }: LockerProps) {
                 Pick Up Order
               </button>
             </div>
-          </div>
-          <div className='bg-dark-gray w-full lg:w-2/5 h-44 rounded-3xl shadow-3xl border border-gray pb-2'>
+          </div>        
+          
+          <div className='bg-dark-gray w-full h-44 rounded-3xl shadow-3xl border border-gray pb-2'>
             <div className='w-full flex h-2/3'>
               <div className='w-1/3 text-green text-4xl text-center align-middle my-auto'>
                 D1

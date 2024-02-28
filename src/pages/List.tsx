@@ -103,7 +103,7 @@ export default function List({ setValue }: ListProps){
         }
       }} >No more</Divider>
 
-      <div className="flex flex-col items-start px-6 py-4">
+      <div className="flex flex-col items-start px-6 pt-4 pb-8">
         <img className="w-50" src={packagestoship} alt=" Packages To Ship" />
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className='mt-4 w-full min-h-40 rounded-3xl border shadow-5xl'>
