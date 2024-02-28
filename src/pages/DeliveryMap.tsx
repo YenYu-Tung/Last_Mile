@@ -58,7 +58,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
   } as const;
 
   const bottomDivStyle = {
-    height: '36%', 
+    height: '37%', 
     position: 'fixed',
     top: '45%',
   } as const;
