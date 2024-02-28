@@ -117,7 +117,7 @@ export default function Delivery({ setValue }: DeliveryProps) {
             <div className="flex flex-col sm:flex-row justify-start mt-2 mx-4 items-start h-full pb-2">
               <div className="flex items-center h-1/4">
                 <img className="w-8" src={shopee} alt="Shopee" />
-                <span className="text-white text-lg ml-2">Shopee</span>
+                <span className="text-white text-lg ml-2 sm:mt-8">Shopee</span>
               </div>              
               <div className="flex w-80 min-h-[50%] items-center sm:ml-10">
                 <img className="w-3" src={deliver} alt="Deliver" />
@@ -160,7 +160,7 @@ export default function Delivery({ setValue }: DeliveryProps) {
             <div className="flex flex-col sm:flex-row justify-start mt-2 mx-4 items-start h-full pb-2">
               <div className="flex items-center h-1/4">
                 <img className="w-8" src={shopee} alt="Shopee" />
-                <span className="text-white text-lg ml-2">Shopee</span>
+                <span className="text-white text-lg ml-2 sm:mt-8">Shopee</span>
               </div>
               <div className="flex w-80 min-h-[50%] items-center sm:ml-10">
                 <img className="w-3" src={deliver} alt="Deliver" />

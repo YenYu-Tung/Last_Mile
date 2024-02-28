@@ -118,7 +118,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
                 <div className="flex items-center h-1/4">
                   <span className="text-white text-lg ml-2 sm:mt-8">Walk Directions</span>
                 </div>
-                <div className="flex w-full min-h-[50%] truncate ... items-center sm:ml-4">
+                <div className="flex w-full min-h-[50%]  items-center sm:ml-4">
                   <Stepper />
                 </div>
               </div>
