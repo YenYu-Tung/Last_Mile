@@ -11,6 +11,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Dialog from '@mui/material/Dialog';
+
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+
 // import PersonIcon from '@mui/icons-material/Person';
 // import { blue } from '@mui/material/colors';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
@@ -52,7 +56,9 @@ export default function SimpleDialog(props: DialogProps) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle className="flex flex-col text-green font-bold">
+      <DialogTitle className="flex flex-col text-green font-bold" sx={{
+        paddingBottom: '0'
+      }}>
         {title}
         <Chip
           avatar={<Avatar alt={avatar} src={avatar === 'Shopee' ? shopee : pchome} />}
@@ -60,8 +66,18 @@ export default function SimpleDialog(props: DialogProps) {
             <div className='flex align-middle items-center text-green text-xs font-bold'>
               {avatar}
             </div>
-          } variant="outlined" sx={{ color: 'white', border: 1, borderColor: '#32FF9D', bgcolor: 'transparent', maxWidth: 88, }} size="small" />
-        
+          } variant="outlined" sx={{ color: 'white', border: 1, borderColor: '#32FF9D', bgcolor: 'transparent', maxWidth: 88, }} />
+
+        <FormControlLabel control={<Checkbox sx={{
+          color: '#32FF9D',
+          '&.Mui-checked': {
+            color: '#32FF9D',
+          },
+          padding: '0px 6px 0px 6px'
+        }} size="small" />} label="Send to Locker" sx={{
+          marginRight: '0', justifyContent: 'end', padding: '0px 0px 4px 0px'
+        }}/>
+
       </DialogTitle>
       <Divider variant="middle" sx={{ border: 0.5, borderColor: '#32FF9D', borderRadius: '24px' }} />
       <DialogContent sx={{

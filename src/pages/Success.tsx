@@ -10,7 +10,7 @@ export default function Success({ setValue }: SuccessProps){
   
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate('/');
+    navigate('/home');
     setValue('home');
   };
   const handleAsistant = () => {

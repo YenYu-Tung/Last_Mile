@@ -49,7 +49,7 @@ export default function Assistant({ setValue }: AssistantProps) {
  
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate('/');
+    navigate('/home');
     setValue('home');
   };
 
@@ -77,7 +77,7 @@ export default function Assistant({ setValue }: AssistantProps) {
         <img className="w-32 mt-12" src={whitelogo} alt="Last Mile" />
         <div className='flex flex-col items-center mt-6 gap-4'>
           <span className='text-white text-3xl font-bold'>Hello, I’m LastAI</span>
-          <span className='text-exlight-gray w-[85%] text-center'>Help you quickly deal with problems you encounter</span>
+          <span className='text-exlight-gray w-[80%] sm:w-full text-center'>Help you quickly deal with problems you encounter</span>
           <span className='text-exlight-gray border border-white px-9 py-1 rounded-full'>Your LastAI is online now</span>
         </div>
       </div>

@@ -9,6 +9,11 @@
   border-radius: 24px;
   width: 310px;
 }
+.MuiDialog-paperFullScreen{
+  width: 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
 .MuiStepLabel-label.Mui-active{
   color: #32FF9D !important;
 }
@@ -136,16 +141,16 @@ body {
     transform: translate(0, 0);
   }  
   25% {
-    transform: translate(-6px, 10px);
+    transform: translate(-4px, 10px);
   }  
   50% {
-    transform: translate(-8px, 23px);
+    transform: translate(-6px, 23px);
   }  
   75% {
-    transform: translate(-10px, 36px);
+    transform: translate(-8px, 36px);
   }  
   100% {
-    transform: translate(-16px, 51px);
+    transform: translate(-12px, 51px);
   }
 }
 @keyframes moveUpLeft {
@@ -186,6 +191,33 @@ body {
 }
 .no-bottom-border {
   border-bottom: none !important;
+}
+
+/* LogoAnimation */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animation-fade-in-out {
+  animation: fade-in-out 4s ease-in-out;
 }
 
 

@@ -36,7 +36,7 @@ export default function Scan({ setValue }: ScanProps) {
   const navigate = useNavigate();
   
   const handleBack = () => {
-    navigate('/');
+    navigate('/home');
     setValue('home');
   };
 
@@ -68,7 +68,7 @@ export default function Scan({ setValue }: ScanProps) {
 
         <div className="flex flex-col justify-start items-center h-1/4">
           <span className="text-green text-xl font-bold">Receive with QRcode</span>
-          <span className="text-white text-lg font-500 mt-2 w-3/4 text-center">Please put the receive qrcode in front of the camera to scan</span>
+          <span className="text-white text-lg font-500 mt-2 w-[270px] sm:w-full text-center">Please put the receive qrcode in front of the camera to scan</span>
         </div>
       </div>
       

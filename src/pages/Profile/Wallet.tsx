@@ -24,7 +24,7 @@ export default function Wallet({ setValue }: WalletProps) {
 
 
   return (
-    <div className="bg-dark w-full min-h-screen">
+    <div className="bg-dark w-full h-screen">
       <div className='flex flex-col m-auto w-11/12 pt-6'>
         <div className="flex justify-center items-center">
           <span className='absolute top-6.5 left-4'>
@@ -37,7 +37,7 @@ export default function Wallet({ setValue }: WalletProps) {
       </div>      
 
 
-      <div className="flex flex-col gap-3 items-start px-6 pb-3 w-full mt-4">
+      <div className="flex flex-col gap-3 items-start px-8 pb-3 w-full mt-4">
         <span className='flex text-lg text-white justify-center items-center'>
           <Avatar alt="Avatar" src={avatar} sx={{
             width: 36, height: 36, border: 2,
@@ -46,7 +46,7 @@ export default function Wallet({ setValue }: WalletProps) {
 
         <div className="w-full flex flex-col">
           {/* another div  */}
-          <div className='flex flex-col max-w-[360px] h-52 rounded-[30px] border border-white hover:border-green bg-gradient-to-br from-[#242424] from-5% via-[#3C3C3C] via-40% to-[#141516] to-65%'>
+          <div className='flex flex-col max-w-[360px] h-56 rounded-[30px] border border-white hover:border-green bg-gradient-to-br from-[#242424] from-5% via-[#3C3C3C] via-40% to-[#141516] to-65%'>
             <div className='flex h-2/3'>
               <div className='flex flex-col w-2/3 pt-8'>
                 <span className='text-xs text-gray ml-6'>85**-****-****-9852</span>
@@ -68,12 +68,12 @@ export default function Wallet({ setValue }: WalletProps) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 items-start px-6 pb-3 w-full">
+      <div className="flex flex-col gap-3 items-start px-8 pb-3 w-full">
         <span className='flex text-lg text-white items-center'> <img className="w-4 mr-2.5" src={discount} alt="Discount coupon" />Discount Coupon</span>
         <div className="w-full flex gap-4 overflow-x-auto">
           {/* another div  */}
-          <div className='flex min-w-40 h-20 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
-            <div className='w-1/2 flex flex-col justify-center items-start text-white'>
+          <div className='flex min-w-44 h-20 rounded-2xl bg-teel-gray py-1'>
+            <div className='w-1/2 flex flex-col justify-center items-center text-white'>
               <span className='text-lg'>10% off</span>
               <span className='text-xs'>entire fee</span>
             </div>
@@ -81,8 +81,8 @@ export default function Wallet({ setValue }: WalletProps) {
               <button className='text-sm bg-teel-dark-gray text-green border border-green py-2 px-[18px] rounded-2xl shadow-xl'>USE</button>
             </div>
           </div>
-          <div className='flex min-w-40 h-20 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
-            <div className='w-1/2 flex flex-col justify-center items-start text-white'>
+          <div className='flex min-w-44 h-20 rounded-2xl bg-teel-gray py-1'>
+            <div className='w-1/2 flex flex-col justify-center items-center text-white'>
               <span className='text-lg'>5% off</span>
               <span className='text-xs'>entire fee</span>
             </div>
@@ -94,7 +94,7 @@ export default function Wallet({ setValue }: WalletProps) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 items-start px-6 pt-3 pb-7 w-full mt-2 bg-exdark min-h-[48vh] sm:min-h-[35vh] rounded-t-[35px]">
+      <div className="flex flex-col gap-3 items-start px-8 pt-3 pb-7 w-full mt-2 bg-exdark min-h-[63%]  rounded-t-[35px]">
         <span className='text-lg text-white mt-2 flex items-center'><HistoryRoundedIcon sx={{ color: '#32FF9D', marginRight: '0.5rem', fontSize: 24 }} />Transaction History</span>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           <div className='flex w-full h-20 rounded-2xl bg-light'>

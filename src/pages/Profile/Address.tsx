@@ -69,7 +69,7 @@ export default function Address({ setValue }: AddressProps) {
   const navigate = useNavigate();
   const handleNavigate = () => {
     if(prevUrl === 'home'){
-      navigate('/');
+      navigate('/home');
       setValue('home');
     }else{
       navigate('/profile');
@@ -137,10 +137,10 @@ export default function Address({ setValue }: AddressProps) {
       </div>
       
 
-      <div className="flex flex-col gap-3 items-start px-6 pb-3 w-full mt-2">
+      <div className="flex flex-col gap-4 items-start px-6 pb-3 w-full mt-2">
         <span className='text-lg text-white'>Add New Address</span>
 
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-6">
           
           {/* another div  */}
           <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', border: '1px solid #898989', borderRadius: '1rem' }}>
@@ -150,7 +150,7 @@ export default function Address({ setValue }: AddressProps) {
             </FormControl>
           </Box>
 
-          <div className='w-full min-h-44 rounded-2xl border border-light-gray hover:border-green relative'>
+          <div className='w-full min-h-56 rounded-2xl border border-light-gray hover:border-green relative'>
             <div style={containerStyle}>
             </div>
           </div>
@@ -172,8 +172,8 @@ export default function Address({ setValue }: AddressProps) {
 
         </div>
       </div>
-      <div className="px-6 w-full mt-2 pb-4">
-        <button className='w-full text-black font-bold rounded-2xl h-12 bg-green'>
+      <div className="px-6 w-full mt-4 pb-4">
+        <button className='w-full text-black font-bold rounded-2xl h-14 bg-green'>
           Add Address
         </button>
       </div>   

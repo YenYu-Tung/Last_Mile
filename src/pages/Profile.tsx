@@ -86,14 +86,18 @@ export default function Profile({ setValue }: ProfileProps){
     <div className='bg-dark' style={{ minHeight: "100vh" }}>
       <div className='flex flex-col sm:flex-row justify-center items-center h-[32vh] sm:h-[30vh] gap-2'>
         <Avatar alt="Avatar" src={avatar} sx={{
-          width: '105px', height: '105px', border: 2,
+          width: '90px', height: '90px', border: 2,
           borderColor: '#32FF9D',
+          '@media (min-width: 380px)': {
+            width: '118px',
+            height: '118px',
+          },
           '@media (min-width: 768px)': { 
-            width: '110px', 
-            height: '110px', 
+            width: '100px', 
+            height: '100px', 
           }, }}  />
           <div className="flex flex-col gap-1 items-center sm:ml-2">
-            <span className='text-2xl text-white font-bold'>Tiffany921</span>
+            <span className='text-3xl text-white font-bold'>Tiffany921</span>
             <span className='text-base text-light-gray mb-1'>Beginner</span>
             <Chip label={
               <div className='flex align-middle items-center'>
@@ -188,7 +192,7 @@ export default function Profile({ setValue }: ProfileProps){
           </ListItem>
         </List>
       </div>
-      <div className='mx-auto mt-1 min-h-[45vh] sm:min-h-[50vh] pb-20 bg-exdark rounded-t-[35px]' style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className='mx-auto mt-1 min-h-[45vh] sm:min-h-[55vh] pb-20 bg-exdark rounded-t-[35px]' style={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ paddingX: 2, paddingY: 1.5, flex: 1}}>
           <Tabs value={num} onChange={handleChange} aria-label="basic tabs example"
             sx={{
@@ -217,10 +221,10 @@ export default function Profile({ setValue }: ProfileProps){
               alignItems: 'flex-start',
               flexDirection: 'row', pt: 3, px: 1, gap: 2, flexWrap: 'wrap'
             }} >
-              <img className="w-[4.3rem]" src={badge1} alt="Badge1" />
-              <img className="w-[4.25rem]" src={badge2} alt="Badge2" />
-              <img className="w-[4.9rem]" src={unknownbadge} alt="UnknownBadge" />
-              <img className="w-[4.9rem]" src={unknownbadge} alt="UnknownBadge" />
+              <img className="w-[4.85rem]" src={badge1} alt="Badge1" />
+              <img className="w-[4.8rem]" src={badge2} alt="Badge2" />
+              <img className="w-[5.6rem]" src={unknownbadge} alt="UnknownBadge" />
+              <img className="w-[5.6rem]" src={unknownbadge} alt="UnknownBadge" />
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>
@@ -258,12 +262,20 @@ export default function Profile({ setValue }: ProfileProps){
           <CustomTabPanel value={num} index={2}>
 
             <Box sx={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              flexDirection: 'row', pt: 4, px: 1, gap: 2, flexWrap: 'wrap'
+              display: 'grid',
+              gap: 2,
+              justifyContent: 'flex-start',
+              gridTemplateColumns: {
+                xs: 'repeat(2, 1fr)', 
+                sm: 'repeat(3, 1fr)',
+                md: 'repeat(4, 1fr)', 
+              },
+              px: 1,
+              pt: 4,
+              flexWrap: 'wrap',
             }} >
-              <div className='flex min-w-40 h-20 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
-                <div className='w-1/2 flex flex-col justify-center items-start text-white'>
+              <div className='flex min-w-40 h-24 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
+                <div className='w-1/2 flex flex-col justify-center items-start xs:items-center text-white'>
                   <span className='text-lg'>10% off</span>
                   <span className='text-xs'>entire fee</span>
                 </div>
@@ -271,9 +283,9 @@ export default function Profile({ setValue }: ProfileProps){
                   <button className='text-sm bg-teel-dark-gray text-green border border-green py-2 px-[18px] rounded-2xl shadow-xl'>USE</button>
                 </div>
               </div>
-              <div className='flex min-w-40 h-20 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
-                <div className='w-1/2 flex flex-col justify-center items-start text-white'>
-                  <span className='text-lg'>10% off</span>
+              <div className='flex min-w-40 h-24 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
+                <div className='w-1/2 flex flex-col justify-center items-start xs:items-center  text-white'>
+                  <span className='text-lg'>5% off</span>
                   <span className='text-xs'>entire fee</span>
                 </div>
                 <div className='w-1/2 flex justify-center items-center'>

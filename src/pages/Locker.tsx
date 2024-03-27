@@ -82,7 +82,7 @@ export default function Locker({ setValue }: LockerProps) {
             <tbody className=''>{generateTable()}</tbody>
           </table>
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-11/12 mt-8 gap-6 pb-24 justify-between'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-11/12 mt-8 gap-8 pb-24 justify-between'>
           <div className='bg-dark-gray w-full h-44 rounded-3xl shadow-3xl border border-gray pb-2'>
             <div className='w-full flex h-2/3'>
               <div className='w-1/3 text-green text-4xl text-center align-middle my-auto'>

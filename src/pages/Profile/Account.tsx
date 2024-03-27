@@ -34,6 +34,11 @@ export default function Account({ setValue }: AccountProps) {
     setValue('profile');
   };
 
+  const handleLogout = () => {
+    navigate('/login');
+    setValue('none');
+  };
+
   return (
     <div className="bg-dark w-full h-screen" >
       <div className='flex w-full h-[10%] justify-center items-center'>
@@ -60,9 +65,6 @@ export default function Account({ setValue }: AccountProps) {
               </div>
             }
             sx={{ padding: '24px 28px' }}
-          // onClick={() => {
-
-          // }}
           >
             <ListItemText
               primary="Avatar"
@@ -81,10 +83,6 @@ export default function Account({ setValue }: AccountProps) {
               </div>
             }
             sx={{ padding: '24px 28px' }}
-          // onClick={() => {
-          //   navigate('/profile/wallets');
-          //   setValue('none');
-          // }}
           >
             <ListItemText
               primary="Name"
@@ -103,10 +101,6 @@ export default function Account({ setValue }: AccountProps) {
               </div>
             }
             sx={{ padding: '24px 28px' }}
-          // onClick={() => {
-          //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
-          //   setValue('none');
-          // }}
           >
             <ListItemText
               primary="Mail Address"
@@ -125,10 +119,6 @@ export default function Account({ setValue }: AccountProps) {
               </div>
             }
             sx={{ padding: '24px 28px' }}
-          // onClick={() => {
-          //   navigate('/profile/about-us');
-          //   setValue('none');
-          // }}
           >
             <ListItemText
               primary="Security"
@@ -147,10 +137,6 @@ export default function Account({ setValue }: AccountProps) {
               </div>
             }
             sx={{ padding: '24px 28px' }}
-          // onClick={() => {
-          //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
-          //   setValue('none');
-          // }}
           >
             <ListItemText
               primary="Authentication"
@@ -169,10 +155,6 @@ export default function Account({ setValue }: AccountProps) {
               </div>
             }
             sx={{ padding: '24px 28px' }}
-          // onClick={() => {
-          //   navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
-          //   setValue('none');
-          // }}
           >
             <ListItemText
               primary="Language"
@@ -186,7 +168,7 @@ export default function Account({ setValue }: AccountProps) {
 
       <div className="flex flex-col px-6 w-full fixed bottom-10 items-center justify-center">
         <span className='text-green text-sm'>Last v 5.4</span>
-        <button className='w-full text-white text-lg border border-white py-3.5 rounded-full mt-2'>
+        <button className='w-full text-white text-lg border border-white py-3.5 rounded-full mt-2' onClick={handleLogout}>
           Sign out
         </button>
       </div>

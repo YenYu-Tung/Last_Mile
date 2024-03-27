@@ -21,6 +21,9 @@ import List from './pages/List.tsx';
 import Scan from './pages/Scan.tsx';
 import Success from './pages/Success.tsx';
 import Assistant from './pages/Assistant.tsx';
+import Animation from './pages/Animation.tsx';
+import Login from './pages/Login.tsx';
+import Signup from './pages/Signup.tsx';
 
 import Account from './pages/Profile/Account.tsx';
 import AboutUs from './pages/Profile/AboutUs.tsx';
@@ -35,7 +38,7 @@ const theme = createTheme({
 
 export default function App() {
 
-    const [value, setValue] = useState('home');
+    const [value, setValue] = useState('none');
 
     useEffect(() => {
         const path = window.location.hash;
@@ -48,12 +51,15 @@ export default function App() {
                 else if (segments[0] === 'deliverymap') setValue('delivery');
                 else if (segments[0] === 'locker') setValue('locker');
                 else if (segments[0] === 'profile') setValue('profile');
+                else if (segments[0] === 'home') setValue('home');
+                else if (segments[0] === 'login') setValue('none');
+                else if (segments[0] === 'signup') setValue('none');
                 else setValue('none');
             }else{
                 setValue('none');
             }
         } else {
-            setValue('home');
+            setValue('none');
         }         
     }, []);
 
@@ -66,7 +72,10 @@ export default function App() {
             <BrowserRouter>
                 <div id="body">
                     <Routes>
-                        <Route path="/" element={<Home setValue={setValue} />}  />
+                        <Route path="/" element={<Animation/>} />
+                        <Route path="/login" element={<Login setValue={setValue} />} />
+                        <Route path="/signup" element={<Signup setValue={setValue} />} />
+                        <Route path="/home" element={<Home setValue={setValue} />} />
                         <Route path="/delivery" element={<Delivery setValue={setValue} />} />
                         <Route path="/deliverymap" element={<DeliveryMap setValue={setValue} />} />
                         <Route path="/locker" element={<Locker setValue={setValue} />} />
@@ -120,7 +129,7 @@ export default function App() {
                                         },
                                     },                             
                                 }}
-                                href="/"
+                                href="/#/home"
                                 onClick={()=>{setValue('home')}}
                             />
                             <BottomNavigationAction

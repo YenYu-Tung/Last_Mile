@@ -26,8 +26,10 @@ import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ArrowRightAltRoundedIcon from '@mui/icons-material/ArrowRightAltRounded';
 
+
 import DialogList from "../components/DialogList";
 import ProgressBar from "../components/ProgressBar";
+import FullScreenDialog from "../components/FullScreenDialog";
 
 const containerStyle = {
   background: `url(${home}), linear-gradient(to right, rgba(31, 31, 31, 1), transparent)`,
@@ -83,9 +85,23 @@ export default function Home({ setValue }: HomeProps) {
         <img className="w-36 sm:w-50" src={logo} alt="Last Mile" />
         <IconButton aria-label="qrcode" onClick={handleQrcode}>
           <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "2rem" }} />
-        </IconButton>
-        
+        </IconButton>        
       </div>
+      
+
+      <div className='flex flex-col m-auto w-full justify-center align-middle px-6 pb-5'>
+        <FullScreenDialog />
+        
+        {/* <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', border: '1px solid #898989', borderRadius: '58px', padding: '0 8px' }}>
+          <SearchRoundedIcon sx={{ color: '#898989', fontSize: 28 }} />
+          <FormControl variant="standard" sx={{ display: 'flex', width: '85%', justifyContent: 'center' }}>
+            <BootstrapInput defaultValue="Enter shipping tracking number" id="bootstrap-input" />
+          </FormControl>
+        </Box> */}
+      </div>
+
+      
+
       <div className="flex flex-col items-start px-6 pb-4 ">
         <img className="w-28 sm:w-40" src={inprogress} alt="In Progress" />
         <div className="border border-green mt-4 w-full rounded-3xl h-52 shadow-3xl relative" >  

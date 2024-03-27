@@ -25,7 +25,7 @@ export default function List({ setValue }: ListProps){
 
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate('/');
+    navigate('/home');
     setValue('home');
   };
   const handleQrcode = () => {

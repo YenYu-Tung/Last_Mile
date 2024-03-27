@@ -8,7 +8,7 @@ import people from "/people.svg";
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import Divider from '@mui/material/Divider';
-import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded'; 
+import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
 // import IconButton from '@mui/material/IconButton';
 // import NearMeRoundedIcon from '@mui/icons-material/NearMeRounded';
 
@@ -23,10 +23,10 @@ type DeliveryMapProps = {
 }
 
 export default function DeliveryMap({ setValue }: DeliveryMapProps) {
-  
+
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate('/');
+    navigate('/home');
     setValue('home');
   };
   const handleQrcode = () => {
@@ -41,9 +41,9 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
       ? `url(${walk1})`
       : activeStep === 1
         ? `url(${walk2})`
-      : activeStep === 2
+        : activeStep === 2
           ? `url(${walk3})`
-        : `url(${walk4})`,
+          : `url(${walk4})`,
     // backgroundImage: `url(${walk0})`,
     backgroundColor: 'rgba(0, 0, 0, 1)',
     backgroundSize: 'cover',
@@ -58,9 +58,9 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
   } as const;
 
   const bottomDivStyle = {
-    height: '37%', 
+    height: '36%',
     position: 'fixed',
-    top: '45%',
+    top: '48%',
   } as const;
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
               {activeStep === 0 ? '1 min' : activeStep === 1 ? '30 sec' : activeStep === 2 ? '10 sec' : '0 sec'}
             </div>
           } variant="outlined" sx={{ color: 'white', border: 2, borderColor: '#32FF9D', bgcolor: '#323232' }} className="absolute top-[6rem] left-[9rem]" />
-          <img className="absolute top-[13rem] left-[12.7rem] move-left" src={people} alt="people Image"/>
+          <img className="absolute top-[15rem] left-[14rem] move-left" src={people} alt="people Image" />
         </div>
         <div className="flex w-full" style={bottomDivStyle} >
           <div className="w-[85%] sm:w-[50%] mx-auto h-full">
@@ -98,8 +98,8 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
                 WALK MODE
               </div>
               <div className="w-1/2 m-auto flex items-center align-middle justify-center">
-                <button className="bg-green rounded-full w-10/12 py-1.5 sm:py-1" onClick={handleQrcode}>
-                  <QrCodeScannerRoundedIcon className='text-exdark mr-2' style={{ fontSize: "1.5rem" }} />                
+                <button className="bg-green rounded-full w-10/12 py-2" onClick={handleQrcode}>
+                  <QrCodeScannerRoundedIcon className='text-exdark mr-2' style={{ fontSize: "1.5rem" }} />
                   <span className="font-bold">SCAN</span>
                 </button>
               </div>
@@ -126,6 +126,6 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   );
 }
