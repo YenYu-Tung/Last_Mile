@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
 
 import deliverybg from "/deliverybg.svg";
-import shopee from "/shopee.svg";
-import deliver from "/deliver.svg";
-// import Arrival from "/Arrival.svg";
-// import Draggable from 'react-draggable';
+
+import escort from "/escort.svg";
+import location from "/location.svg";
+import store from "/store.svg";
+import getitem from "/getitem.svg";
+import santa from "/santa.svg";
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import Divider from '@mui/material/Divider';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded'; 
-// import IconButton from '@mui/material/IconButton';
-// import NearMeRoundedIcon from '@mui/icons-material/NearMeRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 import Chip from '@mui/material/Chip';
 
 import { useNavigate } from 'react-router-dom';
-import CircularProgress from "../components/CircularProgress";
+
+import MapLinearProgressBar from "../components/MapLinearProgressBar";
+import CarLinearProgressBar from "../components/CarLinearProgressBar";
 
 import MapModal from "../components/MapModal";
+
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+
 
 type DeliveryProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
@@ -36,6 +42,13 @@ export default function Delivery({ setValue }: DeliveryProps) {
     setValue('none');
   };
 
+  const [expanded, setExpanded] = useState(true);
+  const toggleAccordion = () => {
+    setExpanded(!expanded);
+  };
+
+  const [carProgress, setCarProgress] = useState(0);
+  const [mapProgress, setMapProgress] = useState(0);
 
   const containerStyle = {
     backgroundImage: `url(${deliverybg})`,
@@ -50,19 +63,12 @@ export default function Delivery({ setValue }: DeliveryProps) {
     height: '100%',
     backgroundBlendMode: 'hard-light'
   } as const;
-  const bottomDivStyle = {
-    height: '36%', 
-    position: 'fixed',
-    top: '48%',
-  } as const;
-
-
 
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const timerId = setTimeout(() => {
       setOpen(true);
-    }, 3000);
+    }, 4800);
     return () => clearTimeout(timerId);
   }, []);
 
@@ -71,8 +77,8 @@ export default function Delivery({ setValue }: DeliveryProps) {
   };
 
   return (
-    <div style={containerStyle}>
-      <div className="mt-6 ml-6">
+    <div style={containerStyle} className="flex justify-center">
+      <div className="w-full mt-6 ml-6">
         <button className="bg-gray rounded-full" onClick={handleNavigate}> 
           <ChevronLeftRoundedIcon sx={{ color: 'white', fontSize: 40 }} />
         </button>  
@@ -87,95 +93,107 @@ export default function Delivery({ setValue }: DeliveryProps) {
           <SendRoundedIcon sx={{ color: 'white', fontSize: 19, transform: 'rotate(60deg)' }} />
         </div>
       </div>
-      <div className="flex w-full overflow-y-auto px-4" style={bottomDivStyle} >
-        <div className="min-w-[345px] max-w-[600px] h-full">
-          <div className="flex w-full h-1/6 sm:h-[20%] justify-center">
-            <div className="bg-exdark text-white text-lg w-1/2 rounded-tl-xl rounded-tr-2xl flex justify-center items-center">
-              IN PROCESS
-            </div>
-            <div className="w-1/2 m-auto flex items-center align-middle justify-center">
-              <button className="bg-green rounded-full w-9/12 py-1.5 sm:py-1" onClick={handleQrcode}>
-                <QrCodeScannerRoundedIcon className='text-exdark mr-2' style={{ fontSize: "1.5rem" }} />
-                <span className="font-bold">SCAN</span>
-              </button>
-            </div>            
-          </div>
-          <div className="bg-exdark flex flex-col min-w-[345px] max-w-[600px] h-5/6 sm:h-[75%] rounded-r-xl rounded-bl-xl overflow-auto">
-            <div className="flex justify-start m-4">
-              <CircularProgress />             
-              
 
-              <div className="flex flex-col items-start justify-center ml-3">
-                <span className="text-white text-lg">#CAR-985</span>
-                <span className="text-gray">24 Jan, 2024</span>
+      <div className={`fixed bottom-[18%] w-[354px] bg-black rounded-t-[50px] rounded-b-[40px]`}>  
+        <button
+          onClick={toggleAccordion}
+            className={`flex justify-between items-center w-full p-4 rounded-t-[50px]  bg-black ${expanded ? 'h-[75px]' : 'h-[45px]'}`}
+        >
+          {expanded ? 
+            <div className="flex w-full items-center">
+              <div className="w-[30%]">
+                <p className='text-xxs text-white'>Distance Left</p>
+                <p className='text-3xl text-exlight-gray'>
+                  {200 - (Math.floor(carProgress * 1.5)) } 
+                  <span className='text-xs text-white ml-1'>m</span>
+                </p>
+              </div>
+              <div className="flex flex-grow justify-between">
+                <CarLinearProgressBar progress={carProgress} setProgress={setCarProgress} expanded={expanded} isDone={false} />
+                <MapLinearProgressBar progress={mapProgress} setProgress={setMapProgress} expanded={expanded} isStart={false}/>
+              </div>   
+            </div>
+          : 
+            <div className="flex gap-1 w-full items-center pl-2">
+              <div className="flex flex-grow justify-between">
+                <CarLinearProgressBar progress={carProgress} setProgress={setCarProgress} expanded={expanded} isDone={false}/>
+                <MapLinearProgressBar progress={mapProgress} setProgress={setMapProgress} expanded={expanded} isStart={false} />
               </div>
             </div>
-            <Divider variant="middle" sx={{ border: 1, borderColor: '#898989', borderRadius: '24px' }} />
-            <div className="flex flex-col sm:flex-row justify-start mt-2 mx-4 items-start h-full pb-2">
-              <div className="flex items-center h-1/4">
-                <img className="w-8" src={shopee} alt="Shopee" />
-                <span className="text-white text-lg ml-2">Shopee</span>
-              </div>              
-              <div className="flex w-full min-h-[50%] items-center sm:ml-10">
-                <img className="w-3" src={deliver} alt="Deliver" />
-                <div className="flex flex-col ml-3 w-full flex-wrap text-wrap">
-                  <div className="flex flex-col">
-                    <span className="text-gray text-sm">Deliver from</span>
-                    <span className="text-white text-sm">No.122,Sec.1,Chongqing S.Rd.</span>
-                  </div>
-                  <div className="flex flex-col mt-4 sm:mt-2">
-                    <span className="text-gray text-sm">Deliver to</span>
-                    <span className="text-sm text-transparent text-white">No.122,Sec.1,Chongqing S.Rd.,Yanham Dist.</span>
-                  </div>        
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>   
-        <div className="ml-6 min-w-[345px] max-w-[600px] h-full">
-          <div className="flex w-full h-1/6 sm:h-[20%] justify-center">
-            <div className="bg-exdark text-white text-lg w-1/2 rounded-tl-xl rounded-tr-2xl flex justify-center items-center">
-              IN PROCESS
-            </div>
-            <div className="w-1/2 m-auto flex items-center align-middle justify-center">
-              <button className="bg-green rounded-full w-9/12 py-1.5 sm:py-1" onClick={handleQrcode}>
-                <QrCodeScannerRoundedIcon className='text-exdark mr-2' style={{ fontSize: "1.5rem" }} />
-                <span className="font-bold">SCAN</span>
-              </button>
-            </div>            
-          </div>
-          <div className="bg-exdark flex flex-col min-w-[345px] max-w-[600px] h-5/6 sm:h-[75%] rounded-r-xl rounded-bl-xl overflow-auto">
-            <div className="flex justify-start m-4">
-              <CircularProgress />           
+          }
+          <ArrowDropDownRoundedIcon sx={{ fontSize: 40, transform: !expanded ? 'rotate(180deg)' : 'rotate(0deg)', color: !expanded ? 'white' : '#32FF9D' }} />
+      </button>
 
-              <div className="flex flex-col items-start justify-center ml-3">
-                <span className="text-white text-lg">#CAR-985</span>
-                <span className="text-gray">24 Jan, 2024</span>
-              </div>
+
+        <div className="w-[354px] h-[275px] bg-[#151515] rounded-[40px] border border-[#303030]">
+          <div className='w-full flex h-[70%] py-4'>
+            <div className='w-[30%] text-white text-5xl align-middle my-auto pl-5'>
+              <p className='text-xs'>Delivery by</p>
+              <p className='text-5xl'>02</p>
             </div>
-            <Divider variant="middle" sx={{ border: 1, borderColor: '#898989', borderRadius: '24px' }} />
-            <div className="flex flex-col sm:flex-row justify-start mt-2 mx-4 items-start h-full pb-2">
-              <div className="flex items-center h-1/4">
-                <img className="w-8" src={shopee} alt="Shopee" />
-                <span className="text-white text-lg ml-2">Shopee</span>
-              </div>              
-              <div className="flex w-full min-h-[50%] items-center sm:ml-10">
-                <img className="w-3" src={deliver} alt="Deliver" />
-                <div className="flex flex-col ml-3 w-full flex-wrap text-wrap">
-                  <div className="flex flex-col">
-                    <span className="text-gray text-sm">Deliver from</span>
-                    <span className="text-white text-sm">No.122,Sec.1,Chongqing S.Rd.</span>
+            <Divider orientation="vertical" variant="middle" flexItem
+              sx={{ border: 1, borderColor: 'white', borderRadius: '24px' }} />
+            <div className="flex flex-col ml-4 w-[70%] my-auto">
+              <div className='flex flex-col h-full justify-center gap-2'>
+                <div className="flex gap-4">
+                  <img className="w-14" src={escort} alt="escort" />
+                  <div className='flex flex-col text-2xl font-bold text-white items-start gap-1'>
+                    <span className='max-w-28 truncate'>
+                      ESCORT
+                      <CheckCircleRoundedIcon className='text-green ml-1' sx={{ fontSize: 12 }} />
+                    </span>
+                    <span className='text-light-gray text-xs font-bold'>
+                      #HUT-51136JGV
+                    </span>
                   </div>
-                  <div className="flex flex-col mt-4 sm:mt-2">
-                    <span className="text-gray text-sm">Deliver to</span>
-                    <span className="text-sm text-transparent text-white">No.122,Sec.1,Chongqing S.Rd.,Yanham Dist.</span>
-                  </div>        
                 </div>
+                <div className="flex gap-4">
+                  <div className="flex gap-2">
+                    <img className="w-6" src={getitem} alt="getitem" />
+                    <div className='flex flex-col text-2xl font-bold text-white items-start gap-1'>
+                      <span className='text-xxs text-gray'>
+                        Pickup Way
+                      </span>
+                      <span className='text-xs font-medium'>
+                        Personally
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <img className="w-6" src={store} alt="store" />
+                    <div className='flex flex-col text-2xl font-bold text-white items-start gap-1'>
+                      <span className='text-xxs text-gray'>
+                        Platform
+                      </span>
+                      <span className='text-xs flex gap-1 font-medium'>
+                        <img className="w-4" src={santa} alt="santa" />
+                        Santa
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <img className="w-6" src={location} alt="location" />
+                  <div className='flex flex-col text-2xl font-bold text-white items-start gap-1'>
+                    <span className='text-xxs text-gray'>
+                      Address
+                    </span>
+                    <span className='text-xs font-medium'>
+                      No.122,Sec.1,Chongqing S.Rd.,Yanham Dist.
+                    </span>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
-        </div> 
-      </div> 
+          <div className='w-full flex justify-center'>
+            <button className='text-green border-2 border-green rounded-full px-4 py-3 w-11/12 sm:w-3/4 font-bold shadow-3xl text-2xl hover:bg-green hover:border-0 hover:text-black' onClick={handleQrcode}>
+              <QrCodeScannerRoundedIcon style={{ fontSize: "1.7rem" }} /> Scan
+            </button>
+          </div>
+        </div>
+      </div>
       
       <MapModal
         open={open}

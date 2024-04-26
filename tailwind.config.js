@@ -9,22 +9,24 @@ export default {
     "node_modules/react-qr-scanner/**/*.{js,jsx,ts,tsx,cjs.js}",
   ],
   theme: {
-    extend: {  
+    extend: {
       screens: {
         xs: '360px',
-      },    
+      },
       colors: {
         'green': '#32FF9D',
-        'light-green': '#7CFFC0',        
+        'light-green': '#7CFFC0',
         'light': '#27292C',
         'dark': '#1E2023', // background
-        'exdark': '#141516',        
+        'day': '#EBEBEB', // background
+        'exdark': '#141516',
         'dark-gray': '#323232',
         'gray': '#767676',
-        'light-gray': '#898989', 
+        'light-gray': '#898989',
         'exlight-gray': '#B8B8B8',
         'teel-gray': '#373B41',
-        'teel-dark-gray': '#2F3337'       
+        'teel-dark-gray': '#2F3337',
+        'orange': '#FF862E',
       },
     },
     fontFamily: {

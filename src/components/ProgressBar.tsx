@@ -18,14 +18,14 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 function LinearProgressWithLabel(props: LinearProgressProps & { value: number, time: number }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'end', flexDirection: 'column' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', gap: 1 }}>
+      <Box sx={{ width: '82%' }}>
+        <BorderLinearProgress variant="determinate" {...props} />
+      </Box>
       <Box sx={{ minWidth: 35 }}>
         <Typography fontSize={"12px"} color="white">{`${Math.round(
           props.time,
         )} min`}</Typography>
-      </Box>
-      <Box sx={{ width: '100%' }}>
-        <BorderLinearProgress variant="determinate" {...props} />
       </Box>
     </Box>
   );

@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -63,18 +63,20 @@ type AddressProps = {
 }
 
 export default function Address({ setValue }: AddressProps) {
-  const location = useLocation();
-  const prevUrl = location.state?.prevurl;
+  // const location = useLocation();
+  // const prevUrl = location.state?.prevurl;
 
   const navigate = useNavigate();
   const handleNavigate = () => {
-    if(prevUrl === 'home'){
-      navigate('/home');
-      setValue('home');
-    }else{
-      navigate('/profile');
-      setValue('profile');
-    }   
+    // if(prevUrl === 'home'){
+    //   navigate('/home');
+    //   setValue('home');
+    // }else{
+    //   navigate('/profile');
+    //   setValue('profile');
+    // }   
+    navigate('/profile');
+    setValue('profile');
   };
 
   const [hoveredDiv, setHoveredDiv] = useState<number | null>(null);
@@ -158,7 +160,7 @@ export default function Address({ setValue }: AddressProps) {
           <div className='flex w-full min-h-20 rounded-2xl border border-light-gray hover:border-green'>
             <div className='w-[25%] m-auto'>
               {/* avatar  */}
-              <Avatar sx={{ bgcolor: '#32FF9D', margin: 'auto', width: 44, height: 44 }}>
+              <Avatar sx={{ bgcolor: '#FF862E', margin: 'auto', width: 44, height: 44 }}>
                 <NearMeRoundedIcon sx={{ fontSize: 30 }} />
               </Avatar>
 

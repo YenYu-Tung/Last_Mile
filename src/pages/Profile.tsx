@@ -6,6 +6,9 @@ import avatar from "/avatar.svg";
 import badge1 from "/badge1.svg";
 import badge2 from "/badge2.svg";
 import unknownbadge from "/unknownbadge.svg";
+import badge1_orange from "/badge1_orange.svg";
+import badge2_orange from "/badge2_orange.svg";
+import unknownbadge_orange from "/badge_unknown_orange.svg";
 
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
@@ -18,7 +21,8 @@ import IconButton from '@mui/material/IconButton';
 import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import WalletOutlinedIcon from '@mui/icons-material/WalletOutlined';
+// import WalletOutlinedIcon from '@mui/icons-material/WalletOutlined';
+import Brightness4RoundedIcon from '@mui/icons-material/Brightness4Rounded';
 import EditLocationOutlinedIcon from '@mui/icons-material/EditLocationOutlined';
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
 // import EditLocationRoundedIcon from '@mui/icons-material/EditLocationRounded';
@@ -32,6 +36,9 @@ import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+
+import Switch from "../components/Switch";
+
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -67,9 +74,11 @@ function a11yProps(index: number) {
 
 type ProfileProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
+  thememode: string;
+  toggleTheme: () => void;
 }
 
-export default function Profile({ setValue }: ProfileProps){
+export default function Profile({ setValue, thememode, toggleTheme }: ProfileProps){
   
   const navigate = useNavigate();
 
@@ -78,33 +87,31 @@ export default function Profile({ setValue }: ProfileProps){
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     if(event){
       setNum(newValue);
+      // if(newValue !== 0 && thememode === 'light'){
+      //   toggleTheme();
+      // }
     }
   };
 
+  const badgeImage1 = thememode === 'light' ? badge1_orange : badge1;
+  const badgeImage2 = thememode === 'light' ? badge2_orange : badge2;
+  const badgeImage3 = thememode === 'light' ? unknownbadge_orange : unknownbadge;
 
   return (
-    <div className='bg-dark' style={{ minHeight: "100vh" }}>
-      <div className='flex flex-col sm:flex-row justify-center items-center h-[32vh] sm:h-[30vh] gap-2'>
+    <div className={thememode === 'light' ? 'flex flex-col bg-day' : 'flex flex-col bg-dark'} style={{ minHeight: "100vh" }}>
+      <div className='flex flex-col sm:flex-row justify-center items-center h-72 gap-2'>
         <Avatar alt="Avatar" src={avatar} sx={{
           width: '90px', height: '90px', border: 2,
-          borderColor: '#32FF9D',
-          '@media (min-width: 380px)': {
-            width: '118px',
-            height: '118px',
-          },
-          '@media (min-width: 768px)': { 
-            width: '100px', 
-            height: '100px', 
-          }, }}  />
-          <div className="flex flex-col gap-1 items-center sm:ml-2">
-            <span className='text-3xl text-white font-bold'>Tiffany921</span>
+          borderColor: thememode === 'light' ? '#FF862E' : '#32FF9D' }}  />
+          <div className="flex flex-col gap-2 items-center sm:ml-2">
+          <span className={thememode === 'light' ? 'text-3xl text-[#383C42] font-bold' : 'text-3xl text-white font-bold'}>Tiffany921</span>
             <span className='text-base text-light-gray mb-1'>Beginner</span>
             <Chip label={
               <div className='flex align-middle items-center'>
-                <PaidOutlinedIcon sx={{ color: '#32FF9D', marginRight: 0.5 }} />
+              <PaidOutlinedIcon sx={{ color: thememode === 'light' ? '#030303' : '#32FF9D', marginRight: 0.5 }} />
                 1050
               </div>
-            } variant="outlined" sx={{ color: '#32FF9D', border: 2, borderColor: '#484848', boxShadow: 2, }} />
+            } variant="outlined" sx={{ color: thememode === 'light' ? '#030303' : '#32FF9D', border: thememode === 'light' ? 0 : 2, borderColor: '#484848', boxShadow: 2, bgcolor: thememode === 'light' ? '#E1E1E1' : '#383839' }} />
           </div>        
       </div>
       <Divider variant="middle" sx={{  border: 1,  borderColor: '#484848' }} />
@@ -113,97 +120,94 @@ export default function Profile({ setValue }: ProfileProps){
           <ListItem
             secondaryAction={
               <IconButton edge="end" aria-label="delete">
-                <ArrowRightRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                <ArrowRightRoundedIcon sx={{ color: thememode === 'light' ? '#686868' : '#32FF9D', fontSize: 40 }} />
               </IconButton>
             }
-            sx={{ paddingY: '7px' }}
+            sx={{ paddingY: '10px' }}
             onClick={() => {
               navigate('/profile/account');
               setValue('none');
             }}
           >
             <ListItemAvatar>
-              <PersonOutlineOutlinedIcon sx={{ color: '#32FF9D', fontSize: 32 }} />
+              <PersonOutlineOutlinedIcon sx={{ color: thememode === 'light' ? '#FF862E' : '#32FF9D', fontSize: 32 }} />
             </ListItemAvatar>
             <ListItemText
               primary="Account"
-              className='text-white'
+              className={thememode === 'light' ? 'text-black' : 'text-white'}
             />
           </ListItem>
           <ListItem
             secondaryAction={
               <IconButton edge="end" aria-label="delete">
-                <ArrowRightRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                {/* <ArrowRightRoundedIcon sx={{ color: thememode === 'light' ? '#686868' : '#32FF9D', fontSize: 40 }} /> */}
+                <Switch thememode={thememode} toggleTheme={toggleTheme}/>
               </IconButton>
             }
-            sx={{ paddingY: '7px' }}
-            onClick={() => {
-              navigate('/profile/wallets');
-              setValue('none');
-            }}
+            sx={{ paddingY: '10px' }}
           >
             <ListItemAvatar>
-              <WalletOutlinedIcon sx={{ color: '#32FF9D', fontSize: 32 }}  />
+              <Brightness4RoundedIcon sx={{ color: thememode === 'light' ? '#FF862E' : '#32FF9D', fontSize: 30 }}  />
             </ListItemAvatar>
             <ListItemText
-              primary="Wallets"
-              className='text-white'
+              primary="Background Mode"
+              className={thememode === 'light' ? 'text-black' : 'text-white'}
             />
           </ListItem>
           <ListItem
             secondaryAction={
               <IconButton edge="end" aria-label="delete">
-                <ArrowRightRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                <ArrowRightRoundedIcon sx={{ color: thememode === 'light' ? '#686868' : '#32FF9D', fontSize: 40 }} />
               </IconButton>
             }
-            sx={{ paddingY: '7px' }}
+            sx={{ paddingY: '10px' }}
             onClick={() => {
               navigate('/profile/address-setting', { state: { prevurl: 'profile' } });
               setValue('none');
             }}
           >
             <ListItemAvatar>
-              <EditLocationOutlinedIcon sx={{ color: '#32FF9D', fontSize: 32 }} />
+              <EditLocationOutlinedIcon sx={{ color: thememode === 'light' ? '#FF862E' : '#32FF9D', fontSize: 32 }} />
             </ListItemAvatar>
             <ListItemText
               primary="Address Setting"
-              className='text-white'
+              className={thememode === 'light' ? 'text-black' : 'text-white'}
             />
           </ListItem>
           <ListItem
             secondaryAction={
               <IconButton edge="end" aria-label="delete">
-                <ArrowRightRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                <ArrowRightRoundedIcon sx={{ color: thememode === 'light' ? '#686868' : '#32FF9D', fontSize: 40 }} />
               </IconButton>
             }
-            sx={{ paddingY: '7px' }}
+            sx={{ paddingY: '10px' }}
             onClick={() => {
               navigate('/profile/about-us');
               setValue('none');
             }}
           >
             <ListItemAvatar>
-              <InfoRoundedIcon sx={{ color: '#32FF9D', fontSize: 32 }} />
+              <InfoRoundedIcon sx={{ color: thememode === 'light' ? '#FF862E' : '#32FF9D', fontSize: 32 }} />
             </ListItemAvatar>
             <ListItemText
               primary="About Us"
-              className='text-white'
+              className={thememode === 'light' ? 'text-black' : 'text-white'}
             />
           </ListItem>
         </List>
       </div>
-      <div className='mx-auto mt-1 min-h-[45vh] sm:min-h-[55vh] pb-20 bg-exdark rounded-t-[35px]' style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className={`flex-1 mt-1 pb-20 ${thememode === 'light' ? 'bg-white drop-shadow-2xl shadow-3xl' : 'bg-exdark'} rounded-t-[35px]`} style={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ paddingX: 2, paddingY: 1.5, flex: 1}}>
           <Tabs value={num} onChange={handleChange} aria-label="basic tabs example"
             sx={{
             '& .MuiTabs-indicator': {
-              backgroundColor: '#32FF9D', 
+                backgroundColor: thememode === 'light' ? '#FF862E' : '#32FF9D', 
             },            
             '& .MuiTab-textColorPrimary': {
-              color: '#898989', 
+              color: thememode === 'light' ? '#1E1E1E' : '#898989', 
             },
             '& .MuiButtonBase-root.MuiTab-root.Mui-selected': {
-              color: '#32FF9D', 
+              color: thememode === 'light' ? '#FF862E' : '#32FF9D', 
             },
             '& .MuiTabs-flexContainer': {
               justifyContent: 'space-around',
@@ -221,31 +225,31 @@ export default function Profile({ setValue }: ProfileProps){
               alignItems: 'flex-start',
               flexDirection: 'row', pt: 3, px: 1, gap: 2, flexWrap: 'wrap'
             }} >
-              <img className="w-[4.85rem]" src={badge1} alt="Badge1" />
-              <img className="w-[4.8rem]" src={badge2} alt="Badge2" />
-              <img className="w-[5.6rem]" src={unknownbadge} alt="UnknownBadge" />
-              <img className="w-[5.6rem]" src={unknownbadge} alt="UnknownBadge" />
+              <img className="w-[4.85rem]" src={badgeImage1} alt="Badge1" />
+              <img className="w-[4.8rem]" src={badgeImage2} alt="Badge2" />
+              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.6rem]'}`} src={badgeImage3} alt="UnknownBadge" />
+              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.6rem]'}`} src={badgeImage3} alt="UnknownBadge" />
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4 px-1">
-              <div className='flex w-full h-20 rounded-2xl bg-light'>
+              <div className={`flex w-full h-20 rounded-2xl ${thememode === 'light' ? 'bg-day' : 'bg-light'}`}>
                 <div className='w-3/4 p-4 flex flex-col'>
-                  <span className='text-green text-lg'>#RWQ-51F9711D</span>
+                  <span className={`text-lg ${thememode === 'light' ? 'text-black' : 'text-green'}`}>#RWQ-51F9711D</span>
                   <span className='text-light-gray text-sm'>2023 / 03 / 18 </span>
                 </div>
                 <div className='w-1/4 text-green text-4xl flex items-center justify-center'>
-                  <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                  <CheckCircleOutlineRoundedIcon sx={{ color: thememode === 'light' ? '#FF862E' : '#32FF9D', fontSize: 40 }} />
                 </div>
               </div>
               
-              <div className='flex w-full h-20 rounded-2xl bg-light'>
+              <div className={`flex w-full h-20 rounded-2xl ${thememode === 'light' ? 'bg-day' : 'bg-light'}`}>
                 <div className='w-3/4 p-4 flex flex-col'>
-                  <span className='text-green text-lg'>#OUR-PFU1IG8</span>
+                  <span className={`text-lg ${thememode === 'light' ? 'text-black' : 'text-green'}`}>#OUR-PFU1IG8</span>
                   <span className='text-light-gray text-sm'>2023 / 03 / 05 </span>
                 </div>
                 <div className='w-1/4 text-green text-4xl flex items-center justify-center'>
-                  <CheckCircleOutlineRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
+                  <CheckCircleOutlineRoundedIcon sx={{ color: thememode === 'light' ? '#FF862E' : '#32FF9D', fontSize: 40 }} />
                 </div>
               </div>
 
@@ -274,22 +278,22 @@ export default function Profile({ setValue }: ProfileProps){
               pt: 4,
               flexWrap: 'wrap',
             }} >
-              <div className='flex min-w-40 h-24 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
-                <div className='w-1/2 flex flex-col justify-center items-start xs:items-center text-white'>
+              <div className={`flex min-w-40 h-24 rounded-2xl pl-3 pr-2 py-1 ${thememode === 'light' ? 'bg-day' : 'bg-teel-gray'}`}>
+                <div className={`w-1/2 flex flex-col justify-center items-start xs:items-center ${thememode === 'light' ? 'text-black' : 'text-white'}`}>
                   <span className='text-lg'>10% off</span>
                   <span className='text-xs'>entire fee</span>
                 </div>
                 <div className='w-1/2 flex justify-center items-center'>
-                  <button className='text-sm bg-teel-dark-gray text-green border border-green py-2 px-[18px] rounded-2xl shadow-xl'>USE</button>
+                  <button className={`text-sm py-2 px-[18px] rounded-2xl shadow-xl border ${thememode === 'light' ? 'bg-white  text-orange border-orange' : 'bg-teel-dark-gray text-green border-green'}`}>USE</button>
                 </div>
               </div>
-              <div className='flex min-w-40 h-24 rounded-2xl bg-teel-gray pl-3 pr-2 py-1'>
-                <div className='w-1/2 flex flex-col justify-center items-start xs:items-center  text-white'>
+              <div className={`flex min-w-40 h-24 rounded-2xl pl-3 pr-2 py-1 ${thememode === 'light' ? 'bg-day' : 'bg-teel-gray'}`}>
+                <div className={`w-1/2 flex flex-col justify-center items-start xs:items-center ${thememode === 'light' ? 'text-black' : 'text-white'}`}>
                   <span className='text-lg'>5% off</span>
                   <span className='text-xs'>entire fee</span>
                 </div>
                 <div className='w-1/2 flex justify-center items-center'>
-                  <button className='text-sm bg-teel-dark-gray text-green border border-green py-2 px-[18px] rounded-2xl shadow-xl'>USE</button>
+                  <button className={`text-sm py-2 px-[18px] rounded-2xl shadow-xl border ${thememode === 'light' ? 'bg-white  text-orange border-orange' : 'bg-teel-dark-gray text-green border-green'}`}>USE</button>
                 </div>
               </div>
             </Box>

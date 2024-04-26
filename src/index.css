@@ -5,9 +5,9 @@
 .MuiPaper-root.MuiDialog-paper{
   background-color: #1E2023;
   color: white;
-  border: 1px solid #32FF9D;
+  border: 1px solid #858585;
   border-radius: 24px;
-  width: 310px;
+  max-width: 377px;
 }
 .MuiDialog-paperFullScreen{
   width: 100% !important;
@@ -219,7 +219,3 @@ body {
 .animation-fade-in-out {
   animation: fade-in-out 4s ease-in-out;
 }
-
-
-
-

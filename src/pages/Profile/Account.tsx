@@ -40,8 +40,8 @@ export default function Account({ setValue }: AccountProps) {
   };
 
   return (
-    <div className="bg-dark w-full h-screen" >
-      <div className='flex w-full h-[10%] justify-center items-center'>
+    <div className="bg-dark w-full flex flex-col" style={{ minHeight: "100vh" }}>
+      <div className='flex w-full h-20 justify-center items-center'>
         <span className='absolute top-6.5 left-4'>
           <button onClick={handleNavigate}>
             <ChevronLeftRoundedIcon sx={{ color: 'white', fontSize: 42 }} />
@@ -50,7 +50,7 @@ export default function Account({ setValue }: AccountProps) {
         <span className='text-white text-2xl font-semibold'>Account</span>
       </div>
 
-      <div className="flex flex-col items-start pt-1 w-full bg-exdark rounded-t-[35px] min-h-[90%] pb-32">
+      <div className="flex flex-col items-start pt-1 w-full bg-exdark rounded-t-[35px] flex-1 pb-32">
         <List className='w-full'>
           <ListItem
             secondaryAction={
@@ -64,7 +64,7 @@ export default function Account({ setValue }: AccountProps) {
                 </IconButton>
               </div>
             }
-            sx={{ padding: '24px 28px' }}
+            sx={{ padding: '1.5rem 28px' }}
           >
             <ListItemText
               primary="Avatar"
@@ -82,7 +82,7 @@ export default function Account({ setValue }: AccountProps) {
                 </IconButton>
               </div>
             }
-            sx={{ padding: '24px 28px' }}
+            sx={{ padding: '1.5rem 28px' }}
           >
             <ListItemText
               primary="Name"
@@ -100,7 +100,7 @@ export default function Account({ setValue }: AccountProps) {
                 </IconButton>
               </div>
             }
-            sx={{ padding: '24px 28px' }}
+            sx={{ padding: '1.5rem 28px' }}
           >
             <ListItemText
               primary="Mail Address"
@@ -118,7 +118,7 @@ export default function Account({ setValue }: AccountProps) {
                 </IconButton>
               </div>
             }
-            sx={{ padding: '24px 28px' }}
+            sx={{ padding: '1.5rem 28px' }}
           >
             <ListItemText
               primary="Security"
@@ -136,7 +136,7 @@ export default function Account({ setValue }: AccountProps) {
                 </IconButton>
               </div>
             }
-            sx={{ padding: '24px 28px' }}
+            sx={{ padding: '1.5rem 28px' }}
           >
             <ListItemText
               primary="Authentication"
@@ -154,7 +154,7 @@ export default function Account({ setValue }: AccountProps) {
                 </IconButton>
               </div>
             }
-            sx={{ padding: '24px 28px' }}
+            sx={{ padding: '1.5rem 28px' }}
           >
             <ListItemText
               primary="Language"

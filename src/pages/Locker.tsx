@@ -4,8 +4,9 @@ import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 
-import shopee from "/shopee.svg";
-import momo from "/momo.svg";
+import santa from "/santa.svg";
+// import momo from "/momo.svg";
+import birde from "/birde.svg";
 
 import { useNavigate } from 'react-router-dom';
 
@@ -68,7 +69,7 @@ export default function Locker({ setValue }: LockerProps) {
             </div>
           </div>
         </div>
-        <div className='flex flex-col m-auto w-11/12 border-2 border-green rounded-xl mt-8'>
+        <div className='flex flex-col m-auto w-11/12 border-2 border-green rounded-xl mt-6 py-2'>
           <table>
             <thead>
               <tr className='text-green'>
@@ -82,75 +83,128 @@ export default function Locker({ setValue }: LockerProps) {
             <tbody className=''>{generateTable()}</tbody>
           </table>
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-11/12 mt-8 gap-8 pb-24 justify-between'>
-          <div className='bg-dark-gray w-full h-44 rounded-3xl shadow-3xl border border-gray pb-2'>
-            <div className='w-full flex h-2/3'>
-              <div className='w-1/3 text-green text-4xl text-center align-middle my-auto'>
-                A2
-              </div>
-              <Divider orientation="vertical" variant="middle" flexItem
-                sx={{ border: 1, borderColor: '#32FF9D', borderRadius: '24px' }} />
-              <div className="flex flex-col ml-4 w-2/3 my-auto">
-                <div className="flex flex-col">
-                  <span className="text-gray text-xs">Delivery Date</span>
-                  <span className="text-white text-sm">P.M. 05:13 12.06 2022</span>
+        <div className='flex flex-col m-auto w-11/12 mt-2 pb-20'>
+          <div className='w-full py-6 flex flex-col gap-8'>
+            <div className='w-full h-48 rounded-[25px] border border-[#363A40] flex justify-center bg-[#26292E] shadow-xl flex-col'>
+              <div className='w-full flex h-3/5 pb-4'>
+                <div className='w-1/5 text-green text-5xl text-center align-middle my-auto'>
+                  A2
                 </div>
-                <div className="flex flex-col mt-3">
-                  <span className="text-gray text-xs">Pick up Deadline</span>
-                  <span className="text-base sm:text-lg text-transparent text-white">P.M. 05:13 12.16 2022</span>
-                </div>
-              </div>
-              <Chip
-                avatar={<Avatar alt="Shopee" src={shopee} />}
-                label={
-                  <div className='flex align-middle items-center text-green text-xs'>
-                    Shopee
+                <Divider orientation="vertical" variant="middle" flexItem
+                  sx={{ border: 1, borderColor: '#32FF9D', borderRadius: '24px' }} />
+                <div className="flex flex-col ml-4 w-2/5 my-auto">
+                  <div className='flex flex-col h-full justify-center gap-2'>
+                    <span className='flex text-xl font-bold text-white items-end'>
+                      <span className='truncate'>MIH Model</span>
+                      {/* <CheckCircleRoundedIcon className='text-green ml-1 mb-1' sx={{ fontSize: 12 }} /> */}
+                    </span>
+                    <Chip
+                      className='w-[62px]'
+                      avatar={<Avatar alt="birde" src={birde} />}
+                      label="Birde"
+                      sx={{
+                        color: '#C0C0C0',
+                        bgcolor: '#50555E',
+                        fontWeight: 'bold',
+                        fontSize: '12px',
+                        '& .MuiChip-label': {
+                          padding: '0 4px 0 2px'
+                        },
+                        '& .MuiChip-avatar': {
+                          margin: '0',
+                          width: '17px',
+                          height: '17px'
+                        },
+                        '&': {
+                          height: '22px'
+                        },
+                      }} />
+                    <span className='text-light-gray text-sm font-bold'>
+                      #KCY-59836LOC
+                      {/* <ContentCopyRoundedIcon className='ml-1' sx={{ fontSize: 12 }} /> */}
+                    </span>
                   </div>
-                } variant="outlined" sx={{ color: 'white', border: 1, borderColor: 'white', bgcolor: 'transparent' }} className="relative top-4 right-2" />
-            </div>
-            <div className='w-full flex justify-center mt-2'>
-              <button className='bg-green rounded-full px-4 py-2 w-11/12 sm:w-3/4 font-bold shadow-3xl' onClick={handleQrcode}>
-                Pick Up Order
-              </button>
-            </div>
-          </div>        
-          
-          <div className='bg-dark-gray w-full h-44 rounded-3xl shadow-3xl border border-gray pb-2'>
-            <div className='w-full flex h-2/3'>
-              <div className='w-1/3 text-green text-4xl text-center align-middle my-auto'>
-                D1
-              </div>
-              <Divider orientation="vertical" variant="middle" flexItem
-                sx={{ border: 1, borderColor: '#32FF9D', borderRadius: '24px' }} />
-              <div className="flex flex-col ml-4 w-2/3 my-auto">
-                <div className="flex flex-col">
-                  <span className="text-gray text-xs">Delivery Date</span>
-                  <span className="text-white text-sm">P.M. 05:13 12.06 2022</span>
                 </div>
-                <div className="flex flex-col mt-3">
-                  <span className="text-gray text-xs">Pick up Deadline</span>
-                  <span className="text-base sm:text-lg text-transparent text-white">P.M. 05:13 12.16 2022</span>
-                </div>
-              </div>
-              <Chip
-                avatar={<Avatar alt="Momo" src={momo} />}
-                label={
-                  <div className='flex align-middle items-center text-green text-xs'>
-                    MOMO
+                <button className='flex w-[110px] h-20 rounded-2xl bg-teel-gray justify-center items-center flex-col shadow-xl m-auto'>
+                  <div className='w-full flex justify-center items-center flex-col'>
+                    <span className="flex gap-1 items-center">
+                      <span className="text-xs text-white">Deadline</span>
+                    </span>
+                    <span className="flex gap-1 items-center">
+                      <span className="text-2xl text-white font-bold">16:35</span>
+                    </span>
+                    <span className="font-bold text-xs text-green">TUE 12.26</span>
                   </div>
-                } variant="outlined" sx={{ color: 'white', border: 1, borderColor: 'white', bgcolor: 'transparent' }} className="relative top-4 right-2" />
+                </button>
+              </div>
+              <div className='w-full flex justify-center'>
+                <button className='bg-green rounded-full px-4 py-3 w-11/12 sm:w-3/4 font-bold shadow-3xl' onClick={handleQrcode}>
+                  Pick Up Order
+                </button>
+              </div>
             </div>
-            <div className='w-full flex justify-center mt-2'>
-              <button className='bg-green rounded-full px-4 py-2 w-11/12 sm:w-3/4 font-bold shadow-3xl' onClick={handleQrcode}>
-                Pick Up Order
-              </button>
+            <div className='w-full h-48 rounded-[25px] border border-[#363A40] flex justify-center bg-[#26292E] shadow-xl flex-col'>
+              <div className='w-full flex h-3/5 pb-4'>
+                <div className='w-1/5 text-green text-5xl text-center align-middle my-auto'>
+                  D1
+                </div>
+                <Divider orientation="vertical" variant="middle" flexItem
+                  sx={{ border: 1, borderColor: '#32FF9D', borderRadius: '24px' }} />
+                <div className="flex flex-col ml-4 w-2/5 my-auto">
+                  <div className='flex flex-col h-full justify-center gap-2'>
+                    <span className='flex text-xl font-bold text-white items-end'>
+                      <span className='truncate'>KENDA-Wheel</span>
+                    </span>
+                    <Chip
+                      className='w-[68px]'
+                      avatar={<Avatar alt="santa" src={santa} />}
+                      label="Santa"
+                      sx={{
+                        color: '#C0C0C0',
+                        bgcolor: '#50555E',
+                        fontWeight: 'bold',
+                        fontSize: '12px',
+                        '& .MuiChip-label': {
+                          padding: '0 4px 0 2px'
+                        },
+                        '& .MuiChip-avatar': {
+                          margin: '0',
+                          width: '18px',
+                          height: '18px'
+                        },
+                        '&': {
+                          height: '22px'
+                        },
+                      }} />
+                    <span className='text-light-gray text-sm font-bold'>
+                      #TUR-B1F8549D
+                    </span>
+                  </div>
+                </div>
+                <button className='flex w-[110px] h-20 rounded-2xl py-1 bg-teel-gray justify-center items-center flex-col shadow-xl m-auto'>
+                  <div className='w-full flex justify-center items-center flex-col'>
+                    <span className="flex gap-1 items-center">
+                      <span className="text-xs text-white">Deadline</span>
+                    </span>
+                    <span className="flex gap-1 items-center">
+                      <span className="text-2xl text-white font-bold">16:35</span>
+                    </span>
+                    <span className="font-bold text-xs text-green">TUE 12.26</span>
+                  </div>
+                  <div className='w-[15%] flex justify-center items-center'>
+                  </div>
+                </button>
+              </div>
+              <div className='w-full flex justify-center'>
+                <button className='bg-green rounded-full px-4 py-3 w-11/12 sm:w-3/4 font-bold shadow-3xl' onClick={handleQrcode}>
+                  Pick Up Order
+                </button>
+              </div>
             </div>
           </div>
-
-
         </div>
-      </div>
 
+      </div>
     </div>
   );
 }

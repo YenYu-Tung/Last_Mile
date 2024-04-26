@@ -15,8 +15,8 @@ function FacebookCircularProgress(props: CircularProgressProps & { value: number
           color: (theme) =>
             theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
         }}
-        size={40}
-        thickness={6}
+        size={32}
+        thickness={4}
         {...props}
       />
       <CircularProgress
@@ -30,8 +30,8 @@ function FacebookCircularProgress(props: CircularProgressProps & { value: number
             strokeLinecap: 'round',
           },
         }}
-        size={40}
-        thickness={6}
+        size={32}
+        thickness={4}
         {...props}
       />
     </Box>

@@ -46,7 +46,7 @@ export default function Scan({ setValue }: ScanProps) {
     }
     if (data && progress === 100) {
       const timerId = setTimeout(() => {
-        navigate('/success');
+        navigate('/box');
         setValue('none');
       }, 280);
       return () => clearTimeout(timerId);      

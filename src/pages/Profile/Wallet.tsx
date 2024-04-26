@@ -18,9 +18,10 @@ export default function Wallet({ setValue }: WalletProps) {
 
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate('/profile');
-    setValue('profile');
+    navigate('/home');
+    setValue('home');
   };
+  
 
 
   return (
@@ -32,7 +33,7 @@ export default function Wallet({ setValue }: WalletProps) {
               <ChevronLeftRoundedIcon sx={{ color: 'white', fontSize: 42 }} />
             </button>
           </span>
-          <span className='text-white text-2xl font-semibold'>Wallets</span>
+          <span className='text-white text-2xl font-semibold'>Wallet</span>
         </div>
       </div>      
 
@@ -70,7 +71,7 @@ export default function Wallet({ setValue }: WalletProps) {
 
       <div className="flex flex-col gap-3 items-start px-8 pb-3 w-full">
         <span className='flex text-lg text-white items-center'> <img className="w-4 mr-2.5" src={discount} alt="Discount coupon" />Discount Coupon</span>
-        <div className="w-full flex gap-4 overflow-x-auto">
+        <div className="w-full flex gap-3.5 overflow-x-auto">
           {/* another div  */}
           <div className='flex min-w-44 h-20 rounded-2xl bg-teel-gray py-1'>
             <div className='w-1/2 flex flex-col justify-center items-center text-white'>

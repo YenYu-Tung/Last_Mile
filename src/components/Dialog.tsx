@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 // import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -14,120 +14,128 @@ import Dialog from '@mui/material/Dialog';
 
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import SquareRoundedIcon from '@mui/icons-material/SquareRounded';
 
 // import PersonIcon from '@mui/icons-material/Person';
 // import { blue } from '@mui/material/colors';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
-import shopee from "/shopee.svg";
-import pchome from "/pchome.svg";
 
-const Cars = ['#CAR-967', '#CAR-811', '#CAR-654', '#CAR-992', '#CAR-336'];
-const Dates = ['TUE 12.26.2023', 'WED 12.27.2023', 'FRI 12.29.2023', 'SAT 12.30.2023', 'SUN 12.31.2023'];
-const Times = ['16:35', '17:20', '12:05', '10:30', '18:45'];
+const Cars = ['#CAR-811', '#CAR-967', '#CAR-811', '#CAR-654', '#CAR-992', '#CAR-336'];
+const Dates = ['MON 12.25', 'TUE 12.26', 'WED 12.27', 'FRI 12.29', 'SAT 12.30', 'SUN 12.31'];
+const Times = ['13:30', '16:35', '17:20', '12:05', '10:30', '18:45'];
 
 
 type DialogProps = {
   open: boolean;
   num: number;
-  onClose: (values: string[]) => void;
+  onClose: (values: string[], isChecked: boolean) => void;
   title: string;
-  avatar: string;
+  image: string;
 }
 
 export default function SimpleDialog(props: DialogProps) {
-  const { onClose, open, num, title, avatar } = props;
+  const { onClose, open, num, title, image } = props;
+  const [changedIndex, setChangedIndex] = useState(num);
   const [changedValue, setChangedValue] = useState(Dates[num]);
-  const [selectedCar, setSelectedCar] = useState(Cars[num]);
   const [changedTime, setChangedTime] = useState(Times[num]);
+  const [isChecked, setIsChecked] = useState(false);
+  const [showProgress, setShowProgress] = useState(false);
 
   const handleClose = () => {
-    onClose([changedValue, changedTime]);
+    onClose([changedValue, changedTime], isChecked);
   };
 
   const handleListItemClick = (value: string) => {
-    setChangedValue(value);
+    setShowProgress(true); 
     const index = Dates.indexOf(value);
-    setSelectedCar(Cars[index]);
-    setChangedTime(Times[index]);
+    setChangedIndex(index);
+    setTimeout(() => {
+      setChangedValue(value);
+      setChangedTime(Times[index]);
+      setShowProgress(false); 
+    }, 1000); 
+  };
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
   };
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle className="flex flex-col text-green font-bold" sx={{
+      <DialogTitle className="flex flex-col font-bold" sx={{
         paddingBottom: '0'
       }}>
-        {title}
-        <Chip
-          avatar={<Avatar alt={avatar} src={avatar === 'Shopee' ? shopee : pchome} />}
-          label={
-            <div className='flex align-middle items-center text-green text-xs font-bold'>
-              {avatar}
-            </div>
-          } variant="outlined" sx={{ color: 'white', border: 1, borderColor: '#32FF9D', bgcolor: 'transparent', maxWidth: 88, }} />
-
-        <FormControlLabel control={<Checkbox sx={{
-          color: '#32FF9D',
-          '&.Mui-checked': {
-            color: '#32FF9D',
-          },
-          padding: '0px 6px 0px 6px'
-        }} size="small" />} label="Send to Locker" sx={{
-          marginRight: '0', justifyContent: 'end', padding: '0px 0px 4px 0px'
-        }}/>
-
-      </DialogTitle>
-      <Divider variant="middle" sx={{ border: 0.5, borderColor: '#32FF9D', borderRadius: '24px' }} />
-      <DialogContent sx={{
-        paddingTop: '6px', paddingBottom: '6px',
-      }}>
-        <div className="w-full flex-col mb-2 px-2">
-          <span className="text-sm">Delivery Time </span>
-          <div className="w-full flex font-bold text-sm">
-            <div className="w-[45%] sm:w-1/2">
-              {selectedCar}
-            </div>
-            <div className="w-[55%] sm:w-1/2">
-              {changedValue}
-            </div>
+        <div className="flex pb-4 gap-4 justify-center items-center">
+          <img className="w-20" src={`/${image}.svg`} alt="image" />
+          <div className={isChecked ? 'text-green' : 'text-white'}>
+            <span className="text-white">
+              {title}
+              <CheckCircleRoundedIcon className='text-green ml-1' sx={{ fontSize: 12 }} />
+            </span>
+            <FormControlLabel control={<Checkbox sx={{
+              color: '#fff',
+              '&.Mui-checked': {
+                color: '#32FF9D',
+              },
+              padding: '0px 6px 0px 6px'
+            }} size="small"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+              checkedIcon={<SquareRoundedIcon />}
+            />} label="Send to Locker" sx={{
+              marginRight: '0', justifyContent: 'end', padding: '0px 0px 4px 0px'
+            }} />
           </div>
         </div>
 
+      </DialogTitle>
+      <Divider variant="middle" sx={{ border: 0.5, borderColor: '#646A75', borderRadius: '24px' }} />
+      <DialogContent sx={{
+        paddingTop: '18px', paddingBottom: '12px',
+      }}>
         <List sx={{
           py: 0, overflow: 'auto',
-          maxHeight: 160, width: '100%',
+          maxHeight: 300, width: '100%',
           maxWidth: 400,
-          border: 1, borderColor: '#32FF9D', borderRadius: '16px',
+          border: 1, borderColor: '#363A40', borderRadius: '16px',
+          backgroundColor: '#26292E'
         }}>
           {Dates.map((Date, index) => (
             <ListItem disableGutters key={Date} sx={{
-                py: 0.5, }}>
-              <ListItemButton onClick={() => handleListItemClick(Date)} sx={{
-                px: 1, borderRadius: "8px", mx: 1, py: 1,
-                '&:hover': {
-                  boxShadow: '0 0 0 0.05rem #32FF9D',
-                },
-                '&:active': {
-                  boxShadow: 'none',
-                  backgroundColor: '#32FF9D',
-                },
-                '&:focus': {
-                  backgroundColor: '#32FF9D',
-                  boxShadow: 'none',
-                  color: 'black'
-                }, }}>
+              py: 0.5,
+            }}>
+              <ListItemButton onClick={() => handleListItemClick(Date)} disabled={isChecked}
+                sx={{
+                  px: 1, borderRadius: "8px", mx: 1, py: 1.5,
+                  '&:hover': {
+                    boxShadow: '0 0 0 0.05rem #32FF9D',
+                    color: 'white'
+                  },
+                  '&:active': {
+                    boxShadow: 'none',
+                    backgroundColor: '#32FF9D',
+                  },
+                  '&:focus': {
+                    backgroundColor: '#32FF9D',
+                    boxShadow: 'none',
+                    color: 'black'
+                  },
+                  ...(index === changedIndex && !isChecked && { backgroundColor: '#32FF9D', color: 'black' }) 
+                }}>
                 {/* <ListItemAvatar>
                   <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
                     <PersonIcon />
                   </Avatar>
                 </ListItemAvatar> */}
-                <div className="w-full flex font-bold text-xs xs:text-sm">
-                  <div className="w-[45%]">
+                <div className="w-full flex font-bold text-lg">
+                  <div className="w-[50%]">
                     {Cars[index]}
                   </div>
-                  <div className="w-[55%]">
+                  <div className="w-[50%]">
                     {Dates[index]}
                   </div>
                 </div>
@@ -138,24 +146,21 @@ export default function SimpleDialog(props: DialogProps) {
       </DialogContent>
       <DialogActions>
         <div className="flex w-full justify-between px-[18px] pb-[6px]">
-          <div className="shadow-5xl h-full  rounded-[10px] py-[6px] px-[8px]"><AccessTimeRoundedIcon sx={{ color: '#32FF9D', marginRight: 1 }} />{changedTime}</div>
-          <Button onClick={handleClose} sx={{
-            bgcolor: '#32FF9D', fontSize: '12px', color: 'black', padding: '6px 18px', borderRadius: '12px', fontWeight: 'bold',
-             '&:hover': {
-              boxShadow: '0 0 0 0.05rem #32FF9D',
-              backgroundColor: '#32FF9D',
-            },
-            '&:active': {
-              boxShadow: 'none',
-              backgroundColor: '#32FF9D',
-            },
-            '&:focus': {
-              backgroundColor: '#32FF9D',
-              boxShadow: 'none',
-            },}}>Confirm</Button>
-        </div>        
+          <div className="flex justify-center items-center shadow-3xl rounded-[20px] py-[14px] w-[140px] h-[60px] text-2xl">
+            {showProgress ? <CircularProgress sx={{ color: '#B4B4B4', marginRight: 1 }} disableShrink size={24}/> : (isChecked ? "Locker" : <><AccessTimeRoundedIcon sx={{ color: '#32FF9D', marginRight: 1 }} />{changedTime}</>)}
+          </div>
+          {showProgress ? 
+            <div className="bg-transparent text-base text-green py-0 px-[34px] rounded-[20px] font-bold border border-green h-[58px] flex justify-center items-center">CONFIRM</div> 
+          : 
+            <Button onClick={handleClose} sx={{
+              backgroundImage: 'linear-gradient(to bottom, #32FF9D, #1E995E)', fontSize: '16px', color: 'black', padding: '0px 34px', borderRadius: '20px', fontWeight: 'bold', height: '58px', marginY: 'auto', boxShadow: '0 4px 12px 0px rgba(0, 0, 0, 0.5)',
+              '&:hover': {
+                backgroundImage: 'linear-gradient(to bottom, #32FF9D, #1E995E)',
+              },
+            }}>Confirm</Button> 
+          }
+        </div>
       </DialogActions>
     </Dialog>
   );
 }
-

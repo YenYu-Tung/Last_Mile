@@ -23,21 +23,22 @@ const containerStyle = {
   backgroundPosition: 'center',
   position: 'fixed',
   top: 0,
-  left: "63%",
-  width: '33%',
+  left: "66%",
+  width: '30%',
   height: '100%',
   backgroundBlendMode: 'normal',
 } as const;
 
 const style = {
   position: 'absolute',
-  top: '15%',
+  top: '10%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   bgcolor: '#000',
   boxShadow: 24,
   p: 2,
-  borderRadius: '24px'
+  borderRadius: '24px',
+  width: '390px',
 } as const;
 
 export default function SimpleDialog(props: DialogProps) {
@@ -61,9 +62,9 @@ export default function SimpleDialog(props: DialogProps) {
 
   return (
     <Modal onClose={handleClose} open={open} className='bg-light-gray/10'>
-      <Box sx={{ ...style, width: 340 }}>
-        <div className="w-[64%] text-white py-1 pr-2">
-          <div className="border border-green rounded-md w-16 px-1 py-0.5">
+      <Box sx={{ ...style }}>
+        <div className="w-[67%] text-white py-1 pr-2">
+          <div className="rounded-md w-16">
             <img src={logo} alt="Logo" />
           </div>
           <div className="flex flex-col p-1 my-2">
@@ -78,7 +79,7 @@ export default function SimpleDialog(props: DialogProps) {
           <div className="flex w-full justify-between px-1">
             <Button onClick={handleMap} className='flex items-center'
              sx={{
-              bgcolor: '#383A3E', fontSize: '12px', color: 'white', padding: '6px 18px', borderRadius: '24px', '&:hover': {
+              bgcolor: '#383A3E', fontSize: '14px', color: 'white', padding: '8px 19px', borderRadius: '24px', '&:hover': {
                 boxShadow: '0 0 0 0.05rem #383A3E',
                 backgroundColor: '#383A3E',
               },
@@ -90,27 +91,34 @@ export default function SimpleDialog(props: DialogProps) {
                 backgroundColor: '#383A3E',
                 boxShadow: 'none',
               },
-              }}>Map <MapsHomeWorkOutlinedIcon className='text-white' style={{ fontSize: "1.2rem", marginLeft: '4px' }} />
+              }}>Map <MapsHomeWorkOutlinedIcon className='text-white' style={{ fontSize: "1.5rem", marginLeft: '8px' }} />
             </Button>
             <Button onClick={handleScan} className='flex items-center' sx={{
-              bgcolor: '#2FC97F', fontSize: '12px', color: 'white', padding: '6px 18px', borderRadius: '24px', '&:hover': {
-                boxShadow: '0 0 0 0.05rem #32FF9D',
+              bgcolor: 'transparent', fontSize: '14px', color: 'white', padding: '8px 19px',
+              border: 1,
+              borderColor: '#32FF9D',
+              borderRadius: '24px', 
+              '&:hover': {
+                boxShadow: 'none',
                 backgroundColor: '#2FC97F',
+                color: 'black'
               },
               '&:active': {
                 boxShadow: 'none',
-                backgroundColor: '#2FC97F',
+                backgroundColor: '#32FF9D',
+                color: 'black'
               },
               '&:focus': {
-                backgroundColor: '#2FC97F',
+                backgroundColor: '#32FF9D',
                 boxShadow: 'none',
+                color: 'black'
               },
-            }}>Scan <QrCodeScannerRoundedIcon className='text-white' style={{ fontSize: "1.2rem", marginLeft: '4px' }} /></Button>
+            }}>Scan <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "1.5rem", marginLeft: '8px' }} /></Button>
           </div>
 
 
         </div>
-        <div className="w-[36%]" style={containerStyle}>
+        <div className="w-[30%]" style={containerStyle}>
 
         </div>
 
