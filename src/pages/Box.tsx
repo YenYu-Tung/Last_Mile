@@ -19,13 +19,6 @@ export default function Box({ setValue }: BoxProps){
     setValue('none');
   };
 
-  // useEffect(() => {
-  //   const gif = document.getElementById('close_gif');
-  //   if (gif) {
-  //     gif.playbackRate = 2; // 调整播放速度，例如 2 表示加快两倍
-  //   }
-  // }, []);
-
   return (
     <div className="bg-black" style={{ height: "100vh" }}>
       <div className="flex flex-col justify-end items-center h-[70%] lg:h-[65%]">
