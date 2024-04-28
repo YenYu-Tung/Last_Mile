@@ -42,10 +42,9 @@ const theme = createTheme({
 export default function App() {
 
     const [value, setValue] = useState('none'); 
-    const [topPosition, setTopPositon] = useState(932); 
+    const [topPosition, setTopPositon] = useState(860); 
 
     useEffect(() => {
-        const path = window.location.hash;
         const windowHeight = window.innerHeight;
         const offset = 72;
         const newTopPosition = windowHeight - offset;
@@ -54,12 +53,15 @@ export default function App() {
         }else{
             setTopPositon(newTopPosition);
         }
-        
+    }, []);
+
+    useEffect(() => {
+        const path = window.location.hash;
         /* eslint-disable-next-line */
         const match = path.match(/^#\/([^\/]+)\/?([^\/]+)?\/?([^\/]+)?$/);
         if (match) {
             const segments = match.slice(1).filter(Boolean);
-            if(segments.length === 1){
+            if (segments.length === 1) {
                 if (segments[0] === 'delivery') setValue('delivery');
                 else if (segments[0] === 'deliverymap') setValue('delivery');
                 else if (segments[0] === 'locker') setValue('locker');
@@ -68,7 +70,7 @@ export default function App() {
                 else if (segments[0] === 'login') setValue('none');
                 else if (segments[0] === 'signup') setValue('none');
                 else setValue('none');
-            }else{
+            } else {
                 setValue('none');
             }
             if (segments.length === 1) {
@@ -79,7 +81,7 @@ export default function App() {
         } else {
             setValue('none');
             setThemeMode('dark');
-        }         
+        }
     }, []);
 
     const isBottomNavigationVisible =
