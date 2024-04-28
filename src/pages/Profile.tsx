@@ -200,7 +200,7 @@ export default function Profile({ setValue, thememode, toggleTheme }: ProfilePro
           </ListItem>
         </List>
       </div>
-      <div className={`flex-1 mt-1 pb-24 ${thememode === 'light' ? 'bg-white drop-shadow-2xl' : 'bg-exdark'} rounded-t-[35px]`} style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className={`flex-1 mt-1 pb-20 ${thememode === 'light' ? 'bg-white drop-shadow-2xl' : 'bg-exdark'} rounded-t-[35px]`} style={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ paddingX: 2, paddingY: 1.5, flex: 1}}>
           <Tabs value={num} onChange={handleChange} aria-label="basic tabs example"
             sx={{
@@ -231,8 +231,8 @@ export default function Profile({ setValue, thememode, toggleTheme }: ProfilePro
             }} >
               <img className="w-[4.85rem]" src={badgeImage1} alt="Badge1" />
               <img className="w-[4.8rem]" src={badgeImage2} alt="Badge2" />
-              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.5rem]'}`} src={badgeImage3} alt="UnknownBadge" />
-              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.5rem]'}`} src={badgeImage3} alt="UnknownBadge" />
+              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.3rem]'}`} src={badgeImage3} alt="UnknownBadge" />
+              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.3rem]'}`} src={badgeImage3} alt="UnknownBadge" />
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>

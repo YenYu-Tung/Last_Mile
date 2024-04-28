@@ -233,7 +233,7 @@ export default function Home({ setValue }: HomeProps) {
                 <img className="w-16 xs:w-20" src={escort} alt="escort" />
                 <div className='flex flex-col h-full justify-center gap-1'>
                   <span className='flex text-2xl font-bold text-white items-end'>
-                    <span className='max-w-20 web:max-w-32 truncate'>ESCORT</span>
+                    <span className='max-w-24 web:max-w-32 truncate'>ESCORT</span>
                     <CheckCircleRoundedIcon className='text-green ml-1 mb-1' sx={{ fontSize: 12 }} />
                   </span>
                   <Chip
@@ -257,11 +257,11 @@ export default function Home({ setValue }: HomeProps) {
                         height: '22px'
                       },           
                     }} />
-                  <span className='text-light-gray text-sm font-bold max-w-20 web:max-w-32  truncate'>
-                    #HUT-51136JGV
-                    <IconButton className='p-0' onClick={() => handleCopy('#HUT-51136JGV')}>
+                  <span className='flex text-light-gray text-sm font-bold items-end'>
+                    <span className='max-w-24 web:max-w-32 truncate'>#HUT-51136JGV</span>
+                    <IconButton onClick={() => handleCopy('#HUT-51136JGV')} sx={{ padding: 0, marginBottom: '4px', paddingLeft: '4px' }}>
                       <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
-                    </IconButton>                    
+                    </IconButton>
                   </span>
                 </div>
               </div>              
@@ -274,7 +274,7 @@ export default function Home({ setValue }: HomeProps) {
                 <img className="w-16 xs:w-20" src={toys} alt="fishing toys" />
                 <div className='flex flex-col h-full justify-center gap-1'>
                   <span className='flex text-2xl font-bold text-white items-end'>
-                    <span className='max-w-20 web:max-w-32 truncate'>FISHING TOYS</span>                    
+                    <span className='max-w-24 web:max-w-32 truncate'>FISHING TOYS</span>                    
                     <CheckCircleRoundedIcon className='text-green ml-1 mb-1' sx={{ fontSize: 12 }} />
                   </span>
                   <Chip
@@ -298,11 +298,11 @@ export default function Home({ setValue }: HomeProps) {
                         height: '22px'
                       },           
                     }} />
-                  <span className='text-light-gray text-sm font-bold max-w-20 web:max-w-32  truncate'>
-                    #RWQ-51F9711D
-                    <IconButton className='p-0' onClick={() => handleCopy('#RWQ-51F9711D')}>
+                  <span className='flex text-light-gray text-sm font-bold items-end'>
+                    <span className='max-w-24 web:max-w-32 truncate'>#RWQ-51F9711D</span>
+                    <IconButton onClick={() => handleCopy('#RWQ-51F9711D')} sx={{ padding: 0, marginBottom: '4px', paddingLeft: '4px'}}>
                       <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
-                    </IconButton> 
+                    </IconButton>                   
                   </span>
                 </div>
               </div>              
@@ -319,7 +319,7 @@ export default function Home({ setValue }: HomeProps) {
                 <img className="w-16 xs:w-20" src={glasses} alt="glasses" />
                 <div className='flex flex-col h-full justify-center gap-1'>
                   <span className='flex text-2xl font-bold text-white items-end'>
-                    <span className='max-w-20 web:max-w-32 truncate'>AIR MASK</span>                    
+                    <span className='max-w-24 web:max-w-32 truncate'>AIR MASK</span>                    
                     <CheckCircleRoundedIcon className='text-green ml-1 mb-1.5' sx={{ fontSize: 12 }} />
                   </span>
                   <Chip
@@ -343,11 +343,11 @@ export default function Home({ setValue }: HomeProps) {
                         height: '22px'
                       },
                     }} />
-                  <span className='text-light-gray text-sm font-bold max-w-20 web:max-w-32  truncate'>
-                    #5UR-4FWQFVP3
-                    <IconButton className='p-0' onClick={() => handleCopy('#5UR-4FWQFVP3')}>
+                  <span className='flex text-light-gray text-sm font-bold items-end'>
+                    <span className='max-w-24 web:max-w-32 truncate'>#5UR-4FWQFVP3</span>
+                    <IconButton onClick={() => handleCopy('#5UR-4FWQFVP3')} sx={{ padding: 0, marginBottom: '4px', paddingLeft: '4px' }}>
                       <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
-                    </IconButton> 
+                    </IconButton>
                   </span>
                 </div>
               </div>
@@ -360,7 +360,7 @@ export default function Home({ setValue }: HomeProps) {
                 <img className="w-16 xs:w-20" src={tripod} alt="tripod" />
                 <div className='flex flex-col h-full justify-center gap-1'>
                   <span className='flex text-2xl font-bold text-white items-end'>
-                    <span className='max-w-20 web:max-w-32  truncate'>TRIPOD</span>
+                    <span className='max-w-24 web:max-w-32  truncate'>TRIPOD</span>
                     <CheckCircleRoundedIcon className='text-green ml-1 mb-1.5' sx={{ fontSize: 12 }} />
                   </span>
                   <Chip
@@ -384,11 +384,12 @@ export default function Home({ setValue }: HomeProps) {
                         height: '22px'
                       },
                     }} />
-                  <span className='text-light-gray text-sm font-bold max-w-20 web:max-w-32  truncate'>
-                    #POR-FS5J964R
-                    <IconButton className='p-0' onClick={() => handleCopy('#POR-FS5J964R')}>
+
+                  <span className='flex text-light-gray text-sm font-bold items-end'>
+                    <span className='max-w-24 web:max-w-32 truncate'>#POR-FS5J964R</span>
+                    <IconButton onClick={() => handleCopy('#POR-FS5J964R')} sx={{ padding: 0, marginBottom: '4px', paddingLeft: '4px' }}>
                       <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
-                    </IconButton> 
+                    </IconButton>
                   </span>
                 </div>
               </div>
