@@ -225,14 +225,18 @@ export default function Profile({ setValue, thememode, toggleTheme }: ProfilePro
           </Tabs>
           <CustomTabPanel value={num} index={0}>
             <Box sx={{
-              display: 'flex',
               alignItems: 'flex-start',
-              flexDirection: 'row', pt: 3, px: 1, gap: 2, flexWrap: 'wrap'
+              flexDirection: 'row', pt: 3, px: 1, gap: 2, flexWrap: 'wrap',
+              display: 'grid',
+              justifyContent: 'flex-start',
+              gridTemplateColumns: {
+                xs: 'repeat(4, 1fr)',
+              },
             }} >
-              <img className="w-[4.85rem]" src={badgeImage1} alt="Badge1" />
-              <img className="w-[4.8rem]" src={badgeImage2} alt="Badge2" />
-              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.3rem]'}`} src={badgeImage3} alt="UnknownBadge" />
-              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.3rem]'}`} src={badgeImage3} alt="UnknownBadge" />
+              <img className={`${thememode === 'light' ? 'w-[4.85rem]' : 'w-[4.5rem]'}`} src={badgeImage1} alt="Badge1" />
+              <img className={`${thememode === 'light' ? 'w-[4.8rem]' : 'w-[4.45rem]'}`} src={badgeImage2} alt="Badge2" />
+              <img className={`${thememode === 'light' ? 'w-[4.8rem]' : 'w-[5.5rem]'}`} src={badgeImage3} alt="UnknownBadge" />
+              <img className={`${thememode === 'light' ? 'w-[4.8rem]' : 'w-[5.5rem]'}`} src={badgeImage3} alt="UnknownBadge" />
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>
