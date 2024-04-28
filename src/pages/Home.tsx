@@ -145,7 +145,7 @@ export default function Home({ setValue }: HomeProps) {
   };
 
   return (
-    <div className="bg-dark pb-24 w-full min-h-full">
+    <div className="bg-dark pb-36 w-full min-h-full">
       <Snackbar
         open={snackbarOpen}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
