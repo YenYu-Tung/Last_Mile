@@ -16,8 +16,8 @@ export default function Success({ setValue }: SuccessProps) {
   };
 
   return (
-    <div className="bg-black" style={{ height: "100vh" }}>
-      <div className="flex flex-col justify-end items-center h-[75%] lg:h-[65%]">
+    <div className="w-full h-full bg-black">
+      <div className="flex flex-col justify-end items-center h-[75%]">
         <span className="text-green text-5xl font-bold mb-4">Success!</span>
 
         {/* <div className="relative p-4 mx-auto mt-10 max-w-xs rounded-lg text-white border border-solid border-white text-center">
@@ -31,7 +31,7 @@ export default function Success({ setValue }: SuccessProps) {
         </div>
         <img className="w-72 mt-3" src={close} alt="Close the door" />
       </div>
-      <div className="h-[25%] lg:h-[35%] flex flex-col justify-start items-center p-12">
+      <div className="h-[25%] flex flex-col justify-start items-center p-12">
         <button className="text-green text-xl font-bold py-3 rounded-[18px] border border-green bg-transparent hover:bg-gradient-to-r from-[#7CFFC0] via-[#32FF9D] to-[#00ff85] hover:text-black w-3/4" onClick={handleNavigate}>
           Back to home
         </button>

@@ -40,7 +40,7 @@ export default function Account({ setValue }: AccountProps) {
   };
 
   return (
-    <div className="bg-dark w-full flex flex-col" style={{ minHeight: "100vh" }}>
+    <div className="bg-dark flex flex-col w-full h-full relative">
       <div className='flex w-full h-20 justify-center items-center'>
         <span className='absolute top-6.5 left-4'>
           <button onClick={handleNavigate}>
@@ -166,7 +166,7 @@ export default function Account({ setValue }: AccountProps) {
         </List>
       </div>
 
-      <div className="flex flex-col px-6 w-full fixed bottom-10 items-center justify-center">
+      <div className="flex flex-col px-6 w-full absolute bottom-10 items-center justify-center">
         <span className='text-green text-sm'>Last v 5.4</span>
         <button className='w-full text-white text-lg border border-white py-3.5 rounded-full mt-2' onClick={handleLogout}>
           Sign out

@@ -7,25 +7,25 @@ import ProgressBar from "../components/ScanProgressBar";
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import IconButton from '@mui/material/IconButton';
 
-import car from "/car.svg";
+// import car from "/car.svg";
 import successicon from "/successicon.svg";
 
 type ScanProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
-const containerStyle = {
-  backgroundImage: `url(${car})`,
-  backgroundColor: 'rgba(20, 21, 22, 0.9)',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  backgroundBlendMode: 'multiply',
-} as const;
+// const containerStyle = {
+//   backgroundImage: `url(${car})`,
+//   backgroundColor: 'rgba(20, 21, 22, 0.9)',
+//   backgroundSize: 'cover',
+//   backgroundRepeat: 'no-repeat',
+//   backgroundPosition: 'center',
+//   position: 'fixed',
+//   top: 0,
+//   left: 0,
+//   width: '100%',
+//   height: '100%',
+//   backgroundBlendMode: 'multiply',
+// } as const;
 
 export default function Scan({ setValue }: ScanProps) {
 
@@ -55,7 +55,7 @@ export default function Scan({ setValue }: ScanProps) {
 
 
   return (
-    <div style={containerStyle}>
+    <div className='w-full h-full bg-dark'>
       {(start && progress === 100) && <div className="absolute top-[26%] w-full flex justify-center"><img className="w-28" src={successicon} alt="Success" /></div>}
 
       <div className="flex flex-col h-3/4 p-4">
@@ -68,7 +68,7 @@ export default function Scan({ setValue }: ScanProps) {
 
         <div className="flex flex-col justify-start items-center h-1/4">
           <span className="text-green text-xl font-bold">Receive with QRcode</span>
-          <span className="text-white text-lg font-500 mt-2 w-[270px] sm:w-full text-center">Please put the receive qrcode in front of the camera to scan</span>
+          <span className="text-white text-lg font-500 mt-2 w-[270px] text-center">Please put the receive qrcode in front of the camera to scan</span>
         </div>
       </div>
       

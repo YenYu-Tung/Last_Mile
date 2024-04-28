@@ -41,6 +41,10 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
     setValue('none');
   };
 
+  useEffect(() => {
+    setValue('delivery');
+  }, [setValue]);
+
   const [activeStep, setActiveStep] = useState(0);
 
   const [expanded, setExpanded] = useState(true);
@@ -64,7 +68,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'cover',
-    position: 'fixed',
+    position: 'relative',
     top: 0,
     left: 0,
     width: '100%',
@@ -88,7 +92,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
   }, [activeStep]);
 
   return (
-    <div style={containerStyle} className="flex justify-center">
+    <div style={containerStyle} className="w-full h-full flex justify-center">
       <div className="w-full mt-6 ml-6">
         <button className="bg-gray rounded-full" onClick={handleNavigate}>
           <ChevronLeftRoundedIcon sx={{ color: 'white', fontSize: 40 }} />
@@ -100,7 +104,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
         } variant="outlined" sx={{ color: 'white', border: 2, borderColor: '#32FF9D', bgcolor: '#323232' }} className="absolute top-[6rem] left-[9rem]" />
         <img className="absolute top-[15rem] left-[14rem] move-left" src={people} alt="people Image" />
       </div>
-      <div className={`fixed bottom-[18%] w-[354px] bg-black rounded-t-[50px] rounded-b-[40px]`}>
+      <div className={`absolute bottom-[18%] w-[354px] bg-black rounded-t-[50px] rounded-b-[40px]`}>
         <button
           onClick={toggleAccordion}
           className={`flex justify-between items-center w-full p-4 rounded-t-[50px]  bg-black ${expanded ? 'h-[75px]' : 'h-[45px]'}`}
@@ -158,7 +162,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
                 <div className="flex gap-4">
                   <div className="flex gap-2">
                     <img className="w-6" src={getitem} alt="getitem" />
-                    <div className='flex flex-col text-2xl font-bold text-white items-start gap-1'>
+                    <div className='flex flex-col text-2xl font-bold text-white items-start gap-[1px]'>
                       <span className='text-xxs text-gray'>
                         Pickup Way
                       </span>
@@ -167,22 +171,22 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
                       </span>
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 mb-1">
                     <img className="w-6" src={store} alt="store" />
-                    <div className='flex flex-col text-2xl font-bold text-white items-start gap-1'>
+                    <div className='flex flex-col text-2xl font-bold text-white items-start gap-[1px]'>
                       <span className='text-xxs text-gray'>
                         Platform
                       </span>
                       <span className='text-xs flex gap-1 font-medium'>
-                        <img className="w-4" src={santa} alt="santa" />
+                        <img className="w-3" src={santa} alt="santa" />
                         Santa
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <img className="w-6" src={location} alt="location" />
-                  <div className='flex flex-col text-2xl font-bold text-white items-start gap-1'>
+                  <img className="w-7" src={location} alt="location" />
+                  <div className='flex flex-col text-2xl font-bold text-white items-start gap-[1px]'>
                     <span className='text-xxs text-gray'>
                       Address
                     </span>
@@ -196,7 +200,7 @@ export default function DeliveryMap({ setValue }: DeliveryMapProps) {
             </div>
           </div>
           <div className='w-full flex justify-center'>
-            <button className='text-green border-2 border-green rounded-full px-4 py-3 w-11/12 sm:w-3/4 font-bold shadow-3xl text-2xl' onClick={handleQrcode}>
+            <button className='text-green border-2 border-green rounded-full px-4 py-3 w-11/12 font-bold shadow-3xl text-2xl' onClick={handleQrcode}>
               <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "1.7rem" }} /> Scan
             </button>
           </div>

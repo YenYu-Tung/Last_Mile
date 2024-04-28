@@ -101,7 +101,7 @@ export default function List({ setValue }: ListProps){
   };
 
   return (
-    <div className="bg-dark w-full" style={{ minHeight: "100vh" }}>
+    <div className="bg-dark w-full min-h-full">
       <Snackbar
         open={snackbarOpen}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -116,7 +116,7 @@ export default function List({ setValue }: ListProps){
               <ChevronLeftRoundedIcon sx={{ color: '#898989', fontSize: 48 }} />
             </button>
           </span>
-          <img className="w-28 sm:w-40" src={logo} alt="Logo" />
+          <img className="w-28" src={logo} alt="Logo" />
           <IconButton aria-label="qrcode" onClick={handleQrcode}>
             <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "2rem" }} />
           </IconButton>
@@ -165,9 +165,9 @@ export default function List({ setValue }: ListProps){
                         <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
                       </IconButton>   
                     </span>
-                    <span className='text-white text-xs sm:text-sm flex items-start max-w-60 truncate'>
+                    <span className='text-white text-xs flex items-start'>
                       <LocationOnIcon className='text-green mr-1' sx={{ fontSize: 17 }} />
-                      <span className='max-w-72 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
+                      <span className='max-w-48 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
                     </span>
                   </div>
 
@@ -201,7 +201,7 @@ export default function List({ setValue }: ListProps){
                   <img className="w-20" src={toys} alt="fishing toys" />
                   <div className='flex flex-col h-full justify-center gap-1'>
                     <span className='flex text-2xl font-bold text-white items-end'>
-                      <span className='max-w-44 truncate'>FISHING TOYS</span>
+                      <span className='max-w-36 web:max-w-44 truncate'>FISHING TOYS</span>
                       <CheckCircleRoundedIcon className='text-green ml-1 mb-1.5' sx={{ fontSize: 12 }} />
                     </span>
                     <span className='text-exlight-gray text-sm font-bold'>
@@ -210,9 +210,9 @@ export default function List({ setValue }: ListProps){
                         <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
                       </IconButton> 
                     </span>
-                    <span className='text-white text-xs sm:text-sm flex items-start max-w-60 truncate'>
+                    <span className='text-white text-xs flex items-start'>
                       <LocationOnIcon className='text-green mr-1' sx={{ fontSize: 17 }} />
-                      <span className='max-w-72 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
+                      <span className='max-w-48 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
                     </span>
                   </div>
 
@@ -255,9 +255,9 @@ export default function List({ setValue }: ListProps){
                         <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
                       </IconButton> 
                     </span>
-                    <span className='text-white text-xs sm:text-sm flex items-start max-w-60 truncate'>
+                    <span className='text-white text-xs flex items-start'>
                       <LocationOnIcon className='text-green mr-1' sx={{ fontSize: 17 }} />
-                      <span className='max-w-72 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
+                      <span className='max-w-48 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
                     </span>
                   </div>
 
@@ -303,9 +303,9 @@ export default function List({ setValue }: ListProps){
                         <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
                       </IconButton>
                     </span>
-                    <span className='text-white text-xs sm:text-sm flex items-start max-w-60 truncate'>
+                    <span className='text-white text-xs flex items-start'>
                       <LocationOnIcon className='text-green mr-1' sx={{ fontSize: 17 }} />
-                      <span className='max-w-72 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
+                      <span className='max-w-48 runcate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
                     </span>
                   </div>
 
@@ -348,9 +348,9 @@ export default function List({ setValue }: ListProps){
                         <ContentCopyRoundedIcon className='text-light-gray' sx={{ fontSize: 12 }} />
                       </IconButton> 
                     </span>
-                    <span className='text-white text-xs sm:text-sm flex items-start max-w-60 truncate'>
+                    <span className='text-white text-xs flex items-start'>
                       <LocationOnIcon className='text-green mr-1' sx={{ fontSize: 17 }} />
-                      <span className='max-w-72 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
+                      <span className='max-w-48 truncate'>No. 122, Sec. 1, Chongqing S. Rd., Zhongzheng District</span>
                     </span>
                   </div>
                   
@@ -384,7 +384,7 @@ export default function List({ setValue }: ListProps){
 
       
       <Divider variant="middle" sx={{
-        color: '#898989', '&.MuiDivider-root::before, &.MuiDivider-root::after': {
+        color: '#898989', height: '56px', alignItems: 'center' , '&.MuiDivider-root::before, &.MuiDivider-root::after': {
           borderTop: '1px solid #898989',
         }
       }} >No more</Divider>

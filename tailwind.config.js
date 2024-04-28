@@ -11,7 +11,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: '360px',
+        xs: '380px',
+        web: '430px',
       },
       colors: {
         'green': '#32FF9D',
@@ -40,7 +41,7 @@ export default {
       lg: ['18px', '28px'],
       xl: ['20px', '32px'],
       '2xl': ['24px', '32px'],
-      '3xl': ['30px', '36px'],
+      '3xl': ['30px', '34px'],
       '4xl': ['36px', '40px'],
       '5xl': ['42px', '44px']
     },

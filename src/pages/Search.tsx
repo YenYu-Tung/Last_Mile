@@ -89,7 +89,7 @@ export default function Search({ setValue }: SearchProps) {
 
 
   return (
-    <div className="bg-dark w-full" style={{ minHeight: "100vh" }}>
+    <div className="bg-dark w-full h-full">
       <div className='flex flex-col m-auto w-11/12 pt-8'>
         <div className="flex justify-between items-center">
           <span className='text-gray'>
@@ -97,13 +97,13 @@ export default function Search({ setValue }: SearchProps) {
               <ChevronLeftRoundedIcon sx={{ color: '#898989', fontSize: 48 }} />
             </button>
           </span>
-          <img className="w-28 sm:w-40" src={logo} alt="Logo" />
+          <img className="w-28" src={logo} alt="Logo" />
           <IconButton aria-label="qrcode" onClick={handleQrcode}>
             <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "2rem" }} />
           </IconButton>
         </div>
       </div>
-      <div className='flex flex-col m-auto w-full justify-center align-middle px-6 py-5 sm:px-12'>
+      <div className='flex flex-col m-auto w-full justify-center align-middle px-6 py-5'>
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', border: '1px solid #898989', borderRadius: '58px', padding: '0 8px' }}>
           <SearchRoundedIcon sx={{ color: '#898989', fontSize: 28 }} />
           <Divider orientation="vertical" variant="middle" flexItem

@@ -65,13 +65,15 @@ export default function SimpleDialog(props: DialogProps) {
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
+    <Dialog onClose={handleClose} open={open} sx={{
+      height: '100%'
+    }}>
       <DialogTitle className="flex flex-col font-bold" sx={{
         paddingBottom: '0'
       }}>
         <div className="flex pb-4 gap-4 justify-center items-center">
           <img className="w-20" src={`/${image}.svg`} alt="image" />
-          <div className={isChecked ? 'text-green' : 'text-white'}>
+          <div className={`flex flex-col ${isChecked ? 'text-green' : 'text-white'}`}>
             <span className="text-white">
               {title}
               <CheckCircleRoundedIcon className='text-green ml-1' sx={{ fontSize: 12 }} />
@@ -87,7 +89,7 @@ export default function SimpleDialog(props: DialogProps) {
               onChange={handleCheckboxChange}
               checkedIcon={<SquareRoundedIcon />}
             />} label="Send to Locker" sx={{
-              marginRight: '0', justifyContent: 'end', padding: '0px 0px 4px 0px'
+              marginRight: '0', justifyContent: 'end', padding: '0px 0px 4px 3px'
             }} />
           </div>
         </div>
@@ -108,7 +110,7 @@ export default function SimpleDialog(props: DialogProps) {
             <ListItem disableGutters key={Date} sx={{
               py: 0.5,
             }}>
-              <ListItemButton onClick={() => handleListItemClick(Date)} disabled={isChecked}
+              <ListItemButton onClick={() => handleListItemClick(Date)} 
                 sx={{
                   px: 1, borderRadius: "8px", mx: 1, py: 1.5,
                   '&:hover': {
@@ -124,7 +126,7 @@ export default function SimpleDialog(props: DialogProps) {
                     boxShadow: 'none',
                     color: 'black'
                   },
-                  ...(index === changedIndex && !isChecked && { backgroundColor: '#32FF9D', color: 'black' }) 
+                  ...(index === changedIndex && { backgroundColor: '#32FF9D', color: 'black' }) 
                 }}>
                 {/* <ListItemAvatar>
                   <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
@@ -145,9 +147,9 @@ export default function SimpleDialog(props: DialogProps) {
         </List>
       </DialogContent>
       <DialogActions>
-        <div className="flex w-full justify-between px-[18px] pb-[6px]">
+        <div className="flex w-full justify-between px-[18px] pb-[6px] gap-4">
           <div className="flex justify-center items-center shadow-3xl rounded-[20px] py-[14px] w-[140px] h-[60px] text-2xl">
-            {showProgress ? <CircularProgress sx={{ color: '#B4B4B4', marginRight: 1 }} disableShrink size={24}/> : (isChecked ? "Locker" : <><AccessTimeRoundedIcon sx={{ color: '#32FF9D', marginRight: 1 }} />{changedTime}</>)}
+            {showProgress ? <CircularProgress sx={{ color: '#B4B4B4', marginRight: 1 }} disableShrink size={24} /> : <><AccessTimeRoundedIcon sx={{ color: '#32FF9D', marginRight: 1 }} />{changedTime}</>}
           </div>
           {showProgress ? 
             <div className="bg-transparent text-base text-green py-0 px-[34px] rounded-[20px] font-bold border border-green h-[58px] flex justify-center items-center">CONFIRM</div> 

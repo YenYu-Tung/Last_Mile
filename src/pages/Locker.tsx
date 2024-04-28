@@ -10,6 +10,8 @@ import birde from "/birde.svg";
 
 import { useNavigate } from 'react-router-dom';
 
+import { useEffect } from 'react';
+
 const generateTable = () => {
   const rows = 4;
   const columns = 5;
@@ -48,8 +50,12 @@ export default function Locker({ setValue }: LockerProps) {
     setValue('none');
   };
 
+  useEffect(() => {
+    setValue('locker');
+  }, [setValue]);
+
   return (
-    <div className="bg-dark" style={{ minHeight: "100vh" }}>
+    <div className="bg-dark w-full min-h-full">
       <div className='flex flex-col justify-center items-center pt-4 w-full'>
         <div className='flex flex-col m-auto w-11/12'>
           <span className='text-gray ml-2 text-lg'>
@@ -83,7 +89,7 @@ export default function Locker({ setValue }: LockerProps) {
             <tbody className=''>{generateTable()}</tbody>
           </table>
         </div>
-        <div className='flex flex-col m-auto w-11/12 mt-2 pb-20'>
+        <div className='flex flex-col m-auto w-11/12 mt-2 pb-24'>
           <div className='w-full py-6 flex flex-col gap-8'>
             <div className='w-full h-48 rounded-[25px] border border-[#363A40] flex justify-center bg-[#26292E] shadow-xl flex-col'>
               <div className='w-full flex h-3/5 pb-4'>
@@ -138,7 +144,7 @@ export default function Locker({ setValue }: LockerProps) {
                 </button>
               </div>
               <div className='w-full flex justify-center'>
-                <button className='bg-green rounded-full px-4 py-3 w-11/12 sm:w-3/4 font-bold shadow-3xl' onClick={handleQrcode}>
+                <button className='bg-green rounded-full px-4 py-3 w-11/12 font-bold shadow-3xl' onClick={handleQrcode}>
                   Pick Up Order
                 </button>
               </div>
@@ -196,7 +202,7 @@ export default function Locker({ setValue }: LockerProps) {
                 </button>
               </div>
               <div className='w-full flex justify-center'>
-                <button className='bg-green rounded-full px-4 py-3 w-11/12 sm:w-3/4 font-bold shadow-3xl' onClick={handleQrcode}>
+                <button className='bg-green rounded-full px-4 py-3 w-11/12 font-bold shadow-3xl' onClick={handleQrcode}>
                   Pick Up Order
                 </button>
               </div>

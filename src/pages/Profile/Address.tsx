@@ -83,7 +83,7 @@ export default function Address({ setValue }: AddressProps) {
  
 
   return (
-    <div className="bg-dark w-full min-h-screen">
+    <div className="bg-dark w-full min-h-full relative">
       <div className='flex flex-col m-auto w-11/12 pt-6'>
         <div className="flex justify-center items-center">
           <span className='absolute top-6.5 left-4'>
@@ -98,7 +98,7 @@ export default function Address({ setValue }: AddressProps) {
       <div className="flex flex-col gap-3 items-start px-6 py-3 w-full mt-4">
         <span className='text-lg text-white'>Current Address</span>
         
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="w-full grid grid-cols-1 gap-4">
           <div className='flex w-full h-[100px] rounded-2xl border border-light-gray hover:border-green text-white hover:text-green' onMouseEnter={() => setHoveredDiv(0)}
             onMouseLeave={() => setHoveredDiv(null)}>
             <div className='w-[22%] m-auto'>
@@ -148,7 +148,7 @@ export default function Address({ setValue }: AddressProps) {
           <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', border: '1px solid #898989', borderRadius: '1rem' }}>
             <LocationOnIcon sx={{ color: '#898989', fontSize: 28 }} />
             <FormControl variant="standard" sx={{ display: 'flex', width: '80%', justifyContent: 'center' }}>
-              <BootstrapInput defaultValue="Search location" id="bootstrap-input" />
+              <BootstrapInput placeholder="Search location" id="bootstrap-input" />
             </FormControl>
           </Box>
 

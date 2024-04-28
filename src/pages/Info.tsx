@@ -59,7 +59,7 @@ export default function Info({ setValue }: InfoProps) {
   };
 
   return (
-    <div className="flex flex-col bg-dark w-full overflow-auto" style={{ height: "100vh" }}>
+    <div className="flex flex-col bg-dark w-full h-full overflow-auto">
       <Snackbar
         open={snackbarOpen}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -74,13 +74,13 @@ export default function Info({ setValue }: InfoProps) {
               <ChevronLeftRoundedIcon sx={{ color: '#898989', fontSize: 48 }} />
             </button>
           </span>
-          <img className="w-28 sm:w-40" src={logo} alt="Logo" />
+          <img className="w-28" src={logo} alt="Logo" />
           <IconButton aria-label="qrcode" onClick={handleAsistant}>
             <SupportAgentRoundedIcon className='text-white' style={{ fontSize: "2rem" }} />
           </IconButton>
         </div>
       </div>
-      <div className='flex m-auto w-full justify-start align-middle px-8 py-5 text-white gap-6'>
+      <div className='flex m-auto w-full justify-start align-middle px-8 py-5 text-white gap-4'>
         <img src={`/${imgSrc}.svg`} alt={good} className="w-20" />    
         <div className='flex flex-col h-full justify-center gap-1'>
           <span className='flex text-2xl font-bold text-white items-end'>
@@ -93,7 +93,7 @@ export default function Info({ setValue }: InfoProps) {
               <span className='text-white font-semibold'>New York</span>
               <span className='text-[#676E7A]'>12.02.2023</span>
             </div>
-            <img src={`/ship.svg`} alt="ship" className='mx-2'/>  
+            <img src={`/ship.svg`} alt="ship" className='mx-2 w-6'/>  
             <FiberManualRecordOutlinedIcon className='text-white' style={{ fontSize: "1rem" }} />
             <div className='flex flex-col ml-2'>
               <span className='text-white font-semibold'>Taipei</span>
@@ -115,7 +115,7 @@ export default function Info({ setValue }: InfoProps) {
         <Divider variant="middle" sx={{ border: 1, borderColor: '#797979' }} />
         <div className="flex px-12 mt-9">
           {/* <Stepper /> */}
-          <img className="w-[18px] pb-12 mt-1.5" src={infostepper} alt="Logo" />
+          <img className="w-[18px] pb-11 mt-1.5" src={infostepper} alt="Logo" />
           <div className='ml-4'>
             <div className='flex flex-col h-[125px]'>
               <span className='text-green text-lg'>Clearing customs</span>

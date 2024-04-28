@@ -19,7 +19,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 function LinearProgressWithLabel(props: LinearProgressProps & { value: number, time: number }) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', gap: 1 }}>
-      <Box sx={{ width: '82%' }}>
+      <Box sx={{ width: '80%' }}>
         <BorderLinearProgress variant="determinate" {...props} />
       </Box>
       <Box sx={{ minWidth: 35 }}>

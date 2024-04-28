@@ -43,13 +43,15 @@ export default function SimpleDialogDemo(props: DialogShowProps) {
           <ArrowRightRoundedIcon sx={{ color: '#32FF9D', fontSize: 40 }} />
         </button>
         {isLocker ?
-          <div className="h-[4.5rem] flex flex-col w-1/3 rounded-2xl justify-center items-start bg-teel-gray shadow-xl px-5">
-            <span className="text-white text-xs">Send to</span>
-            <span className="text-white text-xl font-bold">LOCKER</span>
+          <div className="h-[4.5rem] flex flex-col w-1/3 rounded-2xl justify-center items-center bg-teel-gray shadow-xl">
+            <div className="flex flex-col">
+                <span className="text-white text-xs">Send to</span>
+                <span className="text-white text-xl font-bold">LOCKER</span>
+            </div>
           </div> :
           <div className="h-[4.5rem] flex flex-col w-1/3 rounded-2xl justify-center items-center bg-teel-gray shadow-xl">
-            <span className="text-white text-xxs sm:text-xs">Package <span className="text-green ml-1">ETA</span></span>
-            <span className="text-white text-2xl sm:text-2xl font-bold">{selectedTime}</span>
+            <span className="text-white text-xxs">Package <span className="text-green ml-1">ETA</span></span>
+            <span className="text-white text-2xl font-bold">{selectedTime}</span>
           </div>}
         <Dialog
           num={props.num}
@@ -69,8 +71,8 @@ export default function SimpleDialogDemo(props: DialogShowProps) {
           <ArrowRightRoundedIcon sx={{ color: '#999999', fontSize: 40 }} />
         </div>
         <div className="h-[4.5rem] flex flex-col w-1/3 rounded-2xl justify-center items-center bg-teel-gray shadow-xl">
-          <span className="text-white text-xxs sm:text-xs">Package <span className="text-green ml-1">ETA</span></span>
-          <span className="text-white text-2xl sm:text-2xl font-bold">--:--</span>
+          <span className="text-white text-xxs">Package <span className="text-green ml-1">ETA</span></span>
+          <span className="text-white text-2xl font-bold">--:--</span>
         </div>
         <Dialog
           num={props.num}

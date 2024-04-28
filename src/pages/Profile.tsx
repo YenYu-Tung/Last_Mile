@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 
@@ -93,17 +93,21 @@ export default function Profile({ setValue, thememode, toggleTheme }: ProfilePro
     }
   };
 
+  useEffect(() => {
+    setValue('profile');
+  }, [setValue]);
+
   const badgeImage1 = thememode === 'light' ? badge1_orange : badge1;
   const badgeImage2 = thememode === 'light' ? badge2_orange : badge2;
   const badgeImage3 = thememode === 'light' ? unknownbadge_orange : unknownbadge;
 
   return (
-    <div className={thememode === 'light' ? 'flex flex-col bg-day' : 'flex flex-col bg-dark'} style={{ minHeight: "100vh" }}>
-      <div className='flex flex-col sm:flex-row justify-center items-center h-72 gap-2'>
+    <div className={thememode === 'light' ? 'flex flex-col bg-day w-full min-h-full' : 'flex flex-col bg-dark w-full min-h-full'}>
+      <div className='flex flex-col justify-center items-center h-72 gap-2'>
         <Avatar alt="Avatar" src={avatar} sx={{
           width: '90px', height: '90px', border: 2,
           borderColor: thememode === 'light' ? '#FF862E' : '#32FF9D' }}  />
-          <div className="flex flex-col gap-2 items-center sm:ml-2">
+          <div className="flex flex-col gap-2 items-center">
           <span className={thememode === 'light' ? 'text-3xl text-[#383C42] font-bold' : 'text-3xl text-white font-bold'}>Tiffany921</span>
             <span className='text-base text-light-gray mb-1'>Beginner</span>
             <Chip label={
@@ -196,7 +200,7 @@ export default function Profile({ setValue, thememode, toggleTheme }: ProfilePro
           </ListItem>
         </List>
       </div>
-      <div className={`flex-1 mt-1 pb-20 ${thememode === 'light' ? 'bg-white drop-shadow-2xl shadow-3xl' : 'bg-exdark'} rounded-t-[35px]`} style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className={`flex-1 mt-1 pb-24 ${thememode === 'light' ? 'bg-white drop-shadow-2xl' : 'bg-exdark'} rounded-t-[35px]`} style={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ paddingX: 2, paddingY: 1.5, flex: 1}}>
           <Tabs value={num} onChange={handleChange} aria-label="basic tabs example"
             sx={{
@@ -227,12 +231,12 @@ export default function Profile({ setValue, thememode, toggleTheme }: ProfilePro
             }} >
               <img className="w-[4.85rem]" src={badgeImage1} alt="Badge1" />
               <img className="w-[4.8rem]" src={badgeImage2} alt="Badge2" />
-              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.6rem]'}`} src={badgeImage3} alt="UnknownBadge" />
-              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.6rem]'}`} src={badgeImage3} alt="UnknownBadge" />
+              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.5rem]'}`} src={badgeImage3} alt="UnknownBadge" />
+              <img className={`${thememode === 'light' ? 'w-[5rem]' : 'w-[5.5rem]'}`} src={badgeImage3} alt="UnknownBadge" />
             </Box>
           </CustomTabPanel>
           <CustomTabPanel value={num} index={1}>
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4 px-1">
+            <div className="w-full grid grid-cols-1 gap-4 pt-4 px-1">
               <div className={`flex w-full h-20 rounded-2xl ${thememode === 'light' ? 'bg-day' : 'bg-light'}`}>
                 <div className='w-3/4 p-4 flex flex-col'>
                   <span className={`text-lg ${thememode === 'light' ? 'text-black' : 'text-green'}`}>#RWQ-51F9711D</span>
@@ -272,7 +276,6 @@ export default function Profile({ setValue, thememode, toggleTheme }: ProfilePro
               gridTemplateColumns: {
                 xs: 'repeat(2, 1fr)', 
                 sm: 'repeat(3, 1fr)',
-                md: 'repeat(4, 1fr)', 
               },
               px: 1,
               pt: 4,

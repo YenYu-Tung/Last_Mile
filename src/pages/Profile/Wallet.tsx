@@ -25,7 +25,7 @@ export default function Wallet({ setValue }: WalletProps) {
 
 
   return (
-    <div className="bg-dark w-full h-screen">
+    <div className="bg-dark w-full h-full flex flex-col relative">
       <div className='flex flex-col m-auto w-11/12 pt-6'>
         <div className="flex justify-center items-center">
           <span className='absolute top-6.5 left-4'>
@@ -95,9 +95,9 @@ export default function Wallet({ setValue }: WalletProps) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 items-start px-8 pt-3 pb-7 w-full mt-2 bg-exdark min-h-[63%]  rounded-t-[35px]">
+      <div className="flex flex-col gap-3 items-start px-8 pt-3 pb-7 w-full mt-2 bg-exdark rounded-t-[35px] flex-1">
         <span className='text-lg text-white mt-2 flex items-center'><HistoryRoundedIcon sx={{ color: '#32FF9D', marginRight: '0.5rem', fontSize: 24 }} />Transaction History</span>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="w-full grid grid-cols-1 gap-5">
           <div className='flex w-full h-20 rounded-2xl bg-light'>
             <div className='w-3/4 p-4 flex flex-col'>
               <span className='text-white text-lg'>Completion Reward</span>

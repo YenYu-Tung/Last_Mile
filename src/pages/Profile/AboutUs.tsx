@@ -16,11 +16,11 @@ const containerStyle = {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'bottom',
-  position: 'fixed',
-  top: '8.9%',
+  position: 'relative',
+  top: '-0.5%',
   left: 0,
   width: '100%',
-  height: '91%',
+  height: '90.5%',
   backgroundBlendMode: 'hard-light',
 } as const;
 
@@ -34,13 +34,13 @@ export default function AboutUs({ setValue }: AboutProps) {
   };
 
   return (
-    <div className='h-screen'>
-      <div className='w-full flex items-center px-2 h-[9%] bg-exdark fixed'>
+    <div className='w-full h-full'>
+      <div className='w-full flex items-center h-[8%] bg-exdark'>
         <IconButton aria-label="back" onClick={handleBack}>
-          <ChevronLeftRoundedIcon className='text-white mt-2' style={{ fontSize: "2.5rem" }} />
+          <ChevronLeftRoundedIcon className='text-white mt-1' style={{ fontSize: "2.5rem" }} />
         </IconButton>
         <div className='flex flex-col text-white'>
-          <span className='text-xl sm:text-sm'>Lastmile Global Web</span>
+          <span className='text-xl'>Lastmile Global Web</span>
           <span className='text-xxs'>https://www.lastmile.global.com.tw</span>
         </div>
       </div>
@@ -48,13 +48,11 @@ export default function AboutUs({ setValue }: AboutProps) {
       <div style={containerStyle}>
 
         <WebProgressBar />
-        <div className="flex flex-col px-4">
-
-          <div className='mt-2 sm:mt-4'>
-            <AppBar />
-          </div>
-
-          <div className="flex flex-col items-start mt-8 px-2 sm:px-8">
+        <div className='pt-2'>
+          <AppBar />
+        </div>
+        <div className="flex flex-col px-4">        
+          <div className="flex flex-col items-start mt-8 px-2">
             <span className="text-white text-5xl font-semibold mb-5">City Logistics Solution</span>
             <button className='border border-white rounded-full px-6 py-1 text-white text-xl font-semibold'>More</button>
           </div>

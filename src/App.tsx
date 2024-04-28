@@ -107,10 +107,10 @@ export default function App() {
                         <Route path="/info/*" element={<Info setValue={setValue} />} />
                     </Routes>
                     {isBottomNavigationVisible && (
-                        <Paper sx={{ bgcolor: themeMode === 'light' ? '#FF862E' : '#323232', position: 'fixed', bottom: 24, left: 20, right: 20, borderRadius: 54, boxShadow: 1 }} >
+                        <Paper sx={{ bgcolor: themeMode === 'light' ? '#FF862E' : '#323232', position: 'relative', bottom: 80, borderRadius: 54, boxShadow: 3, width: '92%', margin: 'auto' }} >
                         <BottomNavigation
                             value={value}
-                                sx={{ bgcolor: themeMode === 'light' ? '#fff' : '#323232', borderRadius: 54, padding: 0.6, boxShadow: 2, justifyContent: 'space-around', }}
+                                sx={{ bgcolor: themeMode === 'light' ? '#fff' : '#323232', borderRadius: 54, padding: 0.6, boxShadow: 1, justifyContent: 'space-around', }}
                         >
                             <BottomNavigationAction
                                 value="home"

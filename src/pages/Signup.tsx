@@ -57,7 +57,7 @@ export default function Signup({ setValue }: SetValueProps): JSX.Element {
   };
 
   return (
-    <div className="bg-black w-full h-screen">
+    <div className="bg-black w-full h-full relative">
       <div className="absolute w-full h-full overflow-hidden">
         <div className={clsx(
           'absolute h-[380px] w-[450px] left-[-120px] top-[-150px] rounded-full z-10',
@@ -72,23 +72,23 @@ export default function Signup({ setValue }: SetValueProps): JSX.Element {
       </div>
 
 
-      <button className='text-light-gray  absolute top-10 right-10 text-lg font-semibold z-20' onClick={handleLogin}>
+      <button className='text-light-gray  absolute text-lg font-semibold z-20 top-10 right-10' onClick={handleLogin}>
         Log In
       </button>
 
-      <div className='flex flex-col w-11/12 justify-center align-middle h-[35%] sm:h-[20%] m-auto'>
-        <div className="w-full h-full flex flex-col sm:flex-row justify-end sm:justify-center align-middle items-center">
-          <img className="w-[108px] sm:w-28 my-6 z-20" src="/pagesicon.svg" alt="Last Mile" />
-          <span className='text-white text-3xl font-semibold text-center w-full xs:w-2/3'>
+      <div className='flex flex-col w-11/12 justify-center align-middle h-[35%] m-auto'>
+        <div className="w-full h-full flex flex-col justify-end align-middle items-center">
+          <img className="w-[108px] my-6 z-20" src="/pagesicon.svg" alt="Last Mile" />
+          <span className='text-white text-3xl font-semibold text-center w-[75%] z-20'>
             Create Your Account
           </span>
         </div>
       </div>
 
-      <div className='flex flex-col m-auto w-3/4 sm:w-1/2 justify-center align-middle h-[38%] xs:h-[33%] sm:h-[40%] gap-6 sm:gap-4'>
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px' }}>
+      <div className='flex flex-col m-auto w-3/4 justify-center align-middle h-[35%] gap-6'>
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px', zIndex: 20 }}>
           <div className='flex h-full justify-center items-center'>
-            <span className='text-exlight-gray text-base text-center mr-2 sm:mr-10'>
+            <span className='text-exlight-gray text-base text-center mr-1'>
               +886
               <ArrowDropDownRoundedIcon sx={{ margin: 'auto', color: '#898989' }} />
             </span>
@@ -96,16 +96,16 @@ export default function Signup({ setValue }: SetValueProps): JSX.Element {
               sx={{ border: 1, borderColor: '#898989', borderRadius: '24px' }} />
           </div>
 
-          <FormControl variant="standard" sx={{ display: 'flex', width: '60%', justifyContent: 'center' }}>
+          <FormControl variant="standard" sx={{ display: 'flex', width: '70%', justifyContent: 'center' }}>
             <BootstrapInput placeholder='Phone number' id="bootstrap-input" />
           </FormControl>
         </Box>
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px' }}>
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px', zIndex: 20 }}>
           <FormControl variant="standard" sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
             <BootstrapInput placeholder='User Name' id="bootstrap-input" />
           </FormControl>
         </Box>
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px' }}>
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px', zIndex: 20 }}>
           <FormControl variant="standard" sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
             <BootstrapInput placeholder='Password' id="bootstrap-input" />
           </FormControl>
@@ -114,7 +114,7 @@ export default function Signup({ setValue }: SetValueProps): JSX.Element {
 
       <div className='flex flex-col w-11/12 justify-center align-middle m-auto'>
         <div className="w-full h-full flex flex-col">
-          <div className="flex flex-col justify-center items-center mb-4 xs:mb-10 sm:mb-4">
+          <div className="flex flex-col justify-center items-center xs:mb-8 mb-10">
             <button className="bg-transparent rounded-full w-[220px] py-2.5 text-white border border-white hover:bg-green hover:border-0 hover:text-black z-20" onClick={handleSignup}>
               <span className="font-bold">Sign Up</span>
             </button>

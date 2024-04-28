@@ -45,7 +45,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('sm')]: {
       width: '10ch',
       '&:focus': {
-        width: '24ch',
+        width: '12ch',
         border: 'none', // Remove border
         boxShadow: 'none', // Remove ring
       },
@@ -58,7 +58,7 @@ export default function SearchAppBar() {
     <Box sx={{ width: '100%' }}>
       <AppBar position="static" sx={{ bgcolor: 'transparent', boxShadow: 'none', width: '100%' }}>
         <Toolbar sx={{ paddingLeft: '0', paddingRight: '0', width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-          <img className="w-24 xs:w-32 sm:w-48" src={logo} alt="Last Mile" />
+          <img className="w-32" src={logo} alt="Last Mile" />
           <div className='flex items-center justify-between'>
             <Search>
               <SearchIconWrapper>
