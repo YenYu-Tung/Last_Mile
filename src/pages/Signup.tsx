@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Avatar from '@mui/material/Avatar';
 
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import AppleIcon from '@mui/icons-material/Apple';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
@@ -55,6 +56,10 @@ export default function Signup({ setValue }: SetValueProps): JSX.Element {
     navigate('/home');
     setValue('home');
   };
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className="bg-black w-full h-full relative">

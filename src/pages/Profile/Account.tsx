@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 
@@ -38,6 +39,10 @@ export default function Account({ setValue }: AccountProps) {
     navigate('/login');
     setValue('none');
   };
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className="bg-dark flex flex-col w-full h-full relative">

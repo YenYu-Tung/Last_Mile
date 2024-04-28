@@ -94,7 +94,6 @@ export default function Home({ setValue }: HomeProps) {
   useEffect(() => {
     setValue('home');
   }, [setValue]);
-
   
 
   const navigate = useNavigate();

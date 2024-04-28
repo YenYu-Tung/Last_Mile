@@ -28,6 +28,12 @@
   border-color: 'none';
   --tw-ring-color: 'none';  
 }
+
+
+video {
+  height: auto;
+  max-width: none;
+}
 /* Optional: To make the transition smoother */
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 // import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
@@ -79,6 +79,9 @@ export default function List({ setValue }: ListProps){
     navigate('/scan');
     setValue('none');
   };
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   const [num, setNum] = useState(0);
 

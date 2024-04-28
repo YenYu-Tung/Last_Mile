@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { MouseEvent, ChangeEvent, useState } from 'react';
+import { MouseEvent, ChangeEvent, useState, useEffect } from 'react';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
@@ -86,6 +86,10 @@ export default function Search({ setValue }: SearchProps) {
   const handleListItemClick = (query: string) => {
     navigate(`/info?q=${(query)}`);
   };
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
 
   return (

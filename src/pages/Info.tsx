@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
@@ -57,6 +57,10 @@ export default function Info({ setValue }: InfoProps) {
         console.error('Copy Failed!:', error);
       });
   };
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className="flex flex-col bg-dark w-full h-full overflow-auto">

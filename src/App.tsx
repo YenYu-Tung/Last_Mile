@@ -41,10 +41,20 @@ const theme = createTheme({
 
 export default function App() {
 
-    const [value, setValue] = useState('none');
+    const [value, setValue] = useState('none'); 
+    const [topPosition, setTopPositon] = useState(932); 
 
     useEffect(() => {
         const path = window.location.hash;
+        const windowHeight = window.innerHeight;
+        const offset = 72;
+        const newTopPosition = windowHeight - offset;
+        if(newTopPosition > 860){
+            setTopPositon(860);
+        }else{
+            setTopPositon(newTopPosition);
+        }
+        
         /* eslint-disable-next-line */
         const match = path.match(/^#\/([^\/]+)\/?([^\/]+)?\/?([^\/]+)?$/);
         if (match) {
@@ -86,7 +96,7 @@ export default function App() {
             <BrowserRouter>
                 <div id="body">
                     <Routes>
-                        <Route path="/" element={<Animation/>} />
+                        <Route path="/" element={<Animation setValue={setValue} />} />
                         <Route path="/login" element={<Login setValue={setValue}/>} />
                         <Route path="/signup" element={<Signup setValue={setValue} />} />
                         <Route path="/home" element={<Home setValue={setValue} />} />
@@ -107,7 +117,7 @@ export default function App() {
                         <Route path="/info/*" element={<Info setValue={setValue} />} />
                     </Routes>
                     {isBottomNavigationVisible && (
-                        <Paper sx={{ bgcolor: themeMode === 'light' ? '#FF862E' : '#323232', position: 'relative', bottom: 80, borderRadius: 54, boxShadow: 3, width: '92%', margin: 'auto' }} >
+                        <Paper sx={{ bgcolor: themeMode === 'light' ? '#FF862E' : '#323232', position: 'fixed', top: `${topPosition}px`, borderRadius: 54, boxShadow: 1, margin: 'auto', maxWidth: '386px', left: 15, right: 15 }} >
                         <BottomNavigation
                             value={value}
                                 sx={{ bgcolor: themeMode === 'light' ? '#fff' : '#323232', borderRadius: 54, padding: 0.6, boxShadow: 1, justifyContent: 'space-around', }}

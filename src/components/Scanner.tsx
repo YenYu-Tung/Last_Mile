@@ -10,7 +10,7 @@ class QRScan extends React.Component<ScanProps> {
     delay: 100,
     result: ""
   };
-
+  
   /* eslint-disable-next-line */
   handleScan = (data: any | null) => {
     // console.log(data)
@@ -28,9 +28,17 @@ class QRScan extends React.Component<ScanProps> {
   };
 
   render() {
+    const previewStyle = {
+      position: 'fixed',
+      right: 0,
+      bottom: 0,
+      minWidth: '100%',
+      minHeight: '100%',
+      zIndex: 10,
+    }
+
     return (
-      <div className="w-72 h-72 border-[6px] border-white/70 border-dashed rounded-3xl m-auto">
-        <QrReader
+      <QrReader
           delay={false}
           constraints={{
             audio: false,
@@ -39,10 +47,8 @@ class QRScan extends React.Component<ScanProps> {
           legacyMode={true}
           onError={this.handleError}
           onScan={this.handleScan}
-          className="w-72 h-[276px]"
+          style={previewStyle}
         />
-        {/* <p>{this.state.result}</p> */}
-      </div>
     );
   }
 }

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
@@ -53,6 +54,9 @@ export default function Assistant({ setValue }: AssistantProps) {
     setValue('home');
   };
 
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className="bg-dark w-full h-full relative" >

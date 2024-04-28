@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
 
 import speechbubble from "/SpeechBubble.svg";
 import close from "/closeDoor.gif";
@@ -15,9 +16,13 @@ export default function Success({ setValue }: SuccessProps) {
     setValue('home');
   };
 
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
+
   return (
-    <div className="w-full h-full bg-black">
-      <div className="flex flex-col justify-end items-center h-[75%]">
+    <div className="bg-black" style={{ height: "100%" }}>
+      <div className="flex flex-col justify-end items-center h-[70%]">
         <span className="text-green text-5xl font-bold mb-4">Success!</span>
 
         {/* <div className="relative p-4 mx-auto mt-10 max-w-xs rounded-lg text-white border border-solid border-white text-center">
@@ -29,7 +34,7 @@ export default function Success({ setValue }: SuccessProps) {
           <img src={speechbubble} alt="Make sure the locker has closed before you leave" className="h-auto" />
           <p className="text-base w-52 top-2 left-8 absolute text-white font-bold">Make sure the locker has closed before you leave</p>
         </div>
-        <img className="w-72 mt-3" src={close} alt="Close the door" />
+        <img className="w-64 mt-3" src={close} alt="Close the door" />
       </div>
       <div className="h-[25%] flex flex-col justify-start items-center p-12">
         <button className="text-green text-xl font-bold py-3 rounded-[18px] border border-green bg-transparent hover:bg-gradient-to-r from-[#7CFFC0] via-[#32FF9D] to-[#00ff85] hover:text-black w-3/4" onClick={handleNavigate}>

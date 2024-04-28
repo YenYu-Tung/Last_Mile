@@ -5,7 +5,11 @@ import clsx from 'clsx';
 import CircularProgress from "../components/LogoCircularProgress";
 import lastmile from "/lastmile.svg";
 
-export default function Animation() {
+type Props = {
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function Animation({ setValue }: Props) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,6 +18,10 @@ export default function Animation() {
     }, 4000);
     return () => clearTimeout(animationTimeout);
   }, [navigate]);
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className='bg-black w-full h-full flex items-center align-middle justify-center relative'>

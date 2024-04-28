@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 // import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
@@ -80,6 +80,10 @@ export default function Address({ setValue }: AddressProps) {
   };
 
   const [hoveredDiv, setHoveredDiv] = useState<number | null>(null);
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
  
 
   return (

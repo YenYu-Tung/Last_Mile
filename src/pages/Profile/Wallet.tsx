@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
@@ -22,7 +24,9 @@ export default function Wallet({ setValue }: WalletProps) {
     setValue('home');
   };
   
-
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className="bg-dark w-full h-full flex flex-col relative">

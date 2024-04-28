@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import box from "/box.gif";
 
@@ -18,6 +19,10 @@ export default function Box({ setValue }: BoxProps){
     navigate('/ai-assistant');
     setValue('none');
   };
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className="bg-black" style={{ height: "100%" }}>

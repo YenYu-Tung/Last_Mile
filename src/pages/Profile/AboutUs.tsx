@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import IconButton from '@mui/material/IconButton';
@@ -32,6 +33,10 @@ export default function AboutUs({ setValue }: AboutProps) {
     navigate('/profile');
     setValue('profile');
   };
+
+  useEffect(() => {
+    setValue('none');
+  }, [setValue]);
 
   return (
     <div className='w-full h-full'>
