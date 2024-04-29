@@ -81,72 +81,74 @@ export default function Signup({ setValue }: SetValueProps): JSX.Element {
         Log In
       </button>
 
-      <div className='flex flex-col w-11/12 justify-center align-middle h-[35%] m-auto'>
-        <div className="w-full h-full flex flex-col justify-end align-middle items-center">
-          <img className="w-[108px] my-6 z-20" src="/pagesicon.svg" alt="Last Mile" />
-          <span className='text-white text-3xl font-semibold text-center w-[75%] z-20'>
+      <div className='flex flex-col w-11/12 justify-center align-middle h-full m-auto items-center'>
+        <div className="w-full flex flex-col justify-end align-middle items-center mb-8 web:mb-14">
+          <img className="w-[108px] mb-6 z-20" src="/pagesicon.svg" alt="Last Mile" />
+          <span className='text-white text-3xl font-semibold text-center w-48 z-20'>
             Create Your Account
           </span>
         </div>
-      </div>
 
-      <div className='flex flex-col m-auto w-3/4 justify-center align-middle h-[35%] gap-6'>
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px', zIndex: 20 }}>
-          <div className='flex h-full justify-center items-center'>
-            <span className='text-exlight-gray text-base text-center mr-1'>
-              +886
-              <ArrowDropDownRoundedIcon sx={{ margin: 'auto', color: '#898989' }} />
-            </span>
-            <Divider orientation="vertical" variant="middle" flexItem
-              sx={{ border: 1, borderColor: '#898989', borderRadius: '24px' }} />
-          </div>
+        <div className='flex flex-col w-3/4 justify-center align-middle gap-6 mb-8 web:mb-14'>
+          <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px', zIndex: 20 }}>
+            <div className='flex h-full justify-center items-center'>
+              <span className='text-exlight-gray text-base text-center mr-1'>
+                +886
+                <ArrowDropDownRoundedIcon sx={{ margin: 'auto', color: '#898989' }} />
+              </span>
+              <Divider orientation="vertical" variant="middle" flexItem
+                sx={{ border: 1, borderColor: '#898989', borderRadius: '24px' }} />
+            </div>
 
-          <FormControl variant="standard" sx={{ display: 'flex', width: '70%', justifyContent: 'center' }}>
-            <BootstrapInput placeholder='Phone number' id="bootstrap-input" />
-          </FormControl>
-        </Box>
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px', zIndex: 20 }}>
-          <FormControl variant="standard" sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
-            <BootstrapInput placeholder='User Name' id="bootstrap-input" />
-          </FormControl>
-        </Box>
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px', zIndex: 20 }}>
-          <FormControl variant="standard" sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
-            <BootstrapInput placeholder='Password' id="bootstrap-input" />
-          </FormControl>
-        </Box>
-      </div>
+            <FormControl variant="standard" sx={{ display: 'flex', width: '70%', justifyContent: 'center' }}>
+              <BootstrapInput placeholder='Phone number' id="bootstrap-input" />
+            </FormControl>
+          </Box>
+          <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px', zIndex: 20 }}>
+            <FormControl variant="standard" sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+              <BootstrapInput placeholder='User Name' id="bootstrap-input" />
+            </FormControl>
+          </Box>
+          <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#2C2F33', borderRadius: '15px', padding: '3px 0px', zIndex: 20 }}>
+            <FormControl variant="standard" sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+              <BootstrapInput placeholder='Password' id="bootstrap-input" />
+            </FormControl>
+          </Box>
+        </div>
 
-      <div className='flex flex-col w-11/12 justify-center align-middle m-auto'>
-        <div className="w-full h-full flex flex-col">
-          <div className="flex flex-col justify-center items-center xs:mb-8 mb-10">
-            <button className="bg-transparent rounded-full w-[220px] py-2.5 text-white border border-white hover:bg-green hover:border-0 hover:text-black z-20" onClick={handleSignup}>
-              <span className="font-bold">Sign Up</span>
-            </button>
-          </div>
-          <div className='w-2/3 m-auto z-20'>
-            <Divider variant="middle" sx={{
-              color: 'white', '&.MuiDivider-root::before, &.MuiDivider-root::after': {
-                borderTop: '1px solid #898989',
-              }
-            }} >or</Divider>
-          </div>
+        <div className='flex flex-col w-11/12 justify-center align-middle'>
+          <div className="w-full h-full flex flex-col">
+            <div className="flex flex-col justify-center items-center xs:mb-8 mb-10">
+              <button className="bg-transparent rounded-full w-[220px] py-2.5 text-white border border-white hover:bg-green hover:border-0 hover:text-black z-20" onClick={handleSignup}>
+                <span className="font-bold">Sign Up</span>
+              </button>
+            </div>
+            <div className='w-2/3 m-auto z-20'>
+              <Divider variant="middle" sx={{
+                color: 'white', '&.MuiDivider-root::before, &.MuiDivider-root::after': {
+                  borderTop: '1px solid #898989',
+                }
+              }} >or</Divider>
+            </div>
 
-          <div className="flex m-auto gap-6 mt-4 z-20">
-            <Avatar sx={{ border: '0.5px solid white', bgcolor: 'transparent', width: 42, height: 42 }}>
-              <AppleIcon />
-            </Avatar>
-            <Avatar sx={{ border: '0.5px solid white', bgcolor: 'transparent', width: 42, height: 42 }}>
-              <GoogleIcon />
-            </Avatar>
-            <Avatar sx={{ border: '0.5px solid white', bgcolor: 'transparent', width: 42, height: 42 }}>
-              <FacebookRoundedIcon />
-            </Avatar>
-
+            <div className="flex m-auto gap-6 mt-4 z-20">
+              <Avatar sx={{ border: '0.5px solid white', bgcolor: 'transparent', width: 42, height: 42 }}>
+                <AppleIcon />
+              </Avatar>
+              <Avatar sx={{ border: '0.5px solid white', bgcolor: 'transparent', width: 42, height: 42 }}>
+                <GoogleIcon />
+              </Avatar>
+              <Avatar sx={{ border: '0.5px solid white', bgcolor: 'transparent', width: 42, height: 42 }}>
+                <FacebookRoundedIcon />
+              </Avatar>
+            </div>
           </div>
         </div>
 
       </div>
+
+      
+      
 
     </div>
   );

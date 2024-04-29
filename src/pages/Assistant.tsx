@@ -84,37 +84,37 @@ export default function Assistant({ setValue }: AssistantProps) {
           <span className='text-exlight-gray w-[80%] text-center'>Help you quickly deal with problems you encounter</span>
           <span className='text-exlight-gray border border-white px-9 py-1 rounded-full'>Your LastAI is online now</span>
         </div>
-      </div>
+        <div className="flex flex-col gap-3 px-5 w-full absolute bottom-28">
+          <div className="w-full flex items-center">
+            <img className="w-8 mr-2" src={roundlogo} alt="Last Mile" />
+            <span className='flex text-white text-sm bg-zinc-700/90 px-4 py-2  rounded-lg'>Hi, I’m LastAI. How may I help you?
+            </span>
+          </div>
+          <div className="w-full flex gap-2 overflow-x-auto py-2">
+            <Chip label="Package Mistake" sx={{ backgroundColor: 'rgb(63 63 70 / 1)', color: 'white' }} />
+            <Chip label="Cannot open my box" sx={{ backgroundColor: 'rgb(63 63 70 / 1)', color: 'white' }} />
+            <Chip label="Goods late" sx={{ backgroundColor: 'rgb(63 63 70 / 1)', color: 'white' }} />
+          </div>
+        </div>
 
-      <div className="flex flex-col gap-3 px-5 w-full absolute bottom-8">
-        <div className="w-full flex items-center">
-          <img className="w-8 mr-2" src={roundlogo} alt="Last Mile" />
-          <span className='flex text-white text-sm bg-zinc-700/90 px-4 py-2  rounded-lg'>Hi, I’m LastAI. How may I help you?
-          </span>
-        </div>
-        <div className="w-full flex gap-2 overflow-x-auto py-2">
-          <Chip label="Package Mistake" sx={{ backgroundColor: 'rgb(63 63 70 / 1)', color: 'white' }} />
-          <Chip label="Cannot open my box" sx={{ backgroundColor: 'rgb(63 63 70 / 1)', color: 'white' }} />
-          <Chip label="Goods late" sx={{ backgroundColor: 'rgb(63 63 70 / 1)', color: 'white' }} />
-        </div>
-        <div className="w-full flex justify-between">
-          {/* another div  */}
-          <Box sx={{ display: 'flex', width: '80%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgb(113, 113, 122, 1)', borderRadius: '69px', padding: '3px' }}>
-            <FormControl variant="standard" sx={{ display: 'flex', width: '85%', justifyContent: 'center' }}>
-              <BootstrapInput placeholder="Type your questions..." id="bootstrap-input" />              
-            </FormControl>
-            <Avatar sx={{ bgcolor: 'rgb(63 63 70 / 0.3)', margin: 'auto', width: 42, height: 42 }}>
-              <KeyboardVoiceOutlinedIcon sx={{ fontSize: 28 }} />
-            </Avatar>
-            
-          </Box>
-          <button ><Avatar sx={{ bgcolor: 'transparent', margin: 'auto', width: 53, height: 53, border: 2, borderColor: '#32FF9D' }}>
-            <SendOutlinedIcon sx={{ fontSize: 29, color: '#32FF9D' }} />
-          </Avatar></button>
-          
+        <div className="flex flex-col gap-3 px-5 w-full absolute bottom-10">
+          <div className="w-full flex justify-between">
+            {/* another div  */}
+            <Box sx={{ display: 'flex', width: '80%', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgb(113, 113, 122, 1)', borderRadius: '69px', padding: '3px' }}>
+              <FormControl variant="standard" sx={{ display: 'flex', width: '85%', justifyContent: 'center' }}>
+                <BootstrapInput placeholder="Type your questions..." id="bootstrap-input" />
+              </FormControl>
+              <Avatar sx={{ bgcolor: 'rgb(63 63 70 / 0.3)', margin: 'auto', width: 42, height: 42 }}>
+                <KeyboardVoiceOutlinedIcon sx={{ fontSize: 28 }} />
+              </Avatar>
+            </Box>
+            <button ><Avatar sx={{ bgcolor: 'transparent', margin: 'auto', width: 53, height: 53, border: 2, borderColor: '#32FF9D' }}>
+              <SendOutlinedIcon sx={{ fontSize: 29, color: '#32FF9D' }} />
+            </Avatar></button>
+          </div>
         </div>
       </div>
-
+      
     </div>
   );
 }
