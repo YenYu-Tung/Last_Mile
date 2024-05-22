@@ -25,9 +25,6 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import Brightness4RoundedIcon from '@mui/icons-material/Brightness4Rounded';
 import EditLocationOutlinedIcon from '@mui/icons-material/EditLocationOutlined';
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
-// import EditLocationRoundedIcon from '@mui/icons-material/EditLocationRounded';
-// import SignpostRoundedIcon from '@mui/icons-material/SignpostRounded';
-// import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';

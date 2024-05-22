@@ -11,6 +11,7 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import WhereToVoteRoundedIcon from '@mui/icons-material/WhereToVoteRounded';
+import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
 
 import Home from './pages/Home.tsx';
 import Locker from './pages/Locker.tsx';
@@ -28,6 +29,13 @@ import Animation from './pages/Animation.tsx';
 import Login from './pages/Login.tsx';
 import Signup from './pages/Signup.tsx';
 
+// Sender
+import SenderHome from './pages/SenderHome.tsx';
+import SenderProfile from './pages/SenderProfile.tsx';
+import Shipment from './pages/Shipment.tsx';
+import ToShip from './pages/ToShip.tsx';
+import Upload from './pages/Upload.tsx';
+
 import Account from './pages/Profile/Account.tsx';
 import AboutUs from './pages/Profile/AboutUs.tsx';
 import Address from './pages/Profile/Address.tsx';
@@ -43,6 +51,18 @@ export default function App() {
 
     const [value, setValue] = useState('none'); 
     const [topPosition, setTopPositon] = useState(860); 
+
+    const [mainPage, setMainPage] = useState('home');
+    const toggleMainPage = () => {
+        if (mainPage === 'home') {
+            setMainPage('sender-home');
+            window.location.href = '/#/sender-home';
+        } else {
+            setMainPage('home');
+            window.location.href = '/#/home'; 
+        }
+    };
+
 
     useEffect(() => {
         const windowHeight = window.innerHeight;
@@ -66,7 +86,16 @@ export default function App() {
                 else if (segments[0] === 'deliverymap') setValue('delivery');
                 else if (segments[0] === 'locker') setValue('locker');
                 else if (segments[0] === 'profile') setValue('profile');
-                else if (segments[0] === 'home') setValue('home');
+                else if (segments[0] === 'sender-profile') setValue('sender-profile');
+                else if (segments[0] === 'shipment') setValue('shipment');
+                else if (segments[0] === 'home'){
+                    setValue('home');
+                    setMainPage('home');
+                } 
+                else if (segments[0] === 'sender-home') {
+                    setValue('sender-home');
+                    setMainPage('sender-home');
+                } 
                 else if (segments[0] === 'login') setValue('none');
                 else if (segments[0] === 'signup') setValue('none');
                 else setValue('none');
@@ -85,7 +114,7 @@ export default function App() {
     }, []);
 
     const isBottomNavigationVisible =
-        value === 'home' || value === 'delivery' || value === 'locker' || value === 'profile';
+        value === 'home' || value === 'delivery' || value === 'locker' || value === 'profile' || value === 'sender-home' || value === 'sender-profile' || value === 'shipment';
 
     const [themeMode, setThemeMode] = useState('dark');
     const toggleTheme = () => {
@@ -101,12 +130,18 @@ export default function App() {
                         <Route path="/" element={<Animation setValue={setValue} />} />
                         <Route path="/login" element={<Login setValue={setValue}/>} />
                         <Route path="/signup" element={<Signup setValue={setValue} />} />
-                        <Route path="/home" element={<Home setValue={setValue} />} />
+                        <Route path="/home" element={<Home setValue={setValue} mainPage={mainPage} setMainPage={setMainPage} toggleMainPage={toggleMainPage} />} />
+                        <Route path="/sender-home" element={<SenderHome setValue={setValue} mainPage={mainPage} setMainPage={setMainPage} toggleMainPage={toggleMainPage} />} />
                         <Route path="/delivery" element={<Delivery setValue={setValue} />} />
                         <Route path="/deliverymap" element={<DeliveryMap setValue={setValue} />} />
                         <Route path="/locker" element={<Locker setValue={setValue} />} />
                         <Route path="/profile" element={<Profile setValue={setValue} thememode={themeMode} toggleTheme={toggleTheme} />} />
-                        <Route path="/list" element={<List setValue={setValue} />}  />
+                        <Route path="/sender-profile" element={<SenderProfile setValue={setValue} mainPage={mainPage} setMainPage={setMainPage} toggleMainPage={toggleMainPage} />} />
+                        <Route path="/shipment" element={<Shipment setValue={setValue} setMainPage={setMainPage} />} />
+                        <Route path="/to-ship/*" element={<ToShip setValue={setValue} setMainPage={setMainPage} />} />
+                        <Route path="/upload" element={<Upload setValue={setValue} setMainPage={setMainPage} />} />
+                        <Route
+                         path="/list" element={<List setValue={setValue} />}  />
                         <Route path="/success" element={<Success setValue={setValue} />} />
                         <Route path="/box" element={<Box setValue={setValue} />} />
                         <Route path="/scan" element={<Scan setValue={setValue} />} />
@@ -120,10 +155,10 @@ export default function App() {
                     </Routes>
                     {isBottomNavigationVisible && (
                         <Paper sx={{ bgcolor: themeMode === 'light' ? '#FF862E' : '#323232', position: 'fixed', top: `${topPosition}px`, borderRadius: 54, boxShadow: 1, margin: 'auto', maxWidth: '386px', left: 15, right: 15 }} >
+                        {mainPage === 'home' && ( 
                         <BottomNavigation
-                            value={value}
-                                sx={{ bgcolor: themeMode === 'light' ? '#fff' : '#323232', borderRadius: 54, padding: 0.6, boxShadow: 1, justifyContent: 'space-around', }}
-                        >
+                                        value={value}
+                                        sx={{ bgcolor: themeMode === 'light' ? '#fff' : '#323232', borderRadius: 54, padding: 0.6, boxShadow: 1, justifyContent: 'space-around', }}>
                             <BottomNavigationAction
                                 value="home"
                                 label="HOME"
@@ -160,6 +195,7 @@ export default function App() {
                                 href="/#/home"
                                     onClick={() => { 
                                         setValue('home') 
+                                        setMainPage('home')
                                         setThemeMode('dark') }}
                             />
                             <BottomNavigationAction
@@ -275,8 +311,132 @@ export default function App() {
                                 }}
                                 href="/#/profile"
                                 onClick={() => { setValue('profile') }}
-                                />                        
-                        </BottomNavigation>
+                                        /> </BottomNavigation> )}  
+                                {mainPage === 'sender-home' && (
+                                <BottomNavigation
+                                    value={value}
+                                    sx={{ bgcolor: themeMode === 'light' ? '#fff' : '#323232', borderRadius: 54, padding: 0.6, boxShadow: 1, justifyContent: 'space-around', }}
+                                >
+                                    <BottomNavigationAction
+                                        value="sender-home"
+                                        label="HOME"
+                                        icon={<HomeRoundedIcon sx={{
+                                            color: themeMode === 'light' ? '#D0D0D0' : '#898989', '&:hover': {
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                        }} />}
+                                        sx={{
+                                            paddingTop: 0,
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                            borderRadius: 30,
+                                            gap: 0.5,
+                                            '&.MuiButtonBase-root.MuiBottomNavigationAction-root': {
+                                                minWidth: 60,
+                                            },
+                                            '&.MuiButtonBase-root.MuiBottomNavigationAction-root.Mui-selected': {
+                                                border: 2,
+                                                borderColor: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                                minWidth: 110,
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                            '&.Mui-selected svg': {
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                            '& .MuiBottomNavigationAction-label': {
+                                                display: 'none',
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                                '&.Mui-selected': {
+                                                    display: 'block',
+                                                },
+                                            },
+                                        }}
+                                        href="/#/sender-home"
+                                        onClick={() => {
+                                            setValue('sender-home')
+                                            setMainPage('sender-home')
+                                            setThemeMode('dark')
+                                        }}
+                                    />
+                                    <BottomNavigationAction
+                                        value="shipment" label="SHIPMENT" icon={<InventoryRoundedIcon sx={{
+                                            color: themeMode === 'light' ? '#D0D0D0' : '#898989', '&:hover': {
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                        }} />}
+                                        sx={{
+                                            paddingTop: 0,
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                            borderRadius: 30,
+                                            gap: 0.5,
+                                            color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            '&.MuiButtonBase-root.MuiBottomNavigationAction-root': {
+                                                minWidth: 60,
+                                            },
+                                            '&.MuiButtonBase-root.MuiBottomNavigationAction-root.Mui-selected': {
+                                                border: 2,
+                                                borderColor: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                                minWidth: 110,
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                            '&.Mui-selected svg': {
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                            '& .MuiBottomNavigationAction-label': {
+                                                display: 'none',
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                                '&.Mui-selected': {
+                                                    display: 'block',
+                                                },
+                                            },
+                                        }}
+                                        href="/#/shipment"
+                                        onClick={() => {
+                                            setValue('shipment')
+                                            setThemeMode('dark')
+                                        }}
+                                    />
+
+                                    
+                                    <BottomNavigationAction
+                                        value="sender-profile" label="PROFILE" icon={<PersonRoundedIcon sx={{
+                                            color: themeMode === 'light' ? '#D0D0D0' : '#898989', '&:hover': {
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                        }}
+                                        />}
+                                        sx={{
+                                            paddingTop: 0,
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                            borderRadius: 30,
+                                            gap: 0.5,
+                                            color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            '&.MuiButtonBase-root.MuiBottomNavigationAction-root': {
+                                                minWidth: 60,
+                                            },
+                                            '&.MuiButtonBase-root.MuiBottomNavigationAction-root.Mui-selected': {
+                                                border: 2,
+                                                borderColor: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                                minWidth: 110,
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                            '&.Mui-selected svg': {
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                            },
+                                            '& .MuiBottomNavigationAction-label': {
+                                                display: 'none',
+                                                color: themeMode === 'light' ? '#FF862E' : '#32FF9D',
+                                                '&.Mui-selected': {
+                                                    display: 'block',
+                                                },
+                                            },
+                                        }}
+                                        href="/#/sender-profile"
+                                        onClick={() => { setValue('sender-profile') }}
+                                    /> </BottomNavigation>)}                      
+                        
                     </Paper>
                     )}
                 </div>

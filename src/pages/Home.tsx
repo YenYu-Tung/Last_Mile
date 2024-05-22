@@ -87,13 +87,17 @@ const containerStyle = {
 
 type HomeProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
+  mainPage: string;
+  setMainPage: React.Dispatch<React.SetStateAction<string>>;
+  toggleMainPage: () => void;
 }
 
-export default function Home({ setValue }: HomeProps) {
+export default function Home({ setValue, setMainPage, mainPage, toggleMainPage }: HomeProps) {
 
   useEffect(() => {
     setValue('home');
-  }, [setValue]);
+    setMainPage('home');
+  }, [setValue, setMainPage]);
   
 
   const navigate = useNavigate();
@@ -156,7 +160,7 @@ export default function Home({ setValue }: HomeProps) {
       <div className="flex justify-between align-middle items-center p-4">
         <img className="w-36" src={logo} alt="Last Mile" />
         <div className='flex items-center gap-2'>
-          <Switch />
+          <Switch mainPage={mainPage} toggleMainPage={toggleMainPage} />
           <IconButton aria-label="qrcode" onClick={handleQrcode}>
             <QrCodeScannerRoundedIcon className='text-green' style={{ fontSize: "2rem" }} />
           </IconButton>      

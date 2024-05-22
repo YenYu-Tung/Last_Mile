@@ -1,8 +1,16 @@
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
-// import { SwitchProps } from '@mui/material';
+import { SwitchProps } from '@mui/material';
 
-const AntSwitch = styled(Switch)(({ theme }) => ({
+type Props = {
+  mainPage: string;
+  toggleMainPage: () => void;
+}
+
+
+const AntSwitch = styled((props: Omit<SwitchProps, 'thememode'> & { mainPage: string }) => (
+  <Switch {...props} />
+))(({ theme }) => ({
   width: 68,
   height: 28,
   padding: 0,
@@ -23,7 +31,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
       color: '#A9A9A9',
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.mode === 'dark' ? '#2E3237' : '#2E3237',
+        backgroundColor: '#2E3237',
         color: '#A9A9A9',
         backgroundImage: `url('/receive_gray.svg')`,
         backgroundRepeat: "no-repeat",
@@ -51,7 +59,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-track': {
     borderRadius: 28 / 2,
     opacity: 1,
-    backgroundColor: theme.palette.mode === 'dark' ? '#2E3237' : '#2E3237',
+    backgroundColor: '#2E3237',
     boxSizing: 'border-box',
     backgroundImage: `url('/send.svg')`,
     backgroundRepeat: "no-repeat",
@@ -59,8 +67,8 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedSwitches() {
+export default function CustomizedSwitches({ toggleMainPage, mainPage }: Props) {
   return (
-    <AntSwitch inputProps={{ 'aria-label': 'ant design' }} />
+    <AntSwitch checked={mainPage === 'sender-home'} inputProps={{ 'aria-label': 'ant design' }} mainPage={mainPage} onClick={toggleMainPage} />
   );
 }
