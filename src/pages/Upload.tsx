@@ -49,7 +49,7 @@ export default function Upload({ setValue, setMainPage }: UploadProps) {
     setValue('sender-home');
   };
 
-  const [data, setData] = useState("ll");
+  const [data, setData] = useState("");
 
   return (
     <div className="bg-dark w-full min-h-full">
