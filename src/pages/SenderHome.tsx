@@ -23,7 +23,6 @@ import Chip from '@mui/material/Chip';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
 import Switch from "../components/HomeSwitch";
-import { Navigate } from 'react-router-dom';
 
 const listSxProp = {
   '&.MuiListItemText-root span': {
