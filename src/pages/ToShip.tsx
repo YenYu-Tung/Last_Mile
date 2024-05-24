@@ -10,7 +10,6 @@ import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import IconButton from '@mui/material/IconButton';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
-import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined';
 import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 
 import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
@@ -18,6 +17,7 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import DoneOutlineRoundedIcon from '@mui/icons-material/DoneOutlineRounded';
 
 import logo from "/logo.svg";
+import message from "/message.svg";
 
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
@@ -72,9 +72,7 @@ export default function ToShip({ setValue, setMainPage }: ToShipProps) {
             </button>
           </span>
           <img className="w-28" src={logo} alt="Logo" />
-          <IconButton aria-label="message">
-            <SmsOutlinedIcon className='text-green' style={{ fontSize: "2rem" }} />
-          </IconButton>
+          <img className="w-7" src={message} alt="Message" />
         </div>
       </div>
       <Box sx={{ paddingX: 3.5, paddingY: 1, flex: 1 }}>

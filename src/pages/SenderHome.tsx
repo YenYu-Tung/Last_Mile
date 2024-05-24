@@ -1,12 +1,10 @@
-'use client'
-
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 import logo from "/logo.svg";
+import message from "/message.svg";
 
 
-import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined';
 import IconButton from '@mui/material/IconButton';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
@@ -25,6 +23,7 @@ import Chip from '@mui/material/Chip';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
 import Switch from "../components/HomeSwitch";
+import { Navigate } from 'react-router-dom';
 
 const listSxProp = {
   '&.MuiListItemText-root span': {
@@ -37,9 +36,10 @@ type Props = {
   setMainPage: React.Dispatch<React.SetStateAction<string>>;
   mainPage: string;
   toggleMainPage: () => void;
+  setNum: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function SenderProfile({ setValue, setMainPage, mainPage, toggleMainPage }: Props) {
+export default function SenderProfile({ setValue, setMainPage, mainPage, toggleMainPage, setNum }: Props) {
 
   useEffect(() => {
     setValue('sender-home');
@@ -64,6 +64,12 @@ export default function SenderProfile({ setValue, setMainPage, mainPage, toggleM
     setActiveTab(index);
   };
 
+  const navigate = useNavigate();
+  const handleNavigate = (index: number) => {
+    setNum(index);
+    navigate('/shipment');
+  }
+
 
   return (
     <div className="bg-dark w-full min-h-full">
@@ -71,9 +77,7 @@ export default function SenderProfile({ setValue, setMainPage, mainPage, toggleM
         <img className="w-36" src={logo} alt="Last Mile" />
         <div className='flex items-center gap-2'>
           <Switch mainPage={mainPage} toggleMainPage={toggleMainPage} />
-          <IconButton aria-label="message">
-            <SmsOutlinedIcon className='text-green' style={{ fontSize: "2rem" }} />
-          </IconButton>
+          <img className="w-7" src={message} alt="Message" />
         </div>
       </div>
 
@@ -149,12 +153,12 @@ export default function SenderProfile({ setValue, setMainPage, mainPage, toggleM
               <span className='text-white text-base font-bold mb-3'>My Dashboard</span>
               <div className='w-full flex gap-3'>
                 <div className='w-1/2 flex flex-col gap-3 items-end'>
-                  <img className="w-44" src="/reserved_time.svg" alt="reserved time" />
-                  <img className="w-44" src="/return_refund.svg" alt="return refund" />
+                  <img className="w-44" src="/reserved_time.svg" alt="reserved time" onClick={() => handleNavigate(2) }/>
+                  <img className="w-44" src="/return_refund.svg" alt="return refund" onClick={() => handleNavigate(3)} />
                 </div>
                 <div className='w-1/2 flex flex-col mt-6 gap-3'>
                   <img className="w-44" src="/performance.svg" alt="performance" />
-                  <img className="w-44" src="/pending_order.svg" alt="pending order" />
+                  <img className="w-44" src="/pending_order.svg" alt="pending order" onClick={() => handleNavigate(0)} />
                 </div>
 
               </div>

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
 import logo from "/logo.svg";
-import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined';
+
+
 import IconButton from '@mui/material/IconButton';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
@@ -32,6 +33,7 @@ import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 
 import address from "/company_address.svg";
 import avatar from "/vadash.svg";
+import message from "/message.svg";
 
 import Switch from "../components/HomeSwitch";
 
@@ -154,9 +156,7 @@ export default function SenderProfile({ setValue, mainPage, setMainPage, toggleM
             <img className="w-36" src={logo} alt="Last Mile" />
             <div className='flex items-center gap-2'>
               <Switch mainPage={mainPage} toggleMainPage={toggleMainPage} />
-              <IconButton aria-label="message">
-                <SmsOutlinedIcon className='text-green' style={{ fontSize: "2rem" }} />
-              </IconButton>
+              <img className="w-7" src={message} alt="Message" />
             </div>
           </div>
 
@@ -167,12 +167,9 @@ export default function SenderProfile({ setValue, mainPage, setMainPage, toggleM
             <div className="w-full flex flex-col gap-2 items-center">
               <span className={'text-xl text-white font-bold'}>Vadash</span>
               <span className='text-base text-light-gray mb-1'>Media Company created in 2015</span>
-              <Chip label={
-                <div className='flex align-middle items-center'>
-                  <MilitaryTechRoundedIcon sx={{ color: '#FFB053', marginRight: 0.5 }} />
-                  Advanced
-                </div>
-              } sx={{ color: '#fff', backgroundColor: '#484D56' }} />
+
+              <Chip icon={<MilitaryTechRoundedIcon sx={{ color: '#FFB053' }} />} label="Advanced" sx={{ color: '#fff', backgroundColor: '#484D56' }} />
+
               <div className="w-3/5 flex justify-between items-center mt-1">
                 <div className="flex flex-col items-center justify-start">
                   <span className="text-xl font-bold text-white ">
@@ -300,9 +297,7 @@ export default function SenderProfile({ setValue, mainPage, setMainPage, toggleM
         <img className="w-36" src={logo} alt="Last Mile" />
         <div className='flex items-center gap-2'>
           <Switch mainPage={mainPage} toggleMainPage={toggleMainPage} />
-          <IconButton aria-label="message">
-            <SmsOutlinedIcon className='text-green' style={{ fontSize: "2rem" }} />
-          </IconButton>
+          <img className="w-7" src={message} alt="Message" />
         </div>
       </div>
 

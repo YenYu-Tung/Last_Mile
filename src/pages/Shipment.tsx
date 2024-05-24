@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
+import message from "/message.svg";
+
 // import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
@@ -11,7 +13,7 @@ import IconButton from '@mui/material/IconButton';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 
-import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined';
+
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
@@ -83,9 +85,11 @@ function a11yProps(index: number) {
 type ShipmentProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>;
   setMainPage: React.Dispatch<React.SetStateAction<string>>;
+  num: number;
+  setNum: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function Shipment({ setValue, setMainPage }: ShipmentProps){
+export default function Shipment({ setValue, setMainPage, num, setNum }: ShipmentProps){
 
   const navigate = useNavigate();
   const handleNavigate = () => {
@@ -106,7 +110,6 @@ export default function Shipment({ setValue, setMainPage }: ShipmentProps){
     setMainPage('sender-home');
   }, [setValue, setMainPage]);
 
-  const [num, setNum] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     if (event) {
@@ -136,9 +139,7 @@ export default function Shipment({ setValue, setMainPage }: ShipmentProps){
             </button>
           </span>
           <img className="w-28" src={logo} alt="Logo" />
-          <IconButton aria-label="message">
-            <SmsOutlinedIcon className='text-green' style={{ fontSize: "2rem" }} />
-          </IconButton>
+          <img className="w-7" src={message} alt="Message" />
         </div>
       </div>
       <Box sx={{ paddingX: 3.5, flex: 1 }}>

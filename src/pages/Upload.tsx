@@ -7,10 +7,8 @@ import Chip from '@mui/material/Chip';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 
-import IconButton from '@mui/material/IconButton';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
-import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
@@ -20,6 +18,7 @@ import ContentPasteRoundedIcon from '@mui/icons-material/ContentPasteRounded';
 
 
 import logo from "/logo.svg";
+import message from "/message.svg";
 
 import QrReader from "../components/Sender_Scanner";
 
@@ -61,9 +60,7 @@ export default function Upload({ setValue, setMainPage }: UploadProps) {
             </button>
           </span>
           <img className="w-28" src={logo} alt="Logo" />
-          <IconButton aria-label="message">
-            <SmsOutlinedIcon className='text-green' style={{ fontSize: "2rem" }} />
-          </IconButton>
+          <img className="w-7" src={message} alt="Message" />
         </div>
       </div>
       <div className='pt-4 flex flex-col gap-6 pb-24 px-8'>
