@@ -680,7 +680,7 @@ export default function Shipment({ setValue, setMainPage, num, setNum }: Shipmen
                     label={
                       <div className='flex align-middle items-center font-bold'>
                         <FormatListBulletedRoundedIcon sx={{ color: '#fff', fontSize: '1rem', marginRight: 0.5 }} />
-                        3
+                        {!uploaded ? '3' : '2'}
                       </div>
                     } sx={{
                       color: '#fff',
@@ -1251,14 +1251,12 @@ export default function Shipment({ setValue, setMainPage, num, setNum }: Shipmen
                 </div>
               </div>
               <Divider sx={{ borderColor: '#737373', borderRadius: '24px', borderStyle: 'dashed' }} />
-              <div className='flex justify-between mt-2'>
-                <button className="flex items-center justify-center w-[190px] text-black text-sm font-bold rounded-full py-2 bg-[#F0C0A5] gap-4">
+              <div className='flex justify-between mt-2 gap-2'>
+                <button className="flex items-center justify-center w-[180px] text-black text-sm font-bold rounded-full py-2 bg-[#F0C0A5] gap-3">
                   Comfirm
                   <button className="w-[65px] text-black text-sm font-bold rounded-full py-1.5 bg-white shadow-xl">
                     <KeyboardArrowRightRoundedIcon sx={{ fontSize: 20, color: 'black' }} />
-
-                  </button>
-                  
+                  </button>                  
                 </button>
                 <button className="w-[110px] text-gray text-sm font-bold rounded-full py-2 border border-gray bg-transparent">
                   Appeal
