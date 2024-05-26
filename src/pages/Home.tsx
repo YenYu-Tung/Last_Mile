@@ -149,7 +149,7 @@ export default function Home({ setValue, setMainPage, mainPage, toggleMainPage }
   };
 
   return (
-    <div className="bg-dark pb-32 web:pb-0 w-full min-h-full">
+    <div className="bg-dark pb-32 web:pb-24 w-full min-h-full">
       <Snackbar
         open={snackbarOpen}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
